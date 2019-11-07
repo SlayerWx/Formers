@@ -4,10 +4,81 @@
     <Filter Include="src">
       <UniqueIdentifier>{a00253b6-fcbf-441f-912b-941eb4625007}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\gameObjects">
+      <UniqueIdentifier>{bff8a11e-b0d3-4185-862b-dc37b6a0158a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\gameElement">
+      <UniqueIdentifier>{3f001502-a7dd-487a-ba87-fba61dae2e72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\game">
+      <UniqueIdentifier>{d55e5d10-58fb-4a34-ab04-93e5831f921a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\gameElement\Levels">
+      <UniqueIdentifier>{9f5a035a-22f8-4540-bbe9-a04dbf144699}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\gameElement\Levels\zones">
+      <UniqueIdentifier>{9239c3e7-b8f6-4686-879b-bb4993fb59f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sound">
+      <UniqueIdentifier>{866e7df5-2177-4ff1-82bb-76d7dfec0576}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="img">
+      <UniqueIdentifier>{6d8d289e-7444-4402-8891-9285bbfdff3b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\main.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\gameElements\Credits.cpp">
+      <Filter>src\gameElement</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\gameElements\Game.cpp">
+      <Filter>src\gameElement</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\gameElements\Menu.cpp">
+      <Filter>src\gameElement</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\gameElements\levels\Level1.cpp">
+      <Filter>src\gameElement\Levels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\gameElements\levels\zones\Zone.cpp">
+      <Filter>src\gameElement\Levels\zones</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\gameObjects\Plates.cpp">
+      <Filter>src\gameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\gameObjects\Player.cpp">
+      <Filter>src\gameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\game\Formers.cpp">
+      <Filter>src\game</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\gameElements\Credits.h">
+      <Filter>src\gameElement</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\gameElements\Game.h">
+      <Filter>src\gameElement</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\gameElements\Menu.h">
+      <Filter>src\gameElement</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\gameElements\levels\Level1.h">
+      <Filter>src\gameElement\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\gameElements\levels\zones\Zone.h">
+      <Filter>src\gameElement\Levels\zones</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\gameObjects\Plates.h">
+      <Filter>src\gameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\gameObjects\Player.h">
+      <Filter>src\gameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\game\Formers.h">
+      <Filter>src\game</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
