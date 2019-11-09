@@ -15,6 +15,7 @@ public:
 	void setPosition(Vector2 newPos);
 	void setAlredyChange(bool newRedyChange);
 	bool getAlredyChange();
+	bool checkCollision(Vector2 position,float width,float height);
 private:
 	Vector2 myPosition;
 	float radius;

@@ -40,3 +40,7 @@ bool Plates::getAlredyChange()
 {
 	return alredyChange;
 }
+bool Plates::checkCollision(Vector2 position, float width, float height)
+{
+
+}
