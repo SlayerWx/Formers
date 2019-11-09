@@ -9,6 +9,7 @@ Plates::~Plates()
 }
 void Plates::drawMe()
 {
+#if DEBUG
 	switch (myForm)
 	{
 	case circle:
@@ -23,6 +24,7 @@ void Plates::drawMe()
 					 { myPosition.x + radius / 2,myPosition.y + radius / 4 }, myColor);
 		break;
 	}
+#endif
 }
 Vector2 Plates::getPosition()
 {
