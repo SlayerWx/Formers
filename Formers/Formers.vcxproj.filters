@@ -54,6 +54,9 @@
     <ClCompile Include="..\src\game\Formers.cpp">
       <Filter>src\game</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\gameObjects\Door.cpp">
+      <Filter>src\gameObjects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\gameElements\Credits.h">
@@ -79,6 +82,9 @@
     </ClInclude>
     <ClInclude Include="..\src\game\Formers.h">
       <Filter>src\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\gameObjects\Door.h">
+      <Filter>src\gameObjects</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

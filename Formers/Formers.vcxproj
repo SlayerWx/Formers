@@ -24,6 +24,7 @@
     <ClCompile Include="..\src\gameElements\levels\Level1.cpp" />
     <ClCompile Include="..\src\gameElements\levels\zones\Zone.cpp" />
     <ClCompile Include="..\src\gameElements\Menu.cpp" />
+    <ClCompile Include="..\src\gameObjects\Door.cpp" />
     <ClCompile Include="..\src\gameObjects\Plates.cpp" />
     <ClCompile Include="..\src\gameObjects\Player.cpp" />
     <ClCompile Include="..\src\game\Formers.cpp" />
@@ -35,6 +36,7 @@
     <ClInclude Include="..\src\gameElements\levels\Level1.h" />
     <ClInclude Include="..\src\gameElements\levels\zones\Zone.h" />
     <ClInclude Include="..\src\gameElements\Menu.h" />
+    <ClInclude Include="..\src\gameObjects\Door.h" />
     <ClInclude Include="..\src\gameObjects\Plates.h" />
     <ClInclude Include="..\src\gameObjects\Player.h" />
     <ClInclude Include="..\src\game\Formers.h" />
@@ -104,8 +106,9 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)raylib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\src;$(SolutionDir)raylib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <TreatWarningAsError>true</TreatWarningAsError>
+      <PreprocessorDefinitions>DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)raylib\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -130,6 +133,7 @@
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)\src;$(SolutionDir)raylib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <TreatWarningAsError>true</TreatWarningAsError>
+      <PreprocessorDefinitions>RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
