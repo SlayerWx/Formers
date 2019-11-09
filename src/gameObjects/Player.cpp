@@ -2,10 +2,12 @@
 
 Player::Player()
 {
+
 }
 
 Player::~Player()
 {
+
 }
 void Player::drawMe()
 {

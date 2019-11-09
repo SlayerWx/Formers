@@ -42,7 +42,13 @@ bool Plates::getAlredyChange()
 {
 	return alredyChange;
 }
-bool Plates::checkCollision(Vector2 position, float width, float height)
+void Plates::checkCollision(Vector2 playerPosition, float playerWidth, float playerHeight)
 {
+	if (playerPosition.x + playerWidth / 2 > myPosition.x - radius &&
+		playerPosition.x - playerWidth / 2 < myPosition.x + radius &&
+		playerPosition.y - playerHeight / 2 > myPosition.x + radius &&
+		playerPosition.y + playerHeight / 2 < myPosition.x - radius)
+	{
 
+	}
 }
