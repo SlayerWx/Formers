@@ -13,15 +13,16 @@ void Plates::drawMe()
 	switch (myForm)
 	{
 	case circle:
-		DrawCircle(myPosition.x, myPosition.y, radius, myColor);
+//		DrawCircle(myPosition.x, myPosition.y, static_cast<int>(radius), myColor);
 		break;
 	case rectangle:
-		DrawRectangle(myPosition.x, myPosition.y, radius, radius, myColor);
+//		DrawRectangle(myPosition.x, myPosition.y, static_cast<int>(radius),
+//												  static_cast<int>(radius), myColor);
 		break;
 	case triangle:
-		DrawTriangle({ myPosition.x,myPosition.y - radius/4 }, 
-					 { myPosition.x - radius / 2,myPosition.y + radius / 4 },
-					 { myPosition.x + radius / 2,myPosition.y + radius / 4 }, myColor);
+//		DrawTriangle({ myPosition.x,myPosition.y - radius/4 }, 
+//					 { myPosition.x - radius / 2,myPosition.y + radius / 4 },
+//					 { myPosition.x + radius / 2,myPosition.y + radius / 4 }, myColor);
 		break;
 	}
 #endif
