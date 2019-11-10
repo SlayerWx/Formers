@@ -1,6 +1,7 @@
 #ifndef PLATES_H
 #define PLATES_H
 #include "raylib.h"
+#include "gameElements/Global.h"
 enum Form
 {
 	circle, rectangle, triangle

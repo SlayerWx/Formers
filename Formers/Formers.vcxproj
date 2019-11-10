@@ -33,6 +33,7 @@
   <ItemGroup>
     <ClInclude Include="..\src\gameElements\Credits.h" />
     <ClInclude Include="..\src\gameElements\Game.h" />
+    <ClInclude Include="..\src\gameElements\Global.h" />
     <ClInclude Include="..\src\gameElements\levels\Level1.h" />
     <ClInclude Include="..\src\gameElements\levels\zones\Zone.h" />
     <ClInclude Include="..\src\gameElements\Menu.h" />

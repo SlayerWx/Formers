@@ -1,0 +1,1 @@
+static float WidthAndHeightWorld = 30.0f;

@@ -3,7 +3,7 @@
 Player::Player()
 {
 	speed = 4.0f;
-	distance = 30.0f;
+	distance = WidthAndHeightWorld;
 	myBody.x = 0;
 	myBody.y = 0;
 	myColor = RED;
