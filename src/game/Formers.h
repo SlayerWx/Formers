@@ -12,7 +12,7 @@ public:
 	Formers();
 	~Formers();
 	void Play();
-	const int screenWidth = 800;
+	const int screenWidth = 810;
 	const int screenHeight = 450;
 	GameStage gamestatus;
 	Game* game;
