@@ -20,7 +20,7 @@ Plates::~Plates()
 {
 }
 
-Plates::Plates(Vector2 Pos, Form form, Color myColor)
+Plates::Plates(Vector2 Pos, Form form, Color myNewColor)
 {
 	myPosition.x = Pos.x;
 	myPosition.y = Pos.y;
@@ -28,7 +28,7 @@ Plates::Plates(Vector2 Pos, Form form, Color myColor)
 	hight = WidthAndHeightWorld;
 	radius = WidthAndHeightWorld / 2;
 	myForm = form;
-	myColor = myColor;
+	myColor = myNewColor;
 	alredyChange = false;
 }
 void Plates::drawMe()

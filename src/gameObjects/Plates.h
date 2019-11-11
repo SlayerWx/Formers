@@ -8,6 +8,14 @@ enum Form
 };
 class Plates
 {
+private:
+	Vector2 myPosition;
+	float width;
+	float hight;
+	float radius;
+	Form myForm;
+	Color myColor;
+	bool alredyChange;
 public:
 	Plates();
 	~Plates();
@@ -23,13 +31,5 @@ public:
 	Form getForm();
 	Color getColor();
 	bool checkCollision(Vector2 position, float width, float height);
-private:
-	Vector2 myPosition;
-	float width;
-	float hight;
-	float radius;
-	Form myForm;
-	Color myColor;
-	bool alredyChange;
 };
 #endif
