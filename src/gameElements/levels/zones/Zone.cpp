@@ -34,14 +34,7 @@ void Zone::Update(Vector2 playerPos)
 	{
 		for (int j = 0; j < 13; j++)
 		{
-			if (i == 0 && j == 0)
-			{
-			zonePlates[i][j]->checkCollision(playerPos, WidthAndHeightWorld, WidthAndHeightWorld);
-				cout << "x:" << zonePlates[i][j]->getPosition().x << endl;
-				cout << "y:" << zonePlates[i][j]->getPosition().y << endl; 
-				cout << "player x:" << playerPos.x << endl;
-				cout << "player y:" << playerPos.y << endl;
-			}
+			zonePlates[i][j]->checkCollision(playerPos, WidthAndHeightWorld, WidthAndHeightWorld);	
 		}
 	}
 }

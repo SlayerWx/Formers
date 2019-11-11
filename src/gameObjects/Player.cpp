@@ -24,7 +24,7 @@ Player::~Player()
 
 Vector2 Player::getPosition()
 {
-	return endPosition;
+	return {myBody.x, myBody.y};
 }
 void Player::drawMe()
 {

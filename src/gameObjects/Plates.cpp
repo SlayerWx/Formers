@@ -71,8 +71,8 @@ bool Plates::getAlredyChange()
 }
 void Plates::checkCollision(Vector2 playerPosition, float playerWidth, float playerHeight)
 {
-	if (playerPosition.x + playerWidth / 2 == myPosition.x && 
-		playerPosition.y + playerHeight / 2 == myPosition.y)
+	if (playerPosition.x == myPosition.x && 
+		playerPosition.y == myPosition.y)
 	{
 		std::cout<<"colision"<<std::endl;
 	}
