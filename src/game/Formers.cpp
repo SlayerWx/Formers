@@ -1,4 +1,7 @@
 #include "Formers.h"
+#include "gameElements/Game.h"
+#include "raylib.h"
+
 Formers::Formers()
 {
 	InitWindow(screenWidth, screenHeight, "raylib [core] example - mouse input");
@@ -22,7 +25,7 @@ void Formers::Play()
 }
 void Formers::Init()
 {
-
+	game->Init();
 }
 void Formers::Update()
 {

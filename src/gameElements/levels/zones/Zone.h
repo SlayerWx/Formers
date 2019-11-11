@@ -4,9 +4,9 @@
 class Zone
 {
 public:
-	Plates* cantPlates[25][13];
+	Plates* zonePlates[25][13];
 	virtual void Init();
-	virtual void Update();
+	void Update(Vector2 playerPos);
 	void Draw();
 	Zone();
 	~Zone();

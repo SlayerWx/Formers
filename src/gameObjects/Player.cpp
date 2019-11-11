@@ -21,6 +21,11 @@ Player::~Player()
 {
 
 }
+
+Vector2 Player::getPosition()
+{
+	return endPosition;
+}
 void Player::drawMe()
 {
 #if DEBUG

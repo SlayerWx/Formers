@@ -10,6 +10,7 @@ public:
 	void drawMe();
 	void input();
 	void move();
+	Vector2 getPosition();
 private:
 	Rectangle myBody;
 	Color myColor;
