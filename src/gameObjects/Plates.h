@@ -30,6 +30,6 @@ public:
 	bool getAlredyChange();
 	Form getForm();
 	Color getColor();
-	bool checkCollision(Vector2 position, float width, float height);
+	void checkCollision(Vector2 position, float width, float height);
 };
 #endif

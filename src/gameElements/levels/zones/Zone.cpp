@@ -1,6 +1,5 @@
 #include "Zone.h"
 #include "gameObjects/Plates.h"
-#include "gameObjects/Player.h"
 #include <iostream>
 using namespace std;
 Zone::Zone()
@@ -9,7 +8,7 @@ Zone::Zone()
 	{
 		for (int j = 0; j < 13; j++)
 		{
-			zonePlates[i][j] = new Plates({ (15.0f + (30.0f*i)),(15.0f + (30.0f * j)) }, circle,RED);
+			zonePlates[i][j] = new Plates({ (30.0f + (30.0f*(i+1))),(30.0f + (30.0f * (j+1))) }, circle,BLUE);
 		}
 	}
 }
@@ -35,10 +34,13 @@ void Zone::Update(Vector2 playerPos)
 	{
 		for (int j = 0; j < 13; j++)
 		{
-			if (zonePlates[i][j]->checkCollision(playerPos, WidthAndHeightWorld, WidthAndHeightWorld))
+			if (i == 0 && j == 0)
 			{
-				zonePlates[i][j]->setForm(rectangle);
-				cout << "Colision" << endl;
+			zonePlates[i][j]->checkCollision(playerPos, WidthAndHeightWorld, WidthAndHeightWorld);
+				cout << "x:" << zonePlates[i][j]->getPosition().x << endl;
+				cout << "y:" << zonePlates[i][j]->getPosition().y << endl; 
+				cout << "player x:" << playerPos.x << endl;
+				cout << "player y:" << playerPos.y << endl;
 			}
 		}
 	}

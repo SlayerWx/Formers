@@ -9,8 +9,6 @@ Game::Game()
 {
 	player = new Player();
 	Lvl1 = new Level1();
-	testZone = new Zone();
-	testPlate = new Plates({ 105, 75 }, circle, BLUE);
 }
 
 Game::~Game()
@@ -24,13 +22,13 @@ void Game::Init()
 void Game::Update()
 {
 	player->input();
+	Lvl1->update(player->getPosition());
 	player->move();
-	testZone->Update(player->getPosition());
 
 }
 void Game::Draw()
 {
 	player->drawMe();
-	testZone->Draw();
+	Lvl1->draw();
 	//DrawCircle(testPlate->getPosition().x, testPlate->getPosition().y, WidthAndHeightWorld/2, testPlate->gerColor());
 }

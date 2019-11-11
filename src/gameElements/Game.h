@@ -7,8 +7,6 @@ class Game
 {
 public:
 	Level1* Lvl1;
-	Zone* testZone;
-	Plates* testPlate;
 	Game();
 	~Game();
 	void Init();

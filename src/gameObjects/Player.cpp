@@ -36,7 +36,7 @@ void Player::input()
 {
 	if (!up && !down && !left && !right)
 	{
-		if (IsKeyDown(KEY_W) && myBody.y > myBody.height)
+		if (IsKeyDown(KEY_W) && myBody.y > myBody.height/2)
 		{
 			up = true;
 			startPosition.x = myBody.x;
@@ -52,7 +52,7 @@ void Player::input()
 			endPosition.x = startPosition.x;
 			endPosition.y = startPosition.y + distance;
 		}
-		if (IsKeyDown(KEY_A) && myBody.x >= 0 + myBody.height / 2)
+		if (IsKeyDown(KEY_A) && myBody.x >= myBody.height / 2)
 		{
 			left = true;
 			startPosition.x = myBody.x;

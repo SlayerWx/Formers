@@ -1,5 +1,5 @@
 #include "Plates.h"
-
+#include <iostream>
 Plates::Plates()
 {
 	myPosition.x = 0;
@@ -8,7 +8,7 @@ Plates::Plates()
 	hight = WidthAndHeightWorld;
 	radius = WidthAndHeightWorld / 2;
 	myForm = circle;
-	myColor = RED;
+	myColor = BLUE;
 	alredyChange = false;
 }
 /*
@@ -33,11 +33,10 @@ Plates::Plates(Vector2 Pos, Form form, Color myNewColor)
 }
 void Plates::drawMe()
 {
-	
 	switch (myForm)
 	{
 	case circle:
-		DrawCircle(myPosition.x+30, myPosition.y+30, radius, myColor);
+		DrawCircle(myPosition.x-15.0f, myPosition.y-15.0f, radius, myColor);
 		break;
 	case rectangle:
 		DrawRectangle(myPosition.x, myPosition.y, width, hight, myColor);
@@ -70,20 +69,13 @@ bool Plates::getAlredyChange()
 {
 	return alredyChange;
 }
-bool Plates::checkCollision(Vector2 playerPosition, float playerWidth, float playerHeight)
+void Plates::checkCollision(Vector2 playerPosition, float playerWidth, float playerHeight)
 {
-	if (playerPosition.x + playerWidth / 2 > myPosition.x - radius &&
-		playerPosition.x - playerWidth / 2 < myPosition.x + radius &&
-		playerPosition.y - playerHeight / 2 > myPosition.x + radius &&
-		playerPosition.y + playerHeight / 2 < myPosition.x - radius)
+	if (playerPosition.x + playerWidth / 2 == myPosition.x && 
+		playerPosition.y + playerHeight / 2 == myPosition.y)
 	{
-		return true;
+		std::cout<<"colision"<<std::endl;
 	}
-	else
-	{
-		return false;
-	}
-
 }
 
 void Plates::setForm(Form newForm)
