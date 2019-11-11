@@ -4,7 +4,7 @@
 #include "gameElements/Global.h"
 enum Form
 {
-	circle, rectangle, triangle
+	circle, rectangle, triangle, 
 };
 class Plates
 {
@@ -16,6 +16,7 @@ private:
 	Form myForm;
 	Color myColor;
 	bool alredyChange;
+	bool isActive;
 public:
 	Plates();
 	~Plates();
@@ -26,7 +27,9 @@ public:
 	Vector2 getPosition();
 	void setPosition(Vector2 newPos);
 	void setAlredyChange(bool newRedyChange);
-	void setForm(Form newForm);
+	void setForm(Form newForm); 
+	void setActive();
+	bool getActive();
 	bool getAlredyChange();
 	Form getForm();
 	Color getColor();

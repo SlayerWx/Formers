@@ -9,8 +9,11 @@ Zone::Zone()
 		for (int j = 0; j < 13; j++)
 		{
 			zonePlates[i][j] = new Plates({ (30.0f + (30.0f*(i+1))),(30.0f + (30.0f * (j+1))) }, circle,BLUE);
+			
 		}
+
 	}
+	zonePlates[3][3]->setActive();
 }
 
 Zone::~Zone()
@@ -20,13 +23,8 @@ Zone::~Zone()
 
 void Zone::Init() 
 {
-	/*for (int i = 0; i < 25; i++)
-	{
-		for (int j = 0; j < 13; j++)
-		{
-			cantPlates[i][j]->init(TILE1X1,circle,RED);
-		}
-	}*/
+	
+
 }
 void Zone::Update(Vector2 playerPos)
 {
@@ -34,7 +32,10 @@ void Zone::Update(Vector2 playerPos)
 	{
 		for (int j = 0; j < 13; j++)
 		{
-			zonePlates[i][j]->checkCollision(playerPos, WidthAndHeightWorld, WidthAndHeightWorld);	
+			if (zonePlates[i][j]->getActive())
+			{
+				zonePlates[i][j]->checkCollision(playerPos, WidthAndHeightWorld, WidthAndHeightWorld);
+			}	
 		}
 	}
 }
@@ -44,7 +45,10 @@ void Zone::Draw()
 	{
 		for (int j = 0; j < 13; j++)
 		{
+			if (zonePlates[i][j]->getActive())
+			{
 			zonePlates[i][j]->drawMe();
+			}
 		}
 	}
 }

@@ -10,6 +10,7 @@ Plates::Plates()
 	myForm = circle;
 	myColor = BLUE;
 	alredyChange = false;
+	isActive = false;
 }
 /*
 void Plates::init(Vector2 Pos, Form form, Color myColor)
@@ -30,21 +31,22 @@ Plates::Plates(Vector2 Pos, Form form, Color myNewColor)
 	myForm = form;
 	myColor = myNewColor;
 	alredyChange = false;
+	isActive = false;
 }
 void Plates::drawMe()
 {
-	switch (myForm)
+	switch (getForm())
 	{
 	case circle:
-		DrawCircle(myPosition.x-15.0f, myPosition.y-15.0f, radius, myColor);
+		DrawCircle(myPosition.x - 15.0f, myPosition.y - 15.0f, radius, myColor);
 		break;
 	case rectangle:
-		DrawRectangle(myPosition.x, myPosition.y, width, hight, myColor);
+		DrawRectangle(myPosition.x-30.0f, myPosition.y -30.0f, width, hight, myColor);
 		break;
 	case triangle:
-		DrawTriangle({ myPosition.x,myPosition.y - hight/2},
-			{ myPosition.x - width / 2,myPosition.y +  hight/2},
-			{ myPosition.x + width / 2,myPosition.y + hight / 2 }, myColor);
+		DrawTriangle({ myPosition.x - 15.0f,myPosition.y - hight / 2 - 15.0f },
+			{ myPosition.x - width / 2 - 15.0f,myPosition.y + hight / 2 - 15.0f },
+			{ myPosition.x + width / 2 - 15.0f,myPosition.y + hight / 2 - 15.0f }, myColor);
 		break;
 	}
 }
@@ -53,7 +55,7 @@ Vector2 Plates::getPosition()
 	return myPosition;
 }
 
-Color Plates::getColor() 
+Color Plates::getColor()
 {
 	return myColor;
 }
@@ -71,10 +73,45 @@ bool Plates::getAlredyChange()
 }
 void Plates::checkCollision(Vector2 playerPosition, float playerWidth, float playerHeight)
 {
-	if (playerPosition.x == myPosition.x && 
-		playerPosition.y == myPosition.y)
+	if (playerPosition.x == myPosition.x-30.0f &&
+		playerPosition.y == myPosition.y - 30.0f)
 	{
-		std::cout<<"colision"<<std::endl;
+		switch (getForm())
+		{
+			
+		case circle:
+			std::cout << "circle" << std::endl;
+			if (alredyChange == false)
+			{
+				setForm(rectangle);
+				alredyChange = true;
+			}
+
+			break;
+		case rectangle:
+			std::cout << "rectangle" << std::endl;
+			if (alredyChange == false)
+			{
+				setForm(triangle);
+				alredyChange = true;
+			}
+			break;
+		case triangle:
+			std::cout << "triangle" << std::endl;
+			if (alredyChange == false)
+			{
+				setForm(circle);
+				alredyChange = true;
+			}
+			break;
+		default:
+			break;
+		}
+
+	}
+	else
+	{
+		alredyChange = false;
 	}
 }
 
@@ -85,4 +122,12 @@ void Plates::setForm(Form newForm)
 Form Plates::getForm()
 {
 	return myForm;
+}
+bool Plates::getActive()
+{
+	return isActive;
+}
+void Plates::setActive()
+{
+	isActive = !isActive;
 }
