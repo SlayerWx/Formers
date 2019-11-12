@@ -1,5 +1,6 @@
 #include "Player.h"
 #include <iostream>
+using namespace std;
 Player::Player()
 {
 	speed = 4.0f;
@@ -38,9 +39,16 @@ void Player::drawMe()
 }
 void Player::input()
 {
+	system("cls");
+	cout << "up = " << up << endl;
+	cout << "down = " << down << endl;
+	cout << "left = " << left << endl;
+	cout << "right = " << right << endl;
+	std::cout << "x:" << myBody.x << std::endl;
+	std::cout << "y:" << myBody.y << std::endl;
 	if (!up && !down && !left && !right)
 	{
-		if (IsKeyDown(KEY_W) && myBody.y > myBody.height/2)
+		if (IsKeyDown(KEY_W) && myBody.y > myBody.height/2 && !down)
 		{
 			up = true;
 			startPosition.x = myBody.x;
@@ -48,7 +56,7 @@ void Player::input()
 			endPosition.x = startPosition.x;
 			endPosition.y = startPosition.y - distance;
 		}
-		if (IsKeyDown(KEY_S) && myBody.y < GetScreenHeight() - myBody.height)
+		else if (IsKeyDown(KEY_S) && myBody.y < GetScreenHeight() - myBody.height && !up)
 		{
 			down = true;
 			startPosition.x = myBody.x;
@@ -56,7 +64,7 @@ void Player::input()
 			endPosition.x = startPosition.x;
 			endPosition.y = startPosition.y + distance;
 		}
-		if (IsKeyDown(KEY_A) && myBody.x >= myBody.height / 2)
+		else if (IsKeyDown(KEY_A) && myBody.x >= myBody.height / 2 && !right)
 		{
 			left = true;
 			startPosition.x = myBody.x;
@@ -64,7 +72,7 @@ void Player::input()
 			endPosition.x = startPosition.x - distance;
 			endPosition.y = startPosition.y;
 		}
-		if (IsKeyDown(KEY_D) && myBody.x < GetScreenWidth() - myBody.height )
+		else if (IsKeyDown(KEY_D) && myBody.x < GetScreenWidth() - myBody.height && !left)
 		{
 			right = true;
 			startPosition.x = myBody.x;
