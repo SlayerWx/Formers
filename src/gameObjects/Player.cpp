@@ -1,6 +1,5 @@
 #include "Player.h"
 #include <iostream>
-using namespace std;
 Player::Player()
 {
 	speed = 4.0f;
@@ -39,13 +38,7 @@ void Player::drawMe()
 }
 void Player::input()
 {
-	system("cls");
-	cout << "up = " << up << endl;
-	cout << "down = " << down << endl;
-	cout << "left = " << left << endl;
-	cout << "right = " << right << endl;
-	std::cout << "x:" << myBody.x << std::endl;
-	std::cout << "y:" << myBody.y << std::endl;
+	
 	if (!up && !down && !left && !right)
 	{
 		if (IsKeyDown(KEY_W) && myBody.y > myBody.height/2 && !down)

@@ -1,6 +1,7 @@
 #include "Plates.h"
 #include <iostream>
 #include "raylib.h"
+using namespace std;
 Plates::Plates()
 {
 	myPosition.x = 0;
@@ -116,6 +117,9 @@ void Plates::checkCollision(Vector2 playerPosition, Vector2 lastPosition, float 
 		}
 		else
 		{
+			system("cls");
+			
+			std::cout << "color:" << actualColor << std::endl;
 			switch (actualColor) 
 			{
 			case red:
@@ -161,9 +165,9 @@ void Plates::setForm(Form newForm)
 void Plates::setColor(Colors newColor)
 {
 		actualColor = newColor;
-		if (actualColor == 1)myColor = RED;
-		if (actualColor == 2)myColor = BLUE;
-		if (actualColor == 3)myColor = GREEN;
+		if (actualColor == red)myColor = RED;
+		if (actualColor == blue)myColor = BLUE;
+		if (actualColor == green)myColor = GREEN;
 }
 Form Plates::getForm()
 {
