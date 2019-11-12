@@ -4,8 +4,8 @@ Player::Player()
 {
 	speed = 4.0f;
 	distance = WidthAndHeightWorld;
-	myBody.x = 0;
-	myBody.y = 0;
+	myBody.x = WidthAndHeightWorld;
+	myBody.y = WidthAndHeightWorld*7;
 	myColor = RED;
 	myBody.width = WidthAndHeightWorld;
 	myBody.height = WidthAndHeightWorld;
@@ -41,7 +41,7 @@ void Player::input()
 	
 	if (!up && !down && !left && !right)
 	{
-		if (IsKeyDown(KEY_W) && myBody.y > myBody.height/2 && !down)
+		if (IsKeyDown(KEY_W) && myBody.y > myBody.height/2 + WidthAndHeightWorld && !down)
 		{
 			up = true;
 			startPosition.x = myBody.x;
@@ -49,7 +49,7 @@ void Player::input()
 			endPosition.x = startPosition.x;
 			endPosition.y = startPosition.y - distance;
 		}
-		else if (IsKeyDown(KEY_S) && myBody.y < GetScreenHeight() - myBody.height && !up)
+		else if (IsKeyDown(KEY_S) && myBody.y < GetScreenHeight() - myBody.height - WidthAndHeightWorld && !up)
 		{
 			down = true;
 			startPosition.x = myBody.x;
@@ -57,7 +57,7 @@ void Player::input()
 			endPosition.x = startPosition.x;
 			endPosition.y = startPosition.y + distance;
 		}
-		else if (IsKeyDown(KEY_A) && myBody.x >= myBody.height / 2 && !right)
+		else if (IsKeyDown(KEY_A) && myBody.x >= myBody.height / 2 + WidthAndHeightWorld && !right)
 		{
 			left = true;
 			startPosition.x = myBody.x;
@@ -65,7 +65,7 @@ void Player::input()
 			endPosition.x = startPosition.x - distance;
 			endPosition.y = startPosition.y;
 		}
-		else if (IsKeyDown(KEY_D) && myBody.x < GetScreenWidth() - myBody.height && !left)
+		else if (IsKeyDown(KEY_D) && myBody.x < GetScreenWidth() - myBody.height - WidthAndHeightWorld && !left)
 		{
 			right = true;
 			startPosition.x = myBody.x;
