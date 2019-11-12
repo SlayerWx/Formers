@@ -15,8 +15,9 @@ public:
 	Zone(int newMap[mapRow][mapColumn]);
 	~Zone();
 	bool checkWin();
+	int getMaxMoves();
 
 private:
-
+	int maxMoves;
 };
 #endif

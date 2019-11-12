@@ -9,8 +9,8 @@ Zone::Zone(int newMap[mapRow][mapColumn])
 		for (int j = 0; j < mapColumn; j++)
 		{
 			zoneElements[i][j] = NULL;
-			zoneElements[i][j] = new Plates({ 30.0f*(j + 1),30.0f * (i+1 ) }, circle, BLUE, blue);
-
+			zoneElements[i][j] = new Plates({ tileSize*(j + 1),tileSize * (i+1 ) }, circle, BLUE, blue);
+			maxMoves = 60;
 		}
 
 	}
@@ -122,6 +122,7 @@ bool Zone::checkWin()
 					{
 						if (testIfSame != zoneElements[k][l]->getForm() && zoneElements[k][l]->getForm() != vacio && zoneElements[k][l]->getForm() != wall)
 						{
+							//necesito agarrar la cantidad de movimientos que va y compararlo con maxMoves
 							wins = false;
 						}
 					}
@@ -130,6 +131,11 @@ bool Zone::checkWin()
 		}
 	}
 	return wins;
+}
+
+int Zone::getMaxMoves()
+{
+	return maxMoves;
 }
 
 void Zone::Init() 
@@ -163,4 +169,6 @@ void Zone::Draw()
 		}
 	}
 	DrawText(FormatText("win: %i", checkWin()), tileSize*5, tileSize / 2, tileSize / 2, WHITE);
+
+	DrawText(FormatText("Moves has to be less than: %i", getMaxMoves()) , tileSize * 10, tileSize / 2, tileSize / 2, WHITE);
 }
