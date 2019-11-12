@@ -6,14 +6,10 @@ Plates::Plates()
 {
 	myPosition.x = 0;
 	myPosition.y = 0;
-	width = WidthAndHeightWorld;
-	hight = WidthAndHeightWorld;
-	radius = WidthAndHeightWorld / 2;
 	myForm = circle;
 	myColor = BLUE;
 	actualColor = blue;
 	alredyChange = false;
-	isActive = false;
 }
 /*
 void Plates::init(Vector2 Pos, Form form, Color myColor)
@@ -28,29 +24,25 @@ Plates::Plates(Vector2 Pos, Form form, Color myNewColor, Colors numColor)
 {
 	myPosition.x = Pos.x;
 	myPosition.y = Pos.y;
-	width = WidthAndHeightWorld;
-	hight = WidthAndHeightWorld;
-	radius = WidthAndHeightWorld / 2;
 	myForm = form;
 	myColor = myNewColor;
 	actualColor = numColor;
 	alredyChange = false;
-	isActive = false;
 }
 void Plates::drawMe()
 {
 	switch (getForm())
 	{
 	case circle:
-		DrawCircle(myPosition.x - 15.0f, myPosition.y - 15.0f, radius, myColor);
+		DrawCircle(myPosition.x - 15.0f, myPosition.y - 15.0f, WidthAndHeightWorld/2, myColor);
 		break;
 	case rectangle:
-		DrawRectangle(myPosition.x - 30.0f, myPosition.y - 30.0f, width, hight, myColor);
+		DrawRectangle(myPosition.x - 30.0f, myPosition.y - 30.0f, WidthAndHeightWorld, WidthAndHeightWorld, myColor);
 		break;
 	case triangle:
-		DrawTriangle({ myPosition.x - 15.0f,myPosition.y - hight / 2 - 15.0f },
-			{ myPosition.x - width / 2 - 15.0f,myPosition.y + hight / 2 - 15.0f },
-			{ myPosition.x + width / 2 - 15.0f,myPosition.y + hight / 2 - 15.0f }, myColor);
+		DrawTriangle({ myPosition.x - 15.0f,myPosition.y - WidthAndHeightWorld / 2 - 15.0f },
+			{ myPosition.x - WidthAndHeightWorld / 2 - 15.0f,myPosition.y + WidthAndHeightWorld / 2 - 15.0f },
+			{ myPosition.x + WidthAndHeightWorld / 2 - 15.0f,myPosition.y + WidthAndHeightWorld / 2 - 15.0f }, myColor);
 		break;
 	}
 }
@@ -75,7 +67,7 @@ bool Plates::getAlredyChange()
 {
 	return alredyChange;
 }
-void Plates::checkCollision(Vector2 playerPosition, Vector2 lastPosition, float playerWidth, float playerHeight)
+void Plates::checkCollision(Vector2 playerPosition, Vector2 lastPosition)
 {
 	if (playerPosition.x == myPosition.x - 30.0f &&
 		playerPosition.y == myPosition.y - 30.0f)
@@ -172,12 +164,4 @@ void Plates::setColor(Colors newColor)
 Form Plates::getForm()
 {
 	return myForm;
-}
-bool Plates::getActive()
-{
-	return isActive;
-}
-void Plates::setActive()
-{
-	isActive = !isActive;
 }

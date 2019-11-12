@@ -57,6 +57,9 @@
     <ClCompile Include="..\src\gameObjects\Door.cpp">
       <Filter>src\gameObjects</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\gameElements\levels\Zone_Structures.cpp">
+      <Filter>src\gameElement\Levels</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\gameElements\Credits.h">
@@ -88,6 +91,9 @@
     </ClInclude>
     <ClInclude Include="..\src\gameElements\Global.h">
       <Filter>src\gameElement</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\gameElements\levels\Zone_Structures.h">
+      <Filter>src\gameElement\Levels</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -6,7 +6,7 @@ Player::Player()
 	distance = WidthAndHeightWorld;
 	myBody.x = WidthAndHeightWorld;
 	myBody.y = WidthAndHeightWorld*7;
-	myColor = RED;
+	myColor = YELLOW;
 	myBody.width = WidthAndHeightWorld;
 	myBody.height = WidthAndHeightWorld;
 	stopAction = false;
@@ -35,6 +35,9 @@ void Player::drawMe()
 #if DEBUG
 	DrawRectangleRec(myBody, myColor);
 #endif
+
+
+	
 }
 void Player::input()
 {

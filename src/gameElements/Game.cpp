@@ -31,7 +31,7 @@ void Game::Update()
 }
 void Game::Draw()
 {
-	player->drawMe();
 	Lvl1->draw();
+	player->drawMe();
 	//DrawCircle(testPlate->getPosition().x, testPlate->getPosition().y, WidthAndHeightWorld/2, testPlate->gerColor());
 }

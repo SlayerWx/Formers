@@ -2,20 +2,18 @@
 #include "gameObjects/Plates.h"
 #include <iostream>
 using namespace std;
-Zone::Zone()
+Zone::Zone(int newMap[])
 {
-	for (int i = 0; i < 25; i++)
+	for (int i = 0; i < WidthZone; i++)
 	{
-		for (int j = 0; j < 13; j++)
+		for (int j = 0; j < HeightZone; j++)
 		{
-			zonePlates[i][j] = new Plates({ (30.0f + (30.0f*(i+1))),(30.0f + (30.0f * (j+1))) }, circle,BLUE,blue);
+			zoneElements[i][j] = NULL;
+			zoneElements[i][j] = new Plates({ 30.0f*(i+1),30.0f * (j+1) }, circle,BLUE,blue);
 			
 		}
 
 	}
-	zonePlates[3][3]->setActive();
-	zonePlates[5][3]->setActive();
-	zonePlates[3][5]->setActive();
 }
 
 Zone::~Zone()
@@ -30,26 +28,26 @@ void Zone::Init()
 }
 void Zone::Update(Vector2 playerPos, Vector2 lastPosition)
 {
-	for (int i = 0; i < 25; i++)
+	for (int i = 0; i < WidthZone; i++)
 	{
-		for (int j = 0; j < 13; j++)
+		for (int j = 0; j < HeightZone; j++)
 		{
-			if (zonePlates[i][j]->getActive())
+			if (zoneElements[i][j]->getForm()!=space)
 			{
-				zonePlates[i][j]->checkCollision(playerPos, lastPosition, WidthAndHeightWorld, WidthAndHeightWorld);
+				zoneElements[i][j]->checkCollision(playerPos, lastPosition);
 			}	
 		}
 	}
 }
 void Zone::Draw()
 {
-	for (int i = 0; i < 25; i++)
+	for (int i = 0; i < WidthZone; i++)
 	{
-		for (int j = 0; j < 13; j++)
+		for (int j = 0; j < HeightZone; j++)
 		{
-			if (zonePlates[i][j]->getActive())
+			if (zoneElements[i][j]->getForm() != space)
 			{
-			zonePlates[i][j]->drawMe();
+				zoneElements[i][j]->drawMe();
 			}
 		}
 	}

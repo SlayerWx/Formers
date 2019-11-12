@@ -10,5 +10,9 @@ public:
 	~Level1();
 	void update(Vector2 playerPos, Vector2 lastPosition);
 	void draw();
+
 };
 #endif
+
+
+

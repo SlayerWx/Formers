@@ -1,27 +1,12 @@
 #ifndef PLATES_H
 #define PLATES_H
 #include "raylib.h"
+#include "gameElements/levels/Zone_Structures.h"
 #include "gameElements/Global.h"
-enum Form
-{
-	circle, rectangle, triangle
-};
-enum Colors
-{
-	red,blue,green
-};
-class Plates
+class Plates :public Zone_Structures
 {
 private:
-	Vector2 myPosition;
-	float width;
-	float hight;
-	float radius;
-	Form myForm;
-	Color myColor;
-	Colors actualColor;
 	bool alredyChange;
-	bool isActive;
 public:
 	Plates();
 	~Plates();
@@ -34,11 +19,9 @@ public:
 	void setAlredyChange(bool newRedyChange);
 	void setForm(Form newForm); 
 	void setColor(Colors newColor);
-	void setActive();
-	bool getActive();
 	bool getAlredyChange();
 	Form getForm();
 	Color getColor();
-	void checkCollision(Vector2 position, Vector2 lastPosition, float width, float height);
+	void checkCollision(Vector2 position, Vector2 lastPosition);
 };
 #endif
