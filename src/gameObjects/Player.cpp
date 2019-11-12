@@ -2,18 +2,19 @@
 Player::Player()
 {
 	speed = 4.0f;
-	distance = widthAndHeightWorld;
-	myBody.x = widthAndHeightWorld;
-	myBody.y = widthAndHeightWorld*7;
+	distance = tileSize;
+	myBody.x = tileSize;
+	myBody.y = tileSize*7;
 	myColor = YELLOW;
-	myBody.width = widthAndHeightWorld;
-	myBody.height = widthAndHeightWorld;
+	myBody.width = tileSize;
+	myBody.height = tileSize;
 	stopAction = false;
 	executingMovement = 0.0f;
 	up = false;
 	down = false;
 	right = false;
 	left = false;
+	moves = 0;
 }
 
 Player::~Player()
@@ -35,7 +36,7 @@ void Player::drawMe()
 	DrawRectangleRec(myBody, myColor);
 #endif
 
-
+	DrawText(FormatText("Moves: %i",getMoves()), tileSize, tileSize/2, tileSize/2, WHITE);
 	
 }
 void Player::input()
@@ -43,7 +44,7 @@ void Player::input()
 	
 	if (!up && !down && !left && !right)
 	{
-		if (IsKeyDown(KEY_W) && myBody.y > myBody.height/2 + widthAndHeightWorld && !down)
+		if (IsKeyDown(KEY_W) && myBody.y > myBody.height/2 + tileSize && !down)
 		{
 			up = true;
 			startPosition.x = myBody.x;
@@ -51,7 +52,7 @@ void Player::input()
 			endPosition.x = startPosition.x;
 			endPosition.y = startPosition.y - distance;
 		}
-		else if (IsKeyDown(KEY_S) && myBody.y < GetScreenHeight() - myBody.height - widthAndHeightWorld && !up)
+		else if (IsKeyDown(KEY_S) && myBody.y < GetScreenHeight() - myBody.height - tileSize && !up)
 		{
 			down = true;
 			startPosition.x = myBody.x;
@@ -59,7 +60,7 @@ void Player::input()
 			endPosition.x = startPosition.x;
 			endPosition.y = startPosition.y + distance;
 		}
-		else if (IsKeyDown(KEY_A) && myBody.x >= myBody.height / 2 + widthAndHeightWorld && !right)
+		else if (IsKeyDown(KEY_A) && myBody.x >= myBody.height / 2 + tileSize && !right)
 		{
 			left = true;
 			startPosition.x = myBody.x;
@@ -67,7 +68,7 @@ void Player::input()
 			endPosition.x = startPosition.x - distance;
 			endPosition.y = startPosition.y;
 		}
-		else if (IsKeyDown(KEY_D) && myBody.x < GetScreenWidth() - myBody.height - widthAndHeightWorld && !left)
+		else if (IsKeyDown(KEY_D) && myBody.x < GetScreenWidth() - myBody.height - tileSize && !left)
 		{
 			right = true;
 			startPosition.x = myBody.x;
@@ -87,6 +88,7 @@ void Player::move()
 		left = false;
 		right = false;
 		stopAction = false;
+		updateMoves();
 	}
 	if (executingMovement > 1.0f)
 	{
@@ -97,22 +99,39 @@ void Player::move()
 	{
 		myBody.y = lerp(startPosition.y, endPosition.y, executingMovement);
 		executingMovement += speed * GetFrameTime();
+		
 	}
 	if (down) 
 	{ 
 		myBody.y = lerp(startPosition.y, endPosition.y, executingMovement);
 		executingMovement += speed * GetFrameTime();
+		
 	}
 	if (left) 
 	{ 
 		myBody.x = lerp(startPosition.x, endPosition.x, executingMovement);
 		executingMovement += speed * GetFrameTime();
+		
 	}
 	if (right)
 	{
 		myBody.x = lerp(startPosition.x, endPosition.x, executingMovement);
 		executingMovement += speed * GetFrameTime();
+		
 	}
+}
+int Player::getMoves()
+{
+	return moves;
+}
+
+void Player::updateMoves()
+{
+	moves++;
+}
+void Player::resetMoves()
+{
+	moves = 0;
 }
 float Player::lerp(float start, float end, float percent)
 {

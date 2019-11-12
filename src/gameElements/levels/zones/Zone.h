@@ -14,6 +14,7 @@ public:
 	void Draw();
 	Zone(int newMap[mapRow][mapColumn]);
 	~Zone();
+	bool checkWin();
 
 private:
 

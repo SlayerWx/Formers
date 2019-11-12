@@ -34,18 +34,18 @@ void Plates::drawMe()
 	switch (getForm())
 	{
 	case circle:
-		DrawCircle(myPosition.x - widthAndHeightWorld/2, myPosition.y - widthAndHeightWorld / 2, widthAndHeightWorld/2, myColor);
+		DrawCircle(myPosition.x - tileSize/2, myPosition.y - tileSize / 2, tileSize/2, myColor);
 		break;
 	case rectangle:
-		DrawRectangle(myPosition.x - widthAndHeightWorld, myPosition.y - widthAndHeightWorld, widthAndHeightWorld, widthAndHeightWorld, myColor);
+		DrawRectangle(myPosition.x - tileSize, myPosition.y - tileSize, tileSize, tileSize, myColor);
 		break;
 	case triangle:
-		DrawTriangle({ myPosition.x - widthAndHeightWorld / 2,myPosition.y - widthAndHeightWorld / 2 - widthAndHeightWorld / 2 },
-			{ myPosition.x - widthAndHeightWorld / 2 - widthAndHeightWorld / 2,myPosition.y + widthAndHeightWorld / 2 - widthAndHeightWorld / 2 },
-			{ myPosition.x + widthAndHeightWorld / 2 - widthAndHeightWorld / 2,myPosition.y + widthAndHeightWorld / 2 - widthAndHeightWorld / 2 }, myColor);
+		DrawTriangle({ myPosition.x - tileSize / 2,myPosition.y - tileSize / 2 - tileSize / 2 },
+			{ myPosition.x - tileSize / 2 - tileSize / 2,myPosition.y + tileSize / 2 - tileSize / 2 },
+			{ myPosition.x + tileSize / 2 - tileSize / 2,myPosition.y + tileSize / 2 - tileSize / 2 }, myColor);
 		break;
 	case wall:
-		DrawRectangle(myPosition.x - widthAndHeightWorld, myPosition.y - widthAndHeightWorld, widthAndHeightWorld, widthAndHeightWorld, myColor);
+		DrawRectangle(myPosition.x - tileSize, myPosition.y - tileSize, tileSize, tileSize, myColor);
 		break;
 	}
 }
@@ -85,6 +85,7 @@ void Plates::checkCollision(Vector2 playerPosition, Vector2 lastPosition)
 				{
 					setForm(rectangle);
 					alredyChange = true;
+					playerPosition.x = 30.0f;
 				}
 
 				break;
@@ -147,6 +148,8 @@ void Plates::checkCollision(Vector2 playerPosition, Vector2 lastPosition)
 		alredyChange = false;
 	}
 }
+
+
 
 void Plates::setForm(TileType newForm)
 {

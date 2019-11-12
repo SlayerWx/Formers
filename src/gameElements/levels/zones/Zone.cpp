@@ -104,6 +104,34 @@ Zone::~Zone()
 	
 }
 
+bool Zone::checkWin()
+{
+	int testIfSame = 0;
+	bool wins = true;
+	for (int i = 0; i < mapRow; i++)
+	{
+		for (int j = 0; j < mapColumn; j++)
+		{
+			if (zoneElements[i][j]->getForm() != vacio && zoneElements[i][j]->getForm() != wall)
+			{
+				testIfSame = zoneElements[i][j]->getForm();
+
+				for (int k = 0; k < mapRow; k++)
+				{
+					for (int l = 0; l < mapColumn; l++)
+					{
+						if (testIfSame != zoneElements[k][l]->getForm() && zoneElements[k][l]->getForm() != vacio && zoneElements[k][l]->getForm() != wall)
+						{
+							wins = false;
+						}
+					}
+				}
+			}
+		}
+	}
+	return wins;
+}
+
 void Zone::Init() 
 {
 	
@@ -134,4 +162,5 @@ void Zone::Draw()
 			}
 		}
 	}
+	DrawText(FormatText("win: %i", checkWin()), tileSize*5, tileSize / 2, tileSize / 2, WHITE);
 }

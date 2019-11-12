@@ -10,6 +10,9 @@ public:
 	void drawMe();
 	void input();
 	void move();
+	int getMoves();
+	void updateMoves();
+	void resetMoves();
 	Vector2 getPosition();
 	Vector2 getLastPosition();
 private:
@@ -18,6 +21,7 @@ private:
 	float speed;
 	float executingMovement;
 	float distance;
+	int moves;
 	bool down;
 	bool up;
 	bool left;
