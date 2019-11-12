@@ -8,7 +8,7 @@ private:
 public:
 	Level1();
 	~Level1();
-	void update(Vector2 playerPos);
+	void update(Vector2 playerPos, Vector2 lastPosition);
 	void draw();
 };
 #endif

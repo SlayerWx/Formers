@@ -26,6 +26,10 @@ Vector2 Player::getPosition()
 {
 	return {myBody.x, myBody.y};
 }
+Vector2 Player::getLastPosition()
+{
+	return { startPosition.x, startPosition.y };
+}
 void Player::drawMe()
 {
 #if DEBUG

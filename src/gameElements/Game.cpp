@@ -4,6 +4,7 @@
 #include "gameElements/levels/zones/Zone.h"
 
 #include "gameElements/Global.h"
+#include <iostream>
 
 Game::Game()
 {
@@ -22,7 +23,9 @@ void Game::Init()
 void Game::Update()
 {
 	player->input();
-	Lvl1->update(player->getPosition());
+	Lvl1->update(player->getPosition(), player->getLastPosition());
+	//std::cout << player->getPosition().x << ";" << player->getPosition().y << std::endl;
+	//std::cout << player->getLastPosition().x << ";" << player->getLastPosition().y << std::endl;
 	player->move();
 
 }

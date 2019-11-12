@@ -11,6 +11,7 @@ public:
 	void input();
 	void move();
 	Vector2 getPosition();
+	Vector2 getLastPosition();
 private:
 	Rectangle myBody;
 	Color myColor;

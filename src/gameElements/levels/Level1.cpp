@@ -7,9 +7,9 @@ Level1::Level1()
 Level1::~Level1()
 {
 }
-void Level1::update(Vector2 playerPos)
+void Level1::update(Vector2 playerPos, Vector2 lastPosition)
 {
-	map1->Update(playerPos);
+	map1->Update(playerPos, lastPosition);
 }
 void Level1::draw()
 {

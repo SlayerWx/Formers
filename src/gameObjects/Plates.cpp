@@ -1,5 +1,6 @@
 #include "Plates.h"
 #include <iostream>
+#include "raylib.h"
 Plates::Plates()
 {
 	myPosition.x = 0;
@@ -9,6 +10,7 @@ Plates::Plates()
 	radius = WidthAndHeightWorld / 2;
 	myForm = circle;
 	myColor = BLUE;
+	actualColor = blue;
 	alredyChange = false;
 	isActive = false;
 }
@@ -21,7 +23,7 @@ Plates::~Plates()
 {
 }
 
-Plates::Plates(Vector2 Pos, Form form, Color myNewColor)
+Plates::Plates(Vector2 Pos, Form form, Color myNewColor, Colors numColor)
 {
 	myPosition.x = Pos.x;
 	myPosition.y = Pos.y;
@@ -30,6 +32,7 @@ Plates::Plates(Vector2 Pos, Form form, Color myNewColor)
 	radius = WidthAndHeightWorld / 2;
 	myForm = form;
 	myColor = myNewColor;
+	actualColor = numColor;
 	alredyChange = false;
 	isActive = false;
 }
@@ -41,7 +44,7 @@ void Plates::drawMe()
 		DrawCircle(myPosition.x - 15.0f, myPosition.y - 15.0f, radius, myColor);
 		break;
 	case rectangle:
-		DrawRectangle(myPosition.x-30.0f, myPosition.y -30.0f, width, hight, myColor);
+		DrawRectangle(myPosition.x - 30.0f, myPosition.y - 30.0f, width, hight, myColor);
 		break;
 	case triangle:
 		DrawTriangle({ myPosition.x - 15.0f,myPosition.y - hight / 2 - 15.0f },
@@ -71,41 +74,77 @@ bool Plates::getAlredyChange()
 {
 	return alredyChange;
 }
-void Plates::checkCollision(Vector2 playerPosition, float playerWidth, float playerHeight)
+void Plates::checkCollision(Vector2 playerPosition, Vector2 lastPosition, float playerWidth, float playerHeight)
 {
-	if (playerPosition.x == myPosition.x-30.0f &&
+	if (playerPosition.x == myPosition.x - 30.0f &&
 		playerPosition.y == myPosition.y - 30.0f)
 	{
-		switch (getForm())
+		if (playerPosition.x == lastPosition.x)
 		{
-			
-		case circle:
-			std::cout << "circle" << std::endl;
-			if (alredyChange == false)
+			switch (getForm())
 			{
-				setForm(rectangle);
-				alredyChange = true;
+
+			case circle:
+				std::cout << "circle" << std::endl;
+				if (alredyChange == false)
+				{
+					setForm(rectangle);
+					alredyChange = true;
+				}
+
+				break;
+			case rectangle:
+				std::cout << "rectangle" << std::endl;
+				if (alredyChange == false)
+				{
+					setForm(triangle);
+					alredyChange = true;
+				}
+				break;
+			case triangle:
+				std::cout << "triangle" << std::endl;
+				if (alredyChange == false)
+				{
+					setForm(circle);
+					alredyChange = true;
+				}
+				break;
+			default:
+				break;
 			}
 
-			break;
-		case rectangle:
-			std::cout << "rectangle" << std::endl;
-			if (alredyChange == false)
+		}
+		else
+		{
+			switch (actualColor) 
 			{
-				setForm(triangle);
-				alredyChange = true;
+			case red:
+				if (alredyChange == false)
+				{
+					setColor(blue);
+					alredyChange = true;
+				}
+
+				break;
+			case blue:
+				
+				if (alredyChange == false)
+				{
+					setColor(green);
+					alredyChange = true;
+				}
+				break;
+			case green:
+				
+				if (alredyChange == false)
+				{
+					setColor(red);
+					alredyChange = true;
+				}
+				break;
+			default:
+				break;
 			}
-			break;
-		case triangle:
-			std::cout << "triangle" << std::endl;
-			if (alredyChange == false)
-			{
-				setForm(circle);
-				alredyChange = true;
-			}
-			break;
-		default:
-			break;
 		}
 
 	}
@@ -118,6 +157,13 @@ void Plates::checkCollision(Vector2 playerPosition, float playerWidth, float pla
 void Plates::setForm(Form newForm)
 {
 	myForm = newForm;
+}
+void Plates::setColor(Colors newColor)
+{
+		actualColor = newColor;
+		if (actualColor == 1)myColor = RED;
+		if (actualColor == 2)myColor = BLUE;
+		if (actualColor == 3)myColor = GREEN;
 }
 Form Plates::getForm()
 {
