@@ -4,8 +4,8 @@
 #include "raylib.h"
 
 static float WidthAndHeightWorld = 30.0f;
-static Vector2 TILE1X1 = { 60.0f, 60.0f };
+const int WidthZone = 27;
+const int HeightZone = 15;
 
-
-#endif // !GLOBAL_H
+#endif
 
