@@ -4,8 +4,8 @@
 #include "raylib.h"
 
 static float widthAndHeightWorld = 30.0f;
-const int widthZone = 27;
-const int heightZone = 15;
+const int mapColumn = 27;
+const int mapRow = 15;
 
 #endif
 

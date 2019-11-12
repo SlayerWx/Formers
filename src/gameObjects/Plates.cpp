@@ -20,7 +20,7 @@ Plates::~Plates()
 {
 }
 
-Plates::Plates(Vector2 Pos, Form form, Color myNewColor, Colors numColor)
+Plates::Plates(Vector2 Pos, TileType form, Color myNewColor, Colors numColor)
 {
 	myPosition.x = Pos.x;
 	myPosition.y = Pos.y;
@@ -34,15 +34,15 @@ void Plates::drawMe()
 	switch (getForm())
 	{
 	case circle:
-		DrawCircle(myPosition.x - 15.0f, myPosition.y - 15.0f, widthAndHeightWorld/2, myColor);
+		DrawCircle(myPosition.x - widthAndHeightWorld/2, myPosition.y - widthAndHeightWorld / 2, widthAndHeightWorld/2, myColor);
 		break;
 	case rectangle:
-		DrawRectangle(myPosition.x - 30.0f, myPosition.y - 30.0f, widthAndHeightWorld, widthAndHeightWorld, myColor);
+		DrawRectangle(myPosition.x - widthAndHeightWorld, myPosition.y - widthAndHeightWorld, widthAndHeightWorld, widthAndHeightWorld, myColor);
 		break;
 	case triangle:
-		DrawTriangle({ myPosition.x - 15.0f,myPosition.y - widthAndHeightWorld / 2 - 15.0f },
-			{ myPosition.x - widthAndHeightWorld / 2 - 15.0f,myPosition.y + widthAndHeightWorld / 2 - 15.0f },
-			{ myPosition.x + widthAndHeightWorld / 2 - 15.0f,myPosition.y + widthAndHeightWorld / 2 - 15.0f }, myColor);
+		DrawTriangle({ myPosition.x - widthAndHeightWorld / 2,myPosition.y - widthAndHeightWorld / 2 - widthAndHeightWorld / 2 },
+			{ myPosition.x - widthAndHeightWorld / 2 - widthAndHeightWorld / 2,myPosition.y + widthAndHeightWorld / 2 - widthAndHeightWorld / 2 },
+			{ myPosition.x + widthAndHeightWorld / 2 - widthAndHeightWorld / 2,myPosition.y + widthAndHeightWorld / 2 - widthAndHeightWorld / 2 }, myColor);
 		break;
 	}
 }
@@ -78,7 +78,6 @@ void Plates::checkCollision(Vector2 playerPosition, Vector2 lastPosition)
 			{
 
 			case circle:
-				std::cout << "circle" << std::endl;
 				if (alredyChange == false)
 				{
 					setForm(rectangle);
@@ -87,7 +86,6 @@ void Plates::checkCollision(Vector2 playerPosition, Vector2 lastPosition)
 
 				break;
 			case rectangle:
-				std::cout << "rectangle" << std::endl;
 				if (alredyChange == false)
 				{
 					setForm(triangle);
@@ -95,7 +93,7 @@ void Plates::checkCollision(Vector2 playerPosition, Vector2 lastPosition)
 				}
 				break;
 			case triangle:
-				std::cout << "triangle" << std::endl;
+
 				if (alredyChange == false)
 				{
 					setForm(circle);
@@ -109,9 +107,6 @@ void Plates::checkCollision(Vector2 playerPosition, Vector2 lastPosition)
 		}
 		else
 		{
-			system("cls");
-			
-			std::cout << "color:" << actualColor << std::endl;
 			switch (actualColor) 
 			{
 			case red:
@@ -150,7 +145,7 @@ void Plates::checkCollision(Vector2 playerPosition, Vector2 lastPosition)
 	}
 }
 
-void Plates::setForm(Form newForm)
+void Plates::setForm(TileType newForm)
 {
 	myForm = newForm;
 }
@@ -160,8 +155,12 @@ void Plates::setColor(Colors newColor)
 		if (actualColor == red)myColor = RED;
 		if (actualColor == blue)myColor = BLUE;
 		if (actualColor == green)myColor = GREEN;
+		if (actualColor == gray)myColor = GRAY;
+		if (actualColor == yellow)myColor = YELLOW;
+		if (actualColor == purple)myColor = PURPLE;
+
 }
-Form Plates::getForm()
+TileType Plates::getForm()
 {
 	return myForm;
 }

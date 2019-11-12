@@ -4,11 +4,11 @@
 class Zone
 {
 public:
-	Zone_Structures* zoneElements[widthZone][heightZone];
+	Zone_Structures* zoneElements[mapRow][mapColumn];
 	virtual void Init();
 	void Update(Vector2 playerPos, Vector2 lastPosition);
 	void Draw();
-	Zone(int newMap[]);
+	Zone(int newMap[mapRow][mapColumn]);
 	~Zone();
 
 private:

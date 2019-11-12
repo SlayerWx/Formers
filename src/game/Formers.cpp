@@ -4,7 +4,7 @@
 
 Formers::Formers()
 {
-	InitWindow(screenWidth, screenHeight, "raylib [core] example - mouse input");
+	InitWindow(screenWidth, screenHeight, "Formers v0.1");
 	gamestatus = GAME;
 	game = new Game();
 	inGame = true;
