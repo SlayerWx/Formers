@@ -20,16 +20,61 @@ Zone::Zone(int newMap[mapRow][mapColumn])
 		{
 			switch (newMap[i][j])
 			{
-			case 0:
+			case vacio:
 				zoneElements[i][j]->setForm(vacio);
 				
 				break;
-			case 1:
-				zoneElements[i][j]->setForm(rectangle);
+			case wall:
+				zoneElements[i][j]->setForm(wall);
 				zoneElements[i][j]->setColor(gray);
 				break;
-			case 2:
+			case door:
 				
+				break;
+
+			case circleR:
+				zoneElements[i][j]->setForm(circle);
+				zoneElements[i][j]->setColor(red);
+				break;
+
+			case circleB:
+				zoneElements[i][j]->setForm(circle);
+				zoneElements[i][j]->setColor(blue);
+				break;
+
+			case circleG:
+				zoneElements[i][j]->setForm(circle);
+				zoneElements[i][j]->setColor(green);
+				break;
+
+			case rectangleR:
+				zoneElements[i][j]->setForm(rectangle);
+				zoneElements[i][j]->setColor(red);
+				break;
+
+			case rectangleB:
+				zoneElements[i][j]->setForm(rectangle);
+				zoneElements[i][j]->setColor(blue);
+				break;
+
+			case rectangleG:
+				zoneElements[i][j]->setForm(rectangle);
+				zoneElements[i][j]->setColor(green);
+				break;
+
+			case triangleR:
+				zoneElements[i][j]->setForm(triangle);
+				zoneElements[i][j]->setColor(red);
+				break;
+
+			case triangleB:
+				zoneElements[i][j]->setForm(triangle);
+				zoneElements[i][j]->setColor(blue);
+				break;
+
+			case triangleG:
+				zoneElements[i][j]->setForm(triangle);
+				zoneElements[i][j]->setColor(green);
 				break;
 			default:
 				break;

@@ -7,8 +7,10 @@ enum Colors
 };
 enum TileType
 {
-	vacio,wall,door,circle, rectangle, triangle
+	vacio, wall, door, circle, rectangle, triangle, circleR = 31, circleB, circleG, rectangleR = 41, rectangleB, rectangleG, triangleR = 51, triangleB, triangleG, doorCR = 231, doorCB, doorCG, doorRR = 241, doorRB,doorRG, doorTR = 251, doorTB, doorTG
 };
+
+
 class Zone_Structures
 {
 public:

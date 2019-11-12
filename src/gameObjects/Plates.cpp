@@ -44,6 +44,9 @@ void Plates::drawMe()
 			{ myPosition.x - widthAndHeightWorld / 2 - widthAndHeightWorld / 2,myPosition.y + widthAndHeightWorld / 2 - widthAndHeightWorld / 2 },
 			{ myPosition.x + widthAndHeightWorld / 2 - widthAndHeightWorld / 2,myPosition.y + widthAndHeightWorld / 2 - widthAndHeightWorld / 2 }, myColor);
 		break;
+	case wall:
+		DrawRectangle(myPosition.x - widthAndHeightWorld, myPosition.y - widthAndHeightWorld, widthAndHeightWorld, widthAndHeightWorld, myColor);
+		break;
 	}
 }
 Vector2 Plates::getPosition()
