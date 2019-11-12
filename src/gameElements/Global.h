@@ -3,9 +3,9 @@
 
 #include "raylib.h"
 
-static float WidthAndHeightWorld = 30.0f;
-const int WidthZone = 27;
-const int HeightZone = 15;
+static float widthAndHeightWorld = 30.0f;
+const int widthZone = 27;
+const int heightZone = 15;
 
 #endif
 

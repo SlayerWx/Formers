@@ -4,7 +4,7 @@
 class Zone
 {
 public:
-	Zone_Structures* zoneElements[WidthZone][HeightZone];
+	Zone_Structures* zoneElements[widthZone][heightZone];
 	virtual void Init();
 	void Update(Vector2 playerPos, Vector2 lastPosition);
 	void Draw();

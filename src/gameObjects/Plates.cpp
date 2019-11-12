@@ -34,15 +34,15 @@ void Plates::drawMe()
 	switch (getForm())
 	{
 	case circle:
-		DrawCircle(myPosition.x - 15.0f, myPosition.y - 15.0f, WidthAndHeightWorld/2, myColor);
+		DrawCircle(myPosition.x - 15.0f, myPosition.y - 15.0f, widthAndHeightWorld/2, myColor);
 		break;
 	case rectangle:
-		DrawRectangle(myPosition.x - 30.0f, myPosition.y - 30.0f, WidthAndHeightWorld, WidthAndHeightWorld, myColor);
+		DrawRectangle(myPosition.x - 30.0f, myPosition.y - 30.0f, widthAndHeightWorld, widthAndHeightWorld, myColor);
 		break;
 	case triangle:
-		DrawTriangle({ myPosition.x - 15.0f,myPosition.y - WidthAndHeightWorld / 2 - 15.0f },
-			{ myPosition.x - WidthAndHeightWorld / 2 - 15.0f,myPosition.y + WidthAndHeightWorld / 2 - 15.0f },
-			{ myPosition.x + WidthAndHeightWorld / 2 - 15.0f,myPosition.y + WidthAndHeightWorld / 2 - 15.0f }, myColor);
+		DrawTriangle({ myPosition.x - 15.0f,myPosition.y - widthAndHeightWorld / 2 - 15.0f },
+			{ myPosition.x - widthAndHeightWorld / 2 - 15.0f,myPosition.y + widthAndHeightWorld / 2 - 15.0f },
+			{ myPosition.x + widthAndHeightWorld / 2 - 15.0f,myPosition.y + widthAndHeightWorld / 2 - 15.0f }, myColor);
 		break;
 	}
 }
