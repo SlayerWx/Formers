@@ -6,7 +6,7 @@
 class Game
 {
 public:
-	Level* Lvl1;
+	Level* lvl;
 	Game();
 	~Game();
 	void Init();
