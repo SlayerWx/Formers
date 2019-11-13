@@ -39,9 +39,6 @@
     <ClCompile Include="..\src\gameElements\Menu.cpp">
       <Filter>src\gameElement</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\gameElements\levels\Level1.cpp">
-      <Filter>src\gameElement\Levels</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\gameElements\levels\zones\Zone.cpp">
       <Filter>src\gameElement\Levels\zones</Filter>
     </ClCompile>
@@ -63,6 +60,9 @@
     <ClCompile Include="..\src\gameObjects\Wall.cpp">
       <Filter>src\gameObjects</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\gameElements\levels\Level.cpp">
+      <Filter>src\gameElement\Levels</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\gameElements\Credits.h">
@@ -73,9 +73,6 @@
     </ClInclude>
     <ClInclude Include="..\src\gameElements\Menu.h">
       <Filter>src\gameElement</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\gameElements\levels\Level1.h">
-      <Filter>src\gameElement\Levels</Filter>
     </ClInclude>
     <ClInclude Include="..\src\gameElements\levels\zones\Zone.h">
       <Filter>src\gameElement\Levels\zones</Filter>
@@ -100,6 +97,9 @@
     </ClInclude>
     <ClInclude Include="..\src\gameObjects\Wall.h">
       <Filter>src\gameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\gameElements\levels\Level.h">
+      <Filter>src\gameElement\Levels</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

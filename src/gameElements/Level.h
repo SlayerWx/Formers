@@ -1,18 +1,17 @@
-#ifndef LEVEL1_H
-#define LEVEL1_H
+#ifndef LEVEL_H
+#define LEVEL_H
 #include "zones/Zone.h"
-class Level1
+class Level
 {
 private:
 	Zone* map1;
 public:
-	Level1();
-	~Level1();
+	Level();
+	~Level();
 	void update(Vector2 playerPos, Vector2 lastPosition);
 	void draw();
 
 };
 #endif
-
 
 

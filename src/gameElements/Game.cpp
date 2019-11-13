@@ -9,7 +9,7 @@
 Game::Game()
 {
 	player = new Player();
-	Lvl1 = new Level1();
+	Lvl1 = new Level();
 }
 
 Game::~Game()

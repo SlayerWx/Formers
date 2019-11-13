@@ -1,5 +1,5 @@
-#include "Level1.h"
-Level1::Level1()
+#include "Level.h"
+Level::Level()
 {
 	int a[mapRow][mapColumn]{
 		{  1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1},
@@ -21,14 +21,14 @@ Level1::Level1()
 	map1 = new Zone(a);
 }
 
-Level1::~Level1()
+Level::~Level()
 {
 }
-void Level1::update(Vector2 playerPos, Vector2 lastPosition)
+void Level::update(Vector2 playerPos, Vector2 lastPosition)
 {
 	map1->Update(playerPos, lastPosition);
 }
-void Level1::draw()
+void Level::draw()
 {
 	map1->Draw();
 }

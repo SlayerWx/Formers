@@ -21,7 +21,7 @@
   <ItemGroup>
     <ClCompile Include="..\src\gameElements\Credits.cpp" />
     <ClCompile Include="..\src\gameElements\Game.cpp" />
-    <ClCompile Include="..\src\gameElements\levels\Level1.cpp" />
+    <ClCompile Include="..\src\gameElements\levels\Level.cpp" />
     <ClCompile Include="..\src\gameElements\levels\zones\Zone.cpp" />
     <ClCompile Include="..\src\gameElements\levels\Zone_Structures.cpp" />
     <ClCompile Include="..\src\gameElements\Menu.cpp" />
@@ -36,7 +36,7 @@
     <ClInclude Include="..\src\gameElements\Credits.h" />
     <ClInclude Include="..\src\gameElements\Game.h" />
     <ClInclude Include="..\src\gameElements\Global.h" />
-    <ClInclude Include="..\src\gameElements\levels\Level1.h" />
+    <ClInclude Include="..\src\gameElements\levels\Level.h" />
     <ClInclude Include="..\src\gameElements\levels\zones\Zone.h" />
     <ClInclude Include="..\src\gameElements\levels\Zone_Structures.h" />
     <ClInclude Include="..\src\gameElements\Menu.h" />
