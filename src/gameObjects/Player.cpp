@@ -81,26 +81,18 @@ void Player::input()
 Vector2 Player::getNextPos() {
 	if (up)   return{ myBody.x, myBody.y - tileScale };
 	if (down) return{ myBody.x, myBody.y + tileScale };
-	if (left) return{ myBody.x - tileScale, myBody.y };
-	if (right)return{ myBody.x + tileScale, myBody.y };
+	if (left) return{ myBody.x - tileScale , myBody.y };
+	if (right)return{ myBody.x + tileScale , myBody.y };
 			  return{ myBody.x, myBody.y };
 }
 void Player::move()
 {
-	if (stopAction)
-	{
-		executingMovement = 0.0f;
-		up = false;
-		down = false;
-		left = false;
-		right = false;
-		stopAction = false;
-		updateMoves();
-	}
+	stopMyAction();
 	if (executingMovement > 1.0f)
 	{
 		executingMovement = 1.0f;
 		stopAction = true;
+		updateMoves();
 	}
 	if (up)
 	{
@@ -143,4 +135,20 @@ void Player::resetMoves()
 float Player::lerp(float start, float end, float percent)
 {
 	return (start + percent * (end - start));
+}
+void Player::stopMyAction()
+{
+	if (stopAction)
+	{
+		executingMovement = 0.0f;
+		up = false;
+		down = false;
+		left = false;
+		right = false;
+		stopAction = false;
+	}
+}
+void Player::setStopAtion(bool newStopAction)
+{
+	stopAction = newStopAction;
 }
