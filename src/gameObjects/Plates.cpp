@@ -4,11 +4,6 @@
 using namespace std;
 Plates::Plates()
 {
-	myPosition.x = 0;
-	myPosition.y = 0;
-	myForm = circle;
-	myColor = BLUE;
-	actualColor = blue;
 	alredyChange = false;
 }
 /*
@@ -21,12 +16,8 @@ Plates::~Plates()
 }
 
 Plates::Plates(Vector2 Pos, TileType form, Color myNewColor, Colors numColor)
+	:Zone_Structures(Pos,form,myNewColor,numColor)
 {
-	myPosition.x = Pos.x;
-	myPosition.y = Pos.y;
-	myForm = form;
-	myColor = myNewColor;
-	actualColor = numColor;
 	alredyChange = false;
 }
 

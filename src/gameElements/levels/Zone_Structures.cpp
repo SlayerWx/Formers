@@ -1,6 +1,18 @@
 #include "Zone_Structures.h"
 Zone_Structures::Zone_Structures()
 {
+	myPosition.x = 0;
+	myPosition.y = 0;
+	myForm = circle;
+	myColor = BLUE;
+	actualColor = blue;
+}
+Zone_Structures::Zone_Structures(Vector2 Pos, TileType form, Color myNewColor, Colors numColor)
+{
+	myPosition = Pos;
+	myForm = form;
+	myColor = myNewColor;
+	actualColor = numColor;
 }
 Zone_Structures::~Zone_Structures()
 {
@@ -9,7 +21,6 @@ TileType Zone_Structures::getForm()
 {
 	return myForm;
 }
-
 void Zone_Structures::setForm(TileType myNewForm)
 {
 	myForm = myNewForm;
@@ -27,10 +38,12 @@ void Zone_Structures::drawMe()
 	switch (getForm())
 	{
 	case circle:
-		DrawCircle(myPosition.x - tileScale / 2, myPosition.y - tileScale / 2, tileScale / 2, myColor);
+		DrawCircle(static_cast<int>(myPosition.x - tileScale / 2), 
+		   	       static_cast<int>(myPosition.y - tileScale / 2), tileScale / 2, myColor);
 		break;
 	case rectangle:
-		DrawRectangle(myPosition.x - tileScale, myPosition.y - tileScale, tileScale, tileScale, myColor);
+		DrawRectangle(static_cast<int>(myPosition.x - tileScale), 
+			          static_cast<int>(myPosition.y - tileScale), tileScale, tileScale, myColor);
 		break;
 	case triangle:
 		DrawTriangle({ myPosition.x - tileScale / 2,myPosition.y - tileScale / 2 - tileScale / 2 },
@@ -38,7 +51,8 @@ void Zone_Structures::drawMe()
 			{ myPosition.x + tileScale / 2 - tileScale / 2,myPosition.y + tileScale / 2 - tileScale / 2 }, myColor);
 		break;
 	case wall:
-		DrawRectangle(myPosition.x - tileScale, myPosition.y - tileScale, tileScale, tileScale, myColor);
+		DrawRectangle(static_cast<int>(myPosition.x - tileScale),
+					  static_cast<int>(myPosition.y - tileScale), tileScale, tileScale, myColor);
 		break;
 	}
 }
@@ -49,10 +63,10 @@ Color Zone_Structures::getColor()
 void Zone_Structures::setColor(Colors newColor)
 {
 	actualColor = newColor;
-	if (actualColor == red)myColor = RED;
-	if (actualColor == blue)myColor = BLUE;
-	if (actualColor == green)myColor = GREEN;
-	if (actualColor == gray)myColor = GRAY;
+	if (actualColor == red)   myColor = RED;
+	if (actualColor == blue)  myColor = BLUE;
+	if (actualColor == green) myColor = GREEN;
+	if (actualColor == gray)  myColor = GRAY;
 	if (actualColor == yellow)myColor = YELLOW;
 	if (actualColor == purple)myColor = PURPLE;
 

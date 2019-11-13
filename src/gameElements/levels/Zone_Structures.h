@@ -14,6 +14,7 @@ class Zone_Structures
 {
 public:
 	Zone_Structures();
+	Zone_Structures(Vector2 Pos, TileType form, Color myNewColor, Colors numColor);
 	virtual ~Zone_Structures();
 	void setColor(Colors myColor);
 	Color getColor();
