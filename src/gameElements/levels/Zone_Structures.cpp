@@ -1,10 +1,11 @@
 #include "Zone_Structures.h"
+#include "gameElements/Global.h"
 Zone_Structures::Zone_Structures()
 {
 	myPosition.x = 0;
 	myPosition.y = 0;
 	myForm = circle;
-	myColor = BLUE;
+	myColor = F_DARKBLUE;
 	actualColor = blue;
 }
 Zone_Structures::Zone_Structures(Vector2 Pos, TileType form, Color myNewColor, Colors numColor)
@@ -63,9 +64,9 @@ Color Zone_Structures::getColor()
 void Zone_Structures::setColor(Colors newColor)
 {
 	actualColor = newColor;
-	if (actualColor == red)   myColor = RED;
-	if (actualColor == blue)  myColor = BLUE;
-	if (actualColor == green) myColor = GREEN;
+	if (actualColor == red)   myColor = F_DARKRED;
+	if (actualColor == blue)  myColor = F_DARKBLUE;
+	if (actualColor == green) myColor = F_DARKGREEN;
 	if (actualColor == gray)  myColor = GRAY;
 	if (actualColor == yellow)myColor = YELLOW;
 	if (actualColor == purple)myColor = PURPLE;
