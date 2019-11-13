@@ -16,7 +16,7 @@ Formers::~Formers()
 }
 void Formers::Play()
 {
-	while (inGame)
+	while (inGame && !WindowShouldClose())
 	{
 		Init();
 		Update();
