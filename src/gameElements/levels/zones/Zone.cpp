@@ -1,6 +1,7 @@
 #include "Zone.h"
 #include "gameObjects/Plates.h"
 #include <iostream>
+#include "gameObjects/Player.h"
 using namespace std;
 Zone::Zone(int newMap[mapRow][mapColumn])
 {
@@ -143,7 +144,7 @@ void Zone::Init()
 	
 
 }
-void Zone::Update(Vector2 playerPos, Vector2 lastPosition)
+void Zone::Update(Player* player)
 {
 	for (int i = 0; i < mapRow; i++)
 	{
@@ -151,7 +152,18 @@ void Zone::Update(Vector2 playerPos, Vector2 lastPosition)
 		{
 			if (zoneElements[i][j]->getForm() != vacio)
 			{
-				zoneElements[i][j]->checkCollision(playerPos, lastPosition);
+				if (zoneElements[i][j]->getForm()== wall)
+				{
+					if (zoneElements[i][j]->getPosition().x == player->getPosition().x &&
+						zoneElements[i][j]->getPosition().y == player->getPosition().y)
+					{
+
+					}
+				}
+				else 
+				{
+					zoneElements[i][j]->checkCollision(player->getPosition(), player->getLastPosition());
+				}
 			}
 		}
 	}

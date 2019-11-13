@@ -1,4 +1,5 @@
 #include "Level.h"
+#include "gameObjects/Player.h"
 Level::Level()
 {
 	int a[mapRow][mapColumn]{
@@ -24,9 +25,9 @@ Level::Level()
 Level::~Level()
 {
 }
-void Level::update(Vector2 playerPos, Vector2 lastPosition)
+void Level::update(Player* player)
 {
-	map1->Update(playerPos, lastPosition);
+	map1->Update(player);
 }
 void Level::draw()
 {
