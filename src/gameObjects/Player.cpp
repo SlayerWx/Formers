@@ -32,9 +32,9 @@ Vector2 Player::getLastPosition()
 }
 void Player::drawMe()
 {
-#if DEBUG
+//#if DEBUG
 	DrawRectangleRec(myBody, myColor);
-#endif
+//#endif
 
 	DrawText(FormatText("Moves: %i",getMoves()), tileScale, tileScale/2, tileScale/2, WHITE);
 	
