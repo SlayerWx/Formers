@@ -1,5 +1,5 @@
 #include "Game.h"
-#include "gameElements/levels/Level1.h"
+#include "gameElements/levels/Level.h"
 #include "gameObjects/Plates.h"
 #include "gameElements/levels/zones/Zone.h"
 
