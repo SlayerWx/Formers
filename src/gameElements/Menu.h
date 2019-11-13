@@ -2,6 +2,10 @@
 #define MENU_H
 class Menu
 {
+	enum MenuOptions
+	{
+		Play, Controls, Credits, Exit
+	};
 public:
 	Menu();
 	~Menu();
@@ -9,6 +13,7 @@ public:
 	void Input();
 	void Update();
 	void Draw();
+	int actualOption;
 private:
 
 };

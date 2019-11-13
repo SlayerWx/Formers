@@ -2,6 +2,8 @@
 #define FORMERS_H
 #include "raylib.h"
 #include "gameElements/Game.h"
+#include "gameElements/Menu.h"
+#include "gameElements/Credits.h"
 enum GameStage
 {
 	MENU,GAME,CREDITS
@@ -16,6 +18,8 @@ public:
 	const int screenHeight = 450;
 	GameStage gamestatus;
 	Game* game;
+	Menu* menu;
+	Credits* credits;
 private:
 	void Init();
 	void Update();
