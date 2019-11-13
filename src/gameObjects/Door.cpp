@@ -1,7 +1,10 @@
 #include "Door.h"
-Door::Door()
+namespace FormersMJ
 {
-}
-Door::~Door()
-{
+	Door::Door()
+	{
+	}
+	Door::~Door()
+	{
+	}
 }

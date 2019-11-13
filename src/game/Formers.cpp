@@ -4,64 +4,69 @@
 #include "gameElements/Credits.h"
 #include "gameElements/Global.h"
 #include "raylib.h"
+namespace FormersMJ
+{
+	Formers::Formers()
+	{
+		InitWindow(screenWidth, screenHeight, "Formers v0.1");
+		game = new Game();
+		menu = new Menu();
+		credits = new Credits();
+		inGame = true;
+	}
 
-Formers::Formers()
-{
-	InitWindow(screenWidth, screenHeight, "Formers v0.1");
-	game = new Game();
-	menu = new Menu();
-	credits = new Credits();
-	inGame = true;
-}
+	Formers::~Formers()
+	{
+		if (game) delete game;
+	}
+	void Formers::Play()
+	{
+		Init();
+		while (inGame && !WindowShouldClose())
+		{
 
-Formers::~Formers()
-{
-	if (game) delete game;
-}
-void Formers::Play()
-{
-	Init();
-	while (inGame && !WindowShouldClose())
-	{
-		
-		Update();
-		Draw();
+			Update();
+			Draw();
+		}
 	}
-}
-void Formers::Init()
-{
-	menu->Init();
-	game->Init();
-	gamestatus = MENU;
-}
-void Formers::Update()
-{
-	switch (gamestatus)
+	void Formers::Init()
 	{
-	case MENU:
-		menu->Update();
-		break;
-	case GAME:
-		game->Update();
-		break;
-	case CREDITS:
-		break;
+		menu->Init();
+		game->Init();
+		credits->Init();
+		gamestatus = MENU;
 	}
-}
-void Formers::Draw()
-{
-	BeginDrawing();
-	ClearBackground(BLACK);
-	switch (gamestatus)
+	void Formers::Update()
 	{
-	case MENU:
-		menu->Draw();
-		break;
-	case GAME:
-		game->Draw();
-		break;
-	case CREDITS:
-		break;
+		switch (gamestatus)
+		{
+		case MENU:
+			menu->Update();
+			break;
+		case GAME:
+			game->Update();
+			break;
+		case CREDITS:
+			credits->Update();
+			break;
+		}
 	}
-	EndDrawing();
+	void Formers::Draw()
+	{
+		BeginDrawing();
+		ClearBackground(BLACK);
+		switch (gamestatus)
+		{
+		case MENU:
+			menu->Draw();
+			break;
+		case GAME:
+			game->Draw();
+			break;
+		case CREDITS:
+			credits->Draw();
+			break;
+		}
+		EndDrawing();
+	}
 }

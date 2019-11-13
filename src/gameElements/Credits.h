@@ -1,12 +1,18 @@
 #ifndef CREDITS_H
 #define CREDITS_H
-class Credits
+namespace FormersMJ
 {
-public:
-	Credits();
-	~Credits();
+	class Credits
+	{
+	public:
+		Credits();
+		~Credits();
+		void Init();
+		void Input();
+		void Update();
+		void Draw();
+	private:
 
-private:
-
-};
+	};
+}
 #endif

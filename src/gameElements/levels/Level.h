@@ -2,17 +2,20 @@
 #define LEVEL_H
 #include "zones/Zone.h"
 #include "gameObjects/Player.h"
-class Level
+namespace FormersMJ
 {
-private:
-	Zone* map1;
-public:
-	Level();
-	~Level();
-	void update(Player* player);
-	void draw();
+	class Level
+	{
+	private:
+		Zone* map1;
+	public:
+		Level();
+		~Level();
+		void update(Player* player);
+		void draw();
 
-};
+	};
+}
 #endif
 
 

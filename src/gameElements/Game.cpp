@@ -4,33 +4,35 @@
 #include "gameElements/levels/zones/Zone.h"
 #include "gameElements/Global.h"
 #include <iostream>
+namespace FormersMJ
+{
+	Game::Game()
+	{
+		player = new Player();
+		lvl = new Level();
+	}
 
-Game::Game()
-{
-	player = new Player();
-	lvl = new Level();
-}
+	Game::~Game()
+	{
+		if (player) delete player;
+	}
+	void Game::Init()
+	{
+		//testZone->Init();
+	}
+	void Game::Update()
+	{
+		player->input();
+		lvl->update(player);
+		//std::cout << player->getPosition().x << ";" << player->getPosition().y << std::endl;
+		//std::cout << player->getLastPosition().x << ";" << player->getLastPosition().y << std::endl;
+		player->move();
 
-Game::~Game()
-{
-	if(player) delete player;
-}
-void Game::Init()
-{
-	//testZone->Init();
-}
-void Game::Update()
-{
-	player->input();
-	lvl->update(player);
-	//std::cout << player->getPosition().x << ";" << player->getPosition().y << std::endl;
-	//std::cout << player->getLastPosition().x << ";" << player->getLastPosition().y << std::endl;
-	player->move();
-
-}
-void Game::Draw()
-{
-	lvl->draw();
-	player->drawMe();
-	//DrawCircle(testPlate->getPosition().x, testPlate->getPosition().y, WidthAndHeightWorld/2, testPlate->gerColor());
+	}
+	void Game::Draw()
+	{
+		lvl->draw();
+		player->drawMe();
+		//DrawCircle(testPlate->getPosition().x, testPlate->getPosition().y, WidthAndHeightWorld/2, testPlate->gerColor());
+	}
 }

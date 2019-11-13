@@ -1,3 +1,5 @@
 #include "gameElements/Global.h"
-
-GameStage gamestatus = MENU;
+namespace FormersMJ
+{
+	GameStage gamestatus = MENU;
+}

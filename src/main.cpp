@@ -1,4 +1,6 @@
+
 #include "game/Formers.h"
+using namespace FormersMJ;
 int main()
 {
 	Formers* game = new Formers();

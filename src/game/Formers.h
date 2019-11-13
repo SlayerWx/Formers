@@ -5,23 +5,25 @@
 #include "gameElements/Menu.h"
 #include "gameElements/Credits.h"
 #include "gameElements/Global.h"
-
-class Formers
+namespace FormersMJ
 {
-public:
-	Formers();
-	~Formers();
-	void Play();
-	const int screenWidth = 810;
-	const int screenHeight = 450;
+	class Formers
+	{
+	public:
+		Formers();
+		~Formers();
+		void Play();
+		const int screenWidth = 810;
+		const int screenHeight = 450;
 
-	Game* game;
-	Menu* menu;
-	Credits* credits;
-private:
-	void Init();
-	void Update();
-	void Draw();
-	bool inGame;
-};
+		Game* game;
+		Menu* menu;
+		Credits* credits;
+	private:
+		void Init();
+		void Update();
+		void Draw();
+		bool inGame;
+	};
+}
 #endif

@@ -1,109 +1,112 @@
 #include "Plates.h"
 #include <iostream>
 #include "raylib.h"
-using namespace std;
-Plates::Plates()
+namespace FormersMJ
 {
-	alredyChange = false;
-}
-/*
-void Plates::init(Vector2 Pos, Form form, Color myColor)
-{
-	Plates(Pos, form, myColor);
-}*/
-Plates::~Plates()
-{
-}
-
-Plates::Plates(Vector2 Pos, TileType form, Color myNewColor, Colors numColor)
-	:Zone_Structures(Pos,form,myNewColor,numColor)
-{
-	alredyChange = false;
-}
-
-void Plates::setAlredyChange(bool newRedyChange)
-{
-	alredyChange = newRedyChange;
-}
-bool Plates::getAlredyChange()
-{
-	return alredyChange;
-}
-void Plates::checkCollision(Vector2 playerPosition, Vector2 lastPosition)
-{
-	if (playerPosition.x == myPosition.x - 30.0f &&
-		playerPosition.y == myPosition.y - 30.0f)
+	using namespace std;
+	Plates::Plates()
 	{
-		if (playerPosition.x == lastPosition.x)
+		alredyChange = false;
+	}
+	/*
+	void Plates::init(Vector2 Pos, Form form, Color myColor)
+	{
+		Plates(Pos, form, myColor);
+	}*/
+	Plates::~Plates()
+	{
+	}
+
+	Plates::Plates(Vector2 Pos, TileType form, Color myNewColor, Colors numColor)
+		:Zone_Structures(Pos, form, myNewColor, numColor)
+	{
+		alredyChange = false;
+	}
+
+	void Plates::setAlredyChange(bool newRedyChange)
+	{
+		alredyChange = newRedyChange;
+	}
+	bool Plates::getAlredyChange()
+	{
+		return alredyChange;
+	}
+	void Plates::checkCollision(Vector2 playerPosition, Vector2 lastPosition)
+	{
+		if (playerPosition.x == myPosition.x - 30.0f &&
+			playerPosition.y == myPosition.y - 30.0f)
 		{
-			switch (getForm())
+			if (playerPosition.x == lastPosition.x)
 			{
-
-			case circle:
-				if (alredyChange == false)
+				switch (getForm())
 				{
-					setForm(rectangle);
-					alredyChange = true;
-					playerPosition.x = tileScale;
+
+				case circle:
+					if (alredyChange == false)
+					{
+						setForm(rectangle);
+						alredyChange = true;
+						playerPosition.x = tileScale;
+					}
+
+					break;
+				case rectangle:
+					if (alredyChange == false)
+					{
+						setForm(triangle);
+						alredyChange = true;
+					}
+					break;
+				case triangle:
+
+					if (alredyChange == false)
+					{
+						setForm(circle);
+						alredyChange = true;
+					}
+					break;
+				default:
+					break;
 				}
 
-				break;
-			case rectangle:
-				if (alredyChange == false)
+			}
+			else
+			{
+				switch (actualColor)
 				{
-					setForm(triangle);
-					alredyChange = true;
-				}
-				break;
-			case triangle:
+				case red:
+					if (alredyChange == false)
+					{
+						setColor(blue);
+						alredyChange = true;
+					}
 
-				if (alredyChange == false)
-				{
-					setForm(circle);
-					alredyChange = true;
+					break;
+				case blue:
+
+					if (alredyChange == false)
+					{
+						setColor(green);
+						alredyChange = true;
+					}
+					break;
+				case green:
+
+					if (alredyChange == false)
+					{
+						setColor(red);
+						alredyChange = true;
+					}
+					break;
+				default:
+					break;
 				}
-				break;
-			default:
-				break;
 			}
 
 		}
 		else
 		{
-			switch (actualColor) 
-			{
-			case red:
-				if (alredyChange == false)
-				{
-					setColor(blue);
-					alredyChange = true;
-				}
-
-				break;
-			case blue:
-				
-				if (alredyChange == false)
-				{
-					setColor(green);
-					alredyChange = true;
-				}
-				break;
-			case green:
-				
-				if (alredyChange == false)
-				{
-					setColor(red);
-					alredyChange = true;
-				}
-				break;
-			default:
-				break;
-			}
+			alredyChange = false;
 		}
-
-	}
-	else
-	{
-		alredyChange = false;
 	}
 }

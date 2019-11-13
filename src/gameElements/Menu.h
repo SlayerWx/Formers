@@ -1,24 +1,27 @@
 #ifndef MENU_H
 #define MENU_H
-class Menu
+namespace FormersMJ
 {
-	enum MenuOptions
+	class Menu
 	{
-		Play, Controls, Credits, Exit
+		enum MenuOptions
+		{
+			Play, Controls, Credits, Exit
+		};
+	public:
+		Menu();
+		~Menu();
+		void Init();
+		void Input();
+		void Update();
+		void UpdateControlsMenu();
+		void Draw();
+		void DrawControlsMenu();
+		int actualOption;
+		bool getIsControlMenu();
+		void changeIsControlMenu();
+	private:
+		bool isControlMenu;
 	};
-public:
-	Menu();
-	~Menu();
-	void Init();
-	void Input();
-	void Update();
-	void UpdateControlsMenu();
-	void Draw();
-	void DrawControlsMenu();
-	int actualOption;
-	bool getIsControlMenu();
-	void changeIsControlMenu();
-private:
-	bool isControlMenu;
-};
+}
 #endif

@@ -2,186 +2,253 @@
 #include "gameObjects/Plates.h"
 #include <iostream>
 #include "gameObjects/Player.h"
-using namespace std;
-Zone::Zone(int newMap[mapRow][mapColumn])
+namespace FormersMJ
 {
-	for (int i = 0; i < mapRow; i++)
+	using namespace std;
+	Zone::Zone(int newMap[mapRow][mapColumn])
 	{
-		for (int j = 0; j < mapColumn; j++)
+		for (int i = 0; i < mapRow; i++)
 		{
-			zoneElements[i][j] = NULL;
-			zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i+1 ) }, circle, BLUE, blue);
-			maxMoves = 60;
-		}
-
-	}
-	for (int i = 0; i < mapRow; i++)
-	{
-		for (int j = 0; j < mapColumn; j++)
-		{
-			switch (newMap[i][j])
+			for (int j = 0; j < mapColumn; j++)
 			{
-			case vacio:
-				zoneElements[i][j]->setForm(vacio);
-				
-				break;
-			case wall:
-				zoneElements[i][j]->setForm(wall);
-				zoneElements[i][j]->setColor(gray);
-				break;
-			case door:
-				
-				break;
-
-			case circleR:
-				zoneElements[i][j]->setForm(circle);
-				zoneElements[i][j]->setColor(red);
-				break;
-
-			case circleB:
-				zoneElements[i][j]->setForm(circle);
-				zoneElements[i][j]->setColor(blue);
-				break;
-
-			case circleG:
-				zoneElements[i][j]->setForm(circle);
-				zoneElements[i][j]->setColor(green);
-				break;
-
-			case rectangleR:
-				zoneElements[i][j]->setForm(rectangle);
-				zoneElements[i][j]->setColor(red);
-				break;
-
-			case rectangleB:
-				zoneElements[i][j]->setForm(rectangle);
-				zoneElements[i][j]->setColor(blue);
-				break;
-
-			case rectangleG:
-				zoneElements[i][j]->setForm(rectangle);
-				zoneElements[i][j]->setColor(green);
-				break;
-
-			case triangleR:
-				zoneElements[i][j]->setForm(triangle);
-				zoneElements[i][j]->setColor(red);
-				break;
-
-			case triangleB:
-				zoneElements[i][j]->setForm(triangle);
-				zoneElements[i][j]->setColor(blue);
-				break;
-
-			case triangleG:
-				zoneElements[i][j]->setForm(triangle);
-				zoneElements[i][j]->setColor(green);
-				break;
-			default:
-				break;
+				zoneElements[i][j] = NULL;
+				zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, circle, BLUE, blue);
+				maxMoves = 60;
 			}
-			/*
-			zoneElements[0][j]->setColor(gray);
-			zoneElements[i][0]->setColor(gray);
-			zoneElements[widthZone - 1][j]->setColor(gray);
-			zoneElements[i][heightZone - 1]->setColor(gray);
 
-			zoneElements[i-1][6]->setForm(space);
-			zoneElements[i-1][8]->setForm(space);
-
-			zoneElements[0][j]->setForm(rectangle);
-			zoneElements[i][0]->setForm(rectangle);
-			zoneElements[widthZone - 1][j]->setForm(rectangle);
-			zoneElements[i][heightZone - 1]->setForm(rectangle);
-			*/
-			
 		}
+		for (int i = 0; i < mapRow; i++)
+		{
+			for (int j = 0; j < mapColumn; j++)
+			{
+				switch (newMap[i][j])
+				{
+				case vacio:
+					zoneElements[i][j]->setForm(vacio);
+					zoneElements[i][j]->chekable = false;
+
+					break;
+				case wall:
+					zoneElements[i][j]->setForm(wall);
+					zoneElements[i][j]->setColor(gray);
+					zoneElements[i][j]->chekable = false;
+					break;
+				case door:
+					zoneElements[i][j]->chekable = false;
+					break;
+
+				case circleR:
+					zoneElements[i][j]->setForm(circle);
+					zoneElements[i][j]->setColor(red);
+					zoneElements[i][j]->chekable = true;
+					break;
+
+				case circleB:
+					zoneElements[i][j]->setForm(circle);
+					zoneElements[i][j]->setColor(blue);
+					zoneElements[i][j]->chekable = true;
+					break;
+
+				case circleG:
+					zoneElements[i][j]->setForm(circle);
+					zoneElements[i][j]->setColor(green);
+					zoneElements[i][j]->chekable = true;
+					break;
+
+				case rectangleR:
+					zoneElements[i][j]->setForm(rectangle);
+					zoneElements[i][j]->setColor(red);
+					zoneElements[i][j]->chekable = true;
+					break;
+
+				case rectangleB:
+					zoneElements[i][j]->setForm(rectangle);
+					zoneElements[i][j]->setColor(blue);
+					zoneElements[i][j]->chekable = true;
+					break;
+
+				case rectangleG:
+					zoneElements[i][j]->setForm(rectangle);
+					zoneElements[i][j]->setColor(green);
+					zoneElements[i][j]->chekable = true;
+					break;
+
+				case triangleR:
+					zoneElements[i][j]->setForm(triangle);
+					zoneElements[i][j]->setColor(red);
+					zoneElements[i][j]->chekable = true;
+					break;
+
+				case triangleB:
+					zoneElements[i][j]->setForm(triangle);
+					zoneElements[i][j]->setColor(blue);
+					zoneElements[i][j]->chekable = true;
+					break;
+
+				case triangleG:
+					zoneElements[i][j]->setForm(triangle);
+					zoneElements[i][j]->setColor(green);
+					zoneElements[i][j]->chekable = true;
+					break;
+
+				case doorCR:
+					zoneElements[i][j]->setForm(doorC);
+					zoneElements[i][j]->setColor(red);
+					break;
+
+				case doorCB:
+					zoneElements[i][j]->setForm(doorC);
+					zoneElements[i][j]->setColor(blue);
+					zoneElements[i][j]->chekable = false;
+					break;
+
+				case doorCG:
+					zoneElements[i][j]->setForm(doorC);
+					zoneElements[i][j]->setColor(green);
+					zoneElements[i][j]->chekable = false;
+					break;
+
+				case doorRR:
+					zoneElements[i][j]->setForm(doorR);
+					zoneElements[i][j]->setColor(red);
+					zoneElements[i][j]->chekable = false;
+					break;
+
+				case doorRB:
+					zoneElements[i][j]->setForm(doorR);
+					zoneElements[i][j]->setColor(blue);
+					zoneElements[i][j]->chekable = false;
+					break;
+
+				case doorRG:
+					zoneElements[i][j]->setForm(doorR);
+					zoneElements[i][j]->setColor(green);
+					zoneElements[i][j]->chekable = false;
+					break;
+
+				case doorTR:
+					zoneElements[i][j]->setForm(doorT);
+					zoneElements[i][j]->setColor(red);
+					zoneElements[i][j]->chekable = false;
+					break;
+
+				case doorTB:
+					zoneElements[i][j]->setForm(doorT);
+					zoneElements[i][j]->setColor(blue);
+					zoneElements[i][j]->chekable = false;
+					break;
+
+				case doorTG:
+					zoneElements[i][j]->setForm(doorT);
+					zoneElements[i][j]->setColor(green);
+					zoneElements[i][j]->chekable = false;
+					break;
+				default:
+					break;
+				}
+				/*
+				zoneElements[0][j]->setColor(gray);
+				zoneElements[i][0]->setColor(gray);
+				zoneElements[widthZone - 1][j]->setColor(gray);
+				zoneElements[i][heightZone - 1]->setColor(gray);
+
+				zoneElements[i-1][6]->setForm(space);
+				zoneElements[i-1][8]->setForm(space);
+
+				zoneElements[0][j]->setForm(rectangle);
+				zoneElements[i][0]->setForm(rectangle);
+				zoneElements[widthZone - 1][j]->setForm(rectangle);
+				zoneElements[i][heightZone - 1]->setForm(rectangle);
+				*/
+
+			}
+
+		}
+	}
+
+	Zone::~Zone()
+	{
 
 	}
-}
 
-Zone::~Zone()
-{
-	
-}
-
-bool Zone::checkWin()
-{
-	int testIfSame = 0;
-	bool wins = true;
-	for (int i = 0; i < mapRow; i++)
+	bool Zone::checkWin()
 	{
-		for (int j = 0; j < mapColumn; j++)
+		int testIfSame = 0;
+		bool wins = true;
+		for (int i = 0; i < mapRow; i++)
 		{
-			if (zoneElements[i][j]->getForm() != vacio && zoneElements[i][j]->getForm() != wall)
+			for (int j = 0; j < mapColumn; j++)
 			{
-				testIfSame = zoneElements[i][j]->getForm();
-
-				for (int k = 0; k < mapRow; k++)
+				if (zoneElements[i][j]->chekable)
 				{
-					for (int l = 0; l < mapColumn; l++)
+					testIfSame = zoneElements[i][j]->getForm();
+
+					for (int k = 0; k < mapRow; k++)
 					{
-						if (testIfSame != zoneElements[k][l]->getForm() && zoneElements[k][l]->getForm() != vacio && zoneElements[k][l]->getForm() != wall)
+						for (int l = 0; l < mapColumn; l++)
 						{
-							//necesito agarrar la cantidad de movimientos que va y compararlo con maxMoves
-							wins = false;
+							if (testIfSame != zoneElements[k][l]->getForm() && zoneElements[k][l]->getForm() != vacio && zoneElements[k][l]->getForm() != wall && zoneElements[i][j]->getForm() != doorC && zoneElements[i][j]->getForm() != doorT && zoneElements[i][j]->getForm() != doorR)
+							{
+								//necesito agarrar la cantidad de movimientos que va y compararlo con maxMoves
+								wins = false;
+							}
 						}
 					}
 				}
 			}
 		}
+		return wins;
 	}
-	return wins;
-}
 
-int Zone::getMaxMoves()
-{
-	return maxMoves;
-}
-
-void Zone::Init() 
-{
-	
-
-}
-void Zone::Update(Player* player)
-{
-	for (int i = 0; i < mapRow; i++)
+	int Zone::getMaxMoves()
 	{
-		for (int j = 0; j < mapColumn; j++)
+		return maxMoves;
+	}
+
+	void Zone::Init()
+	{
+
+
+	}
+	void Zone::Update(Player* player)
+	{
+		for (int i = 0; i < mapRow; i++)
 		{
-			if (zoneElements[i][j]->getForm() != vacio)
+			for (int j = 0; j < mapColumn; j++)
 			{
-				if (zoneElements[i][j]->getForm()== wall)
+				if (zoneElements[i][j]->getForm() != vacio)
 				{
-					if (zoneElements[i][j]->getPosition().x - tileScale == player->getNextPos().x &&
-						zoneElements[i][j]->getPosition().y - tileScale == player->getNextPos().y)
+					if (zoneElements[i][j]->getForm() == wall || zoneElements[i][j]->getForm() == doorC || zoneElements[i][j]->getForm() == doorT || zoneElements[i][j]->getForm() == doorR)
 					{
-						player->setStopAtion(true);
-						player->stopMyAction();
+						if (zoneElements[i][j]->getPosition().x - tileScale == player->getNextPos().x &&
+							zoneElements[i][j]->getPosition().y - tileScale == player->getNextPos().y)
+						{
+							player->setStopAtion(true);
+							player->stopMyAction();
+						}
+					}
+					else
+					{
+						zoneElements[i][j]->checkCollision(player->getPosition(), player->getLastPosition());
 					}
 				}
-				else 
+			}
+		}
+	}
+	void Zone::Draw()
+	{
+		for (int i = 0; i < mapRow; i++)
+		{
+			for (int j = 0; j < mapColumn; j++)
+			{
+				if (zoneElements[i][j]->getForm() != vacio)
 				{
-					zoneElements[i][j]->checkCollision(player->getPosition(), player->getLastPosition());
+					zoneElements[i][j]->drawMe();
 				}
 			}
 		}
-	}
-}
-void Zone::Draw()
-{
-	for (int i = 0; i < mapRow; i++)
-	{
-		for (int j = 0; j < mapColumn; j++)
-		{
-			if (zoneElements[i][j]->getForm() != vacio)
-			{
-				zoneElements[i][j]->drawMe();
-			}
-		}
-	}
-	DrawText(FormatText("win: %i", checkWin()), tileScale*5, tileScale / 2, tileScale / 2, WHITE);
+		DrawText(FormatText("win: %i", checkWin()), tileScale * 5, tileScale / 2, tileScale / 2, WHITE);
 
-	DrawText(FormatText("Moves has to be less than: %i", getMaxMoves()) , tileScale * 10, tileScale / 2, tileScale / 2, WHITE);
+		DrawText(FormatText("Moves has to be less than: %i", getMaxMoves()), tileScale * 10, tileScale / 2, tileScale / 2, WHITE);
+	}
 }
