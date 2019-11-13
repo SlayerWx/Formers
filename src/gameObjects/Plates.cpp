@@ -29,39 +29,7 @@ Plates::Plates(Vector2 Pos, TileType form, Color myNewColor, Colors numColor)
 	actualColor = numColor;
 	alredyChange = false;
 }
-void Plates::drawMe()
-{
-	switch (getForm())
-	{
-	case circle:
-		DrawCircle(myPosition.x - tileSize/2, myPosition.y - tileSize / 2, tileSize/2, myColor);
-		break;
-	case rectangle:
-		DrawRectangle(myPosition.x - tileSize, myPosition.y - tileSize, tileSize, tileSize, myColor);
-		break;
-	case triangle:
-		DrawTriangle({ myPosition.x - tileSize / 2,myPosition.y - tileSize / 2 - tileSize / 2 },
-			{ myPosition.x - tileSize / 2 - tileSize / 2,myPosition.y + tileSize / 2 - tileSize / 2 },
-			{ myPosition.x + tileSize / 2 - tileSize / 2,myPosition.y + tileSize / 2 - tileSize / 2 }, myColor);
-		break;
-	case wall:
-		DrawRectangle(myPosition.x - tileSize, myPosition.y - tileSize, tileSize, tileSize, myColor);
-		break;
-	}
-}
-Vector2 Plates::getPosition()
-{
-	return myPosition;
-}
 
-Color Plates::getColor()
-{
-	return myColor;
-}
-void Plates::setPosition(Vector2 newPos)
-{
-	myPosition = newPos;
-}
 void Plates::setAlredyChange(bool newRedyChange)
 {
 	alredyChange = newRedyChange;
@@ -85,7 +53,7 @@ void Plates::checkCollision(Vector2 playerPosition, Vector2 lastPosition)
 				{
 					setForm(rectangle);
 					alredyChange = true;
-					playerPosition.x = 30.0f;
+					playerPosition.x = tileScale;
 				}
 
 				break;
@@ -147,26 +115,4 @@ void Plates::checkCollision(Vector2 playerPosition, Vector2 lastPosition)
 	{
 		alredyChange = false;
 	}
-}
-
-
-
-void Plates::setForm(TileType newForm)
-{
-	myForm = newForm;
-}
-void Plates::setColor(Colors newColor)
-{
-		actualColor = newColor;
-		if (actualColor == red)myColor = RED;
-		if (actualColor == blue)myColor = BLUE;
-		if (actualColor == green)myColor = GREEN;
-		if (actualColor == gray)myColor = GRAY;
-		if (actualColor == yellow)myColor = YELLOW;
-		if (actualColor == purple)myColor = PURPLE;
-
-}
-TileType Plates::getForm()
-{
-	return myForm;
 }

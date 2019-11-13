@@ -28,6 +28,7 @@
     <ClCompile Include="..\src\gameObjects\Door.cpp" />
     <ClCompile Include="..\src\gameObjects\Plates.cpp" />
     <ClCompile Include="..\src\gameObjects\Player.cpp" />
+    <ClCompile Include="..\src\gameObjects\Wall.cpp" />
     <ClCompile Include="..\src\game\Formers.cpp" />
     <ClCompile Include="..\src\main.cpp" />
   </ItemGroup>
@@ -42,6 +43,7 @@
     <ClInclude Include="..\src\gameObjects\Door.h" />
     <ClInclude Include="..\src\gameObjects\Plates.h" />
     <ClInclude Include="..\src\gameObjects\Player.h" />
+    <ClInclude Include="..\src\gameObjects\Wall.h" />
     <ClInclude Include="..\src\game\Formers.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

@@ -15,6 +15,7 @@ public:
 	void resetMoves();
 	Vector2 getPosition();
 	Vector2 getLastPosition();
+	Vector2 getNextPos();
 private:
 	Rectangle myBody;
 	Color myColor;

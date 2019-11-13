@@ -12,16 +12,9 @@ public:
 	~Plates();
 
 	Plates(Vector2 Pos, TileType form, Color myColor, Colors numColor);
-	void drawMe();
 	/*void init(Vector2 Pos, Form form, Color myColor);*/
-	Vector2 getPosition();
-	void setPosition(Vector2 newPos);
-	void setAlredyChange(bool newRedyChange);
-	void setForm(TileType newForm); 
-	void setColor(Colors newColor);
 	bool getAlredyChange();
-	TileType getForm();
-	Color getColor();
+	void setAlredyChange(bool newRedyChange);
 	void checkCollision(Vector2 position, Vector2 lastPosition);
 };
 #endif

@@ -3,7 +3,7 @@
 
 #include "raylib.h"
 
-static float tileSize = 30.0f;
+static float tileScale = 30.0f;
 const int mapColumn = 27;
 const int mapRow = 15;
 

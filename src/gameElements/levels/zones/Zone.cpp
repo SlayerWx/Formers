@@ -9,7 +9,7 @@ Zone::Zone(int newMap[mapRow][mapColumn])
 		for (int j = 0; j < mapColumn; j++)
 		{
 			zoneElements[i][j] = NULL;
-			zoneElements[i][j] = new Plates({ tileSize*(j + 1),tileSize * (i+1 ) }, circle, BLUE, blue);
+			zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i+1 ) }, circle, BLUE, blue);
 			maxMoves = 60;
 		}
 
@@ -149,10 +149,10 @@ void Zone::Update(Vector2 playerPos, Vector2 lastPosition)
 	{
 		for (int j = 0; j < mapColumn; j++)
 		{
-			if (zoneElements[i][j]->getForm()!=vacio)
+			if (zoneElements[i][j]->getForm() != vacio)
 			{
 				zoneElements[i][j]->checkCollision(playerPos, lastPosition);
-			}	
+			}
 		}
 	}
 }
@@ -168,7 +168,7 @@ void Zone::Draw()
 			}
 		}
 	}
-	DrawText(FormatText("win: %i", checkWin()), tileSize*5, tileSize / 2, tileSize / 2, WHITE);
+	DrawText(FormatText("win: %i", checkWin()), tileScale*5, tileScale / 2, tileScale / 2, WHITE);
 
-	DrawText(FormatText("Moves has to be less than: %i", getMaxMoves()) , tileSize * 10, tileSize / 2, tileSize / 2, WHITE);
+	DrawText(FormatText("Moves has to be less than: %i", getMaxMoves()) , tileScale * 10, tileScale / 2, tileScale / 2, WHITE);
 }
