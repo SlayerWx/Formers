@@ -154,10 +154,11 @@ void Zone::Update(Player* player)
 			{
 				if (zoneElements[i][j]->getForm()== wall)
 				{
-					if (zoneElements[i][j]->getPosition().x == player->getPosition().x &&
-						zoneElements[i][j]->getPosition().y == player->getPosition().y)
+					if (zoneElements[i][j]->getPosition().x - tileScale == player->getNextPos().x &&
+						zoneElements[i][j]->getPosition().y - tileScale == player->getNextPos().y)
 					{
-
+						player->setStopAtion(true);
+						player->stopMyAction();
 					}
 				}
 				else 

@@ -16,6 +16,8 @@ public:
 	Vector2 getPosition();
 	Vector2 getLastPosition();
 	Vector2 getNextPos();
+	void stopMyAction();
+	void setStopAtion(bool newStopAction);
 private:
 	Rectangle myBody;
 	Color myColor;
