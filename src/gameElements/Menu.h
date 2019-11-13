@@ -12,9 +12,13 @@ public:
 	void Init();
 	void Input();
 	void Update();
+	void UpdateControlsMenu();
 	void Draw();
+	void DrawControlsMenu();
 	int actualOption;
+	bool getIsControlMenu();
+	void changeIsControlMenu();
 private:
-
+	bool isControlMenu;
 };
 #endif

@@ -2,12 +2,12 @@
 #include "gameElements/Game.h"
 #include "gameElements/Menu.h"
 #include "gameElements/Credits.h"
+#include "gameElements/Global.h"
 #include "raylib.h"
 
 Formers::Formers()
 {
 	InitWindow(screenWidth, screenHeight, "Formers v0.1");
-	gamestatus = MENU;
 	game = new Game();
 	menu = new Menu();
 	credits = new Credits();
@@ -32,6 +32,7 @@ void Formers::Init()
 {
 	menu->Init();
 	game->Init();
+	gamestatus = MENU;
 }
 void Formers::Update()
 {

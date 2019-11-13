@@ -4,10 +4,8 @@
 #include "gameElements/Game.h"
 #include "gameElements/Menu.h"
 #include "gameElements/Credits.h"
-enum GameStage
-{
-	MENU,GAME,CREDITS
-};
+#include "gameElements/Global.h"
+
 class Formers
 {
 public:
@@ -16,7 +14,7 @@ public:
 	void Play();
 	const int screenWidth = 810;
 	const int screenHeight = 450;
-	GameStage gamestatus;
+
 	Game* game;
 	Menu* menu;
 	Credits* credits;

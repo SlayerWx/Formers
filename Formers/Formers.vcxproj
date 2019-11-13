@@ -31,6 +31,7 @@
     <ClCompile Include="..\src\gameObjects\Wall.cpp" />
     <ClCompile Include="..\src\game\Formers.cpp" />
     <ClCompile Include="..\src\main.cpp" />
+    <ClCompile Include="Global.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\gameElements\Credits.h" />
