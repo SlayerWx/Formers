@@ -1,6 +1,7 @@
 #ifndef LEVEL_H
 #define LEVEL_H
 #include "zones/Zone.h"
+#include "gameObjects/Player.h"
 class Level
 {
 private:
@@ -8,7 +9,7 @@ private:
 public:
 	Level();
 	~Level();
-	void update(Vector2 playerPos, Vector2 lastPosition);
+	void update(Player* player);
 	void draw();
 
 };

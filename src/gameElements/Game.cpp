@@ -22,7 +22,7 @@ void Game::Init()
 void Game::Update()
 {
 	player->input();
-	lvl->update(player->getPosition(), player->getLastPosition());
+	lvl->update(player);
 	//std::cout << player->getPosition().x << ";" << player->getPosition().y << std::endl;
 	//std::cout << player->getLastPosition().x << ";" << player->getLastPosition().y << std::endl;
 	player->move();
