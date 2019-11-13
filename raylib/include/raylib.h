@@ -128,13 +128,13 @@
 #define GOLD       CLITERAL{ 255, 203, 0, 255 }     // Gold
 #define ORANGE     CLITERAL{ 255, 161, 0, 255 }     // Orange
 #define PINK       CLITERAL{ 255, 109, 194, 255 }   // Pink
-#define RED        CLITERAL{ 182, 24, 24, 255 }     // Red
+#define RED        CLITERAL{ 230, 41, 55, 255 }     // Red
 #define MAROON     CLITERAL{ 190, 33, 55, 255 }     // Maroon
-#define GREEN      CLITERAL{ 24, 182, 24, 255 }      // Green
+#define GREEN      CLITERAL{ 0, 228, 48, 255 }      // Green
 #define LIME       CLITERAL{ 0, 158, 47, 255 }      // Lime
 #define DARKGREEN  CLITERAL{ 0, 117, 44, 255 }      // Dark Green
 #define SKYBLUE    CLITERAL{ 102, 191, 255, 255 }   // Sky Blue
-#define BLUE       CLITERAL{ 24, 24, 182, 255 }     // Blue
+#define BLUE       CLITERAL{ 0, 121, 241, 255 }     // Blue
 #define DARKBLUE   CLITERAL{ 0, 82, 172, 255 }      // Dark Blue
 #define PURPLE     CLITERAL{ 200, 122, 255, 255 }   // Purple
 #define VIOLET     CLITERAL{ 135, 60, 190, 255 }    // Violet
