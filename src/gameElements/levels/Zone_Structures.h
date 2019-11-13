@@ -16,9 +16,10 @@ namespace FormersMJ
 	{
 	public:
 		Zone_Structures();
-		Zone_Structures(Vector2 Pos, TileType form, Color myNewColor, Colors numColor);
+		Zone_Structures(Vector2 Pos, TileType form, Color myNewColor, Colors numColor, int id);
 		virtual ~Zone_Structures();
 		void setColor(Colors myColor);
+		Zone_Structures * GetZone();
 		Color getColor();
 		Vector2 getPosition();
 		void setPosition(Vector2 newPos);
@@ -27,10 +28,13 @@ namespace FormersMJ
 		virtual void checkCollision(Vector2 playerPos, Vector2 lastPosition) = 0;
 		void drawMe();
 		bool chekable;
+		int id;
+		int color;
 	protected:
 		Vector2 myPosition;
 		TileType myForm;
 		Color myColor;
+		
 		Colors actualColor;
 
 	};

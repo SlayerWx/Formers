@@ -9,13 +9,15 @@ namespace FormersMJ
 		myForm = circle;
 		myColor = F_DARKBLUE;
 		actualColor = blue;
+		color = blue;
 	}
-	Zone_Structures::Zone_Structures(Vector2 Pos, TileType form, Color myNewColor, Colors numColor)
+	Zone_Structures::Zone_Structures(Vector2 Pos, TileType form, Color myNewColor, Colors numColor, int id)
 	{
 		myPosition = Pos;
 		myForm = form;
 		myColor = myNewColor;
 		actualColor = numColor;
+		this->id = id;
 	}
 	Zone_Structures::~Zone_Structures()
 	{
@@ -83,6 +85,8 @@ namespace FormersMJ
 	{
 		return myColor;
 	}
+
+
 	void Zone_Structures::setColor(Colors newColor)
 	{
 		actualColor = newColor;
@@ -93,5 +97,10 @@ namespace FormersMJ
 		if (actualColor == yellow)myColor = YELLOW;
 		if (actualColor == purple)myColor = PURPLE;
 
+	}
+
+	Zone_Structures * Zone_Structures::GetZone() 
+	{
+		return this;
 	}
 }

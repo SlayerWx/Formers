@@ -12,7 +12,7 @@ namespace FormersMJ
 			for (int j = 0; j < mapColumn; j++)
 			{
 				zoneElements[i][j] = NULL;
-				zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, circle, BLUE, blue);
+				zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, circle, BLUE, blue, newMap[i][j]);
 				maxMoves = 60;
 			}
 
@@ -31,6 +31,7 @@ namespace FormersMJ
 				case wall:
 					zoneElements[i][j]->setForm(wall);
 					zoneElements[i][j]->setColor(gray);
+					zoneElements[i][j]->color = gray;
 					zoneElements[i][j]->chekable = false;
 					break;
 				case door:
@@ -40,107 +41,126 @@ namespace FormersMJ
 				case circleR:
 					zoneElements[i][j]->setForm(circle);
 					zoneElements[i][j]->setColor(red);
+					zoneElements[i][j]->color = red;
 					zoneElements[i][j]->chekable = true;
 					break;
 
 				case circleB:
 					zoneElements[i][j]->setForm(circle);
 					zoneElements[i][j]->setColor(blue);
+					zoneElements[i][j]->color = blue;
 					zoneElements[i][j]->chekable = true;
 					break;
 
 				case circleG:
 					zoneElements[i][j]->setForm(circle);
 					zoneElements[i][j]->setColor(green);
+					zoneElements[i][j]->color = green;
 					zoneElements[i][j]->chekable = true;
 					break;
 
 				case rectangleR:
 					zoneElements[i][j]->setForm(rectangle);
 					zoneElements[i][j]->setColor(red);
+					zoneElements[i][j]->color = red;
 					zoneElements[i][j]->chekable = true;
 					break;
 
 				case rectangleB:
 					zoneElements[i][j]->setForm(rectangle);
 					zoneElements[i][j]->setColor(blue);
+					zoneElements[i][j]->color = blue;
 					zoneElements[i][j]->chekable = true;
 					break;
 
 				case rectangleG:
 					zoneElements[i][j]->setForm(rectangle);
 					zoneElements[i][j]->setColor(green);
+					zoneElements[i][j]->color = green;
 					zoneElements[i][j]->chekable = true;
 					break;
 
 				case triangleR:
 					zoneElements[i][j]->setForm(triangle);
 					zoneElements[i][j]->setColor(red);
+					zoneElements[i][j]->color = red;
 					zoneElements[i][j]->chekable = true;
 					break;
 
 				case triangleB:
 					zoneElements[i][j]->setForm(triangle);
 					zoneElements[i][j]->setColor(blue);
+					zoneElements[i][j]->color = blue;
 					zoneElements[i][j]->chekable = true;
 					break;
 
 				case triangleG:
 					zoneElements[i][j]->setForm(triangle);
 					zoneElements[i][j]->setColor(green);
+					zoneElements[i][j]->color = green;
 					zoneElements[i][j]->chekable = true;
 					break;
 
 				case doorCR:
 					zoneElements[i][j]->setForm(doorC);
 					zoneElements[i][j]->setColor(red);
+					zoneElements[i][j]->color = red;
+					zoneElements[i][j]->chekable = false;
 					break;
 
 				case doorCB:
 					zoneElements[i][j]->setForm(doorC);
 					zoneElements[i][j]->setColor(blue);
+					zoneElements[i][j]->color = blue;
 					zoneElements[i][j]->chekable = false;
 					break;
 
 				case doorCG:
 					zoneElements[i][j]->setForm(doorC);
 					zoneElements[i][j]->setColor(green);
+					zoneElements[i][j]->color = green;
 					zoneElements[i][j]->chekable = false;
 					break;
 
 				case doorRR:
 					zoneElements[i][j]->setForm(doorR);
 					zoneElements[i][j]->setColor(red);
+					zoneElements[i][j]->color = red;
 					zoneElements[i][j]->chekable = false;
 					break;
 
 				case doorRB:
 					zoneElements[i][j]->setForm(doorR);
 					zoneElements[i][j]->setColor(blue);
+					zoneElements[i][j]->color = blue;
 					zoneElements[i][j]->chekable = false;
 					break;
 
 				case doorRG:
 					zoneElements[i][j]->setForm(doorR);
 					zoneElements[i][j]->setColor(green);
+					zoneElements[i][j]->color = green;
 					zoneElements[i][j]->chekable = false;
 					break;
 
 				case doorTR:
 					zoneElements[i][j]->setForm(doorT);
 					zoneElements[i][j]->setColor(red);
+					zoneElements[i][j]->color = red;
 					zoneElements[i][j]->chekable = false;
 					break;
 
 				case doorTB:
 					zoneElements[i][j]->setForm(doorT);
 					zoneElements[i][j]->setColor(blue);
+					zoneElements[i][j]->color = blue;
 					zoneElements[i][j]->chekable = false;
 					break;
 
 				case doorTG:
 					zoneElements[i][j]->setForm(doorT);
 					zoneElements[i][j]->setColor(green);
+					zoneElements[i][j]->color = green;
 					zoneElements[i][j]->chekable = false;
 					break;
 				default:
@@ -173,31 +193,32 @@ namespace FormersMJ
 
 	bool Zone::checkWin()
 	{
-		int testIfSame = 0;
-		bool wins = true;
+		Zone_Structures* testIfSame = NULL;
+		
+
+		int checkable[9] = { circleB, circleG, circleR, triangleB, triangleG, triangleR, rectangleB, rectangleG, rectangleR };
+		int index = 0;
+		while (GetZoneStructureById(checkable[index]) != nullptr)
+		{
+			testIfSame = GetZoneStructureById(checkable[index]);
+			index++;
+		}
+		index = 0;
+		
 		for (int i = 0; i < mapRow; i++)
 		{
 			for (int j = 0; j < mapColumn; j++)
 			{
-				if (zoneElements[i][j]->chekable)
+				if(zoneElements[i][j]->chekable)
 				{
-					testIfSame = zoneElements[i][j]->getForm();
-
-					for (int k = 0; k < mapRow; k++)
+					if(testIfSame->color != zoneElements[i][j]->color || testIfSame->getForm() != zoneElements[i][j]->getForm())
 					{
-						for (int l = 0; l < mapColumn; l++)
-						{
-							if (testIfSame != zoneElements[k][l]->getForm() && zoneElements[k][l]->getForm() != vacio && zoneElements[k][l]->getForm() != wall && zoneElements[i][j]->getForm() != doorC && zoneElements[i][j]->getForm() != doorT && zoneElements[i][j]->getForm() != doorR)
-							{
-								//necesito agarrar la cantidad de movimientos que va y compararlo con maxMoves
-								wins = false;
-							}
-						}
+						return false;
 					}
 				}
 			}
 		}
-		return wins;
+		return true;
 	}
 
 	int Zone::getMaxMoves()
@@ -250,5 +271,20 @@ namespace FormersMJ
 		DrawText(FormatText("win: %i", checkWin()), tileScale * 5, tileScale / 2, tileScale / 2, WHITE);
 
 		DrawText(FormatText("Moves has to be less than: %i", getMaxMoves()), tileScale * 10, tileScale / 2, tileScale / 2, WHITE);
+	}
+
+	Zone_Structures * Zone::GetZoneStructureById(int id)
+	{
+		for (int i = 0; i < mapRow; i++)
+		{
+			for (int j = 0; j < mapColumn; j++)
+			{
+				if (zoneElements[i][j]->GetZone()->id == id)
+				{
+					return zoneElements[i][j]->GetZone();
+				}
+			}
+		}
+		return nullptr;
 	}
 }

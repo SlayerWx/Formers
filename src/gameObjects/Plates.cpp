@@ -17,8 +17,8 @@ namespace FormersMJ
 	{
 	}
 
-	Plates::Plates(Vector2 Pos, TileType form, Color myNewColor, Colors numColor)
-		:Zone_Structures(Pos, form, myNewColor, numColor)
+	Plates::Plates(Vector2 Pos, TileType form, Color myNewColor, Colors numColor, int id)
+		:Zone_Structures(Pos, form, myNewColor, numColor, id)
 	{
 		alredyChange = false;
 	}
@@ -109,4 +109,7 @@ namespace FormersMJ
 			alredyChange = false;
 		}
 	}
+
+
+
 }

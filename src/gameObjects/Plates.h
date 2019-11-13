@@ -12,7 +12,7 @@ namespace FormersMJ
 	public:
 		Plates();
 		~Plates();
-		Plates(Vector2 Pos, TileType form, Color myColor, Colors numColor);
+		Plates(Vector2 Pos, TileType form, Color myColor, Colors numColor, int id);
 		/*void init(Vector2 Pos, Form form, Color myColor);*/
 		bool getAlredyChange();
 		void setAlredyChange(bool newRedyChange);
