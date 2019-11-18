@@ -19,8 +19,8 @@ namespace FormersMJ
 		Zone_Structures(Vector2 Pos, TileType form, Color myNewColor, Colors numColor, int id);
 		virtual ~Zone_Structures();
 		void setColor(Colors myColor);
-		Zone_Structures * GetZone();
 		Color getColor();
+		int getID();
 		Vector2 getPosition();
 		void setPosition(Vector2 newPos);
 		TileType getForm();
@@ -30,6 +30,8 @@ namespace FormersMJ
 		bool chekable;
 		int id;
 		int color;
+		char myType();
+		char type;
 	protected:
 		Vector2 myPosition;
 		TileType myForm;

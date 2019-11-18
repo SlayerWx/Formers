@@ -188,37 +188,38 @@ namespace FormersMJ
 
 	Zone::~Zone()
 	{
-
-	}
-
-	bool Zone::checkWin()
-	{
-		Zone_Structures* testIfSame = NULL;
-		
-
-		int checkable[9] = { circleB, circleG, circleR, triangleB, triangleG, triangleR, rectangleB, rectangleG, rectangleR };
-		int index = 0;
-		while (GetZoneStructureById(checkable[index]) != nullptr)
-		{
-			testIfSame = GetZoneStructureById(checkable[index]);
-			index++;
-		}
-		index = 0;
-		
 		for (int i = 0; i < mapRow; i++)
 		{
 			for (int j = 0; j < mapColumn; j++)
 			{
-				if(zoneElements[i][j]->chekable)
-				{
-					if(testIfSame->color != zoneElements[i][j]->color || testIfSame->getForm() != zoneElements[i][j]->getForm())
+				if(zoneElements[i][j])
+				delete zoneElements[i][j];
+			}
+
+		}
+	}
+
+	bool Zone::checkWin()
+	{
+		bool previousResult = true;
+		for (int i = 0;i< mapRow;i++)
+		{
+			for (int j = 0; j < mapColumn-1; j++)
+			{
+				if (zoneElements[i][j]->myType() == 'P') {
+					if (previousResult && zoneElements[i][j]->getForm() == zoneElements[i][j + 1]->getForm() &&
+						zoneElements[i][j]->color == zoneElements[i][j + 1]->color)
 					{
-						return false;
+						previousResult = true;
+					}
+					else
+					{
+						previousResult = false;
 					}
 				}
 			}
 		}
-		return true;
+		return previousResult;
 	}
 
 	int Zone::getMaxMoves()
@@ -269,11 +270,12 @@ namespace FormersMJ
 			}
 		}
 		DrawText(FormatText("win: %i", checkWin()), tileScale * 5, tileScale / 2, tileScale / 2, WHITE);
-
+		system("cls");
+		cout << checkWin() << endl;
 		DrawText(FormatText("Moves has to be less than: %i", getMaxMoves()), tileScale * 10, tileScale / 2, tileScale / 2, WHITE);
 	}
 
-	Zone_Structures * Zone::GetZoneStructureById(int id)
+	/*Zone_Structures * Zone::GetZoneStructureById(int id)
 	{
 		for (int i = 0; i < mapRow; i++)
 		{
@@ -286,5 +288,5 @@ namespace FormersMJ
 			}
 		}
 		return nullptr;
-	}
+	}*/
 }

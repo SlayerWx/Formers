@@ -7,6 +7,7 @@ namespace FormersMJ
 	Plates::Plates()
 	{
 		alredyChange = false;
+		type = 'P';
 	}
 	/*
 	void Plates::init(Vector2 Pos, Form form, Color myColor)

@@ -11,7 +11,6 @@ namespace FormersMJ
 		virtual void Init();
 		void Update(Player* player);
 		void Draw();
-		Zone_Structures * GetZoneStructureById(int id);
 		Zone(int newMap[mapRow][mapColumn]);
 		~Zone();
 		bool checkWin();

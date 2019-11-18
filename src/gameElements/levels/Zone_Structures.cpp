@@ -98,9 +98,12 @@ namespace FormersMJ
 		if (actualColor == purple)myColor = PURPLE;
 
 	}
-
-	Zone_Structures * Zone_Structures::GetZone() 
+	int Zone_Structures::getID()
 	{
-		return this;
+		return id;
+	}
+	char Zone_Structures::myType()
+	{
+		return type;
 	}
 }
