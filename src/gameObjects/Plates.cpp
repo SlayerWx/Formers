@@ -9,11 +9,7 @@ namespace FormersMJ
 		alredyChange = false;
 		type = 'P';
 	}
-	/*
-	void Plates::init(Vector2 Pos, Form form, Color myColor)
-	{
-		Plates(Pos, form, myColor);
-	}*/
+	
 	Plates::~Plates()
 	{
 	}
@@ -22,6 +18,7 @@ namespace FormersMJ
 		:Zone_Structures(Pos, form, myNewColor, numColor)
 	{
 		alredyChange = false;
+		type = 'P';
 	}
 
 	void Plates::setAlredyChange(bool newRedyChange)

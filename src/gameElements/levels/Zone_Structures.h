@@ -24,7 +24,7 @@ namespace FormersMJ
 		void setPosition(Vector2 newPos);
 		TileType getForm();
 		void setForm(TileType myNewForm);
-		virtual void checkCollision(Vector2 playerPos, Vector2 lastPosition)= 0;
+		virtual void checkCollision(Vector2 playerPos, Vector2 lastPosition) = 0;
 		void drawMe();
 		bool chekable;
 		int color;
