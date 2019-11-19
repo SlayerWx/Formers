@@ -4,6 +4,7 @@
 #include <iostream>
 #include "gameObjects/Player.h"
 #include "gameObjects/Wall.h"
+#include "gameElements/Global.h"
 namespace FormersMJ
 {
 	using namespace std;
@@ -26,15 +27,15 @@ namespace FormersMJ
 				switch (newMap[i][j])
 				{
 				case vacio:
-					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, vacio, BLUE, blue);
+					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, vacio, BLUE);
 					zoneElements[i][j]->chekable = false;
+					zoneElements[i][j]->setType('V');
 
 					break;
 				case wall:
-					zoneElements[i][j] = new Wall({ tileScale*(j + 1),tileScale * (i + 1) }, GRAY, gray);
+					zoneElements[i][j] = new Wall({ tileScale*(j + 1),tileScale * (i + 1) }, GRAY);
 					zoneElements[i][j]->setForm(wall);
-					zoneElements[i][j]->setColor(gray);
-					zoneElements[i][j]->color = gray;
+					zoneElements[i][j]->setColor(GRAY);
 					zoneElements[i][j]->chekable = false;
 					break;
 				case door:
@@ -42,146 +43,128 @@ namespace FormersMJ
 					break;
 
 				case circleR:
-					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, circle, F_DARKRED, red);
+					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, circle, F_DARKRED);
 					zoneElements[i][j]->setForm(circle);
-					zoneElements[i][j]->setColor(red);
-					zoneElements[i][j]->color = red;
+					zoneElements[i][j]->setColor(F_DARKRED);
 					zoneElements[i][j]->chekable = true;
 					break;
 
 				case circleB:
-					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, circle, F_DARKBLUE, blue);
+					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, circle, F_DARKBLUE);
 					zoneElements[i][j]->setForm(circle);
-					zoneElements[i][j]->setColor(blue);
-					zoneElements[i][j]->color = blue;
+					zoneElements[i][j]->setColor(F_DARKBLUE);
 					zoneElements[i][j]->chekable = true;
 					break;
 
 				case circleG:
-					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, circle, F_DARKGREEN, green);
+					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, circle, F_DARKGREEN);
 					zoneElements[i][j]->setForm(circle);
-					zoneElements[i][j]->setColor(green);
-					zoneElements[i][j]->color = green;
+					zoneElements[i][j]->setColor(F_DARKGREEN);
 					zoneElements[i][j]->chekable = true;
 					break;
 
 				case rectangleR:
-					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, rectangle, F_DARKRED, red);
+					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, rectangle, F_DARKRED);
 					zoneElements[i][j]->setForm(rectangle);
-					zoneElements[i][j]->setColor(red);
-					zoneElements[i][j]->color = red;
+					zoneElements[i][j]->setColor(F_DARKRED);
 					zoneElements[i][j]->chekable = true;
 					break;
 
 				case rectangleB:
-					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, rectangle, F_DARKBLUE, blue);
+					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, rectangle, F_DARKBLUE);
 					zoneElements[i][j]->setForm(rectangle);
-					zoneElements[i][j]->setColor(blue);
-					zoneElements[i][j]->color = blue;
+					zoneElements[i][j]->setColor(F_DARKBLUE);
 					zoneElements[i][j]->chekable = true;
 					break;
 
 				case rectangleG:
-					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, rectangle, F_DARKGREEN, green);
+					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, rectangle, F_DARKGREEN);
 					zoneElements[i][j]->setForm(rectangle);
-					zoneElements[i][j]->setColor(green);
-					zoneElements[i][j]->color = green;
+					zoneElements[i][j]->setColor(F_DARKGREEN);
 					zoneElements[i][j]->chekable = true;
 					break;
 
 				case triangleR:
-					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, triangle, F_DARKRED, red);
+					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, triangle, F_DARKRED);
 					zoneElements[i][j]->setForm(triangle);
-					zoneElements[i][j]->setColor(red);
-					zoneElements[i][j]->color = red;
+					zoneElements[i][j]->setColor(F_DARKRED);
 					zoneElements[i][j]->chekable = true;
 					break;
 
 				case triangleB:
-					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, triangle, F_DARKBLUE, blue);
+					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, triangle, F_DARKBLUE);
 					zoneElements[i][j]->setForm(triangle);
-					zoneElements[i][j]->setColor(blue);
-					zoneElements[i][j]->color = blue;
+					zoneElements[i][j]->setColor(F_DARKBLUE);
 					zoneElements[i][j]->chekable = true;
 					break;
 
 				case triangleG:
-					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, triangle, F_DARKGREEN, green);
+					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, triangle, F_DARKGREEN);
 					zoneElements[i][j]->setForm(triangle);
-					zoneElements[i][j]->setColor(green);
-					zoneElements[i][j]->color = green;
+					zoneElements[i][j]->setColor(F_DARKGREEN);
 					zoneElements[i][j]->chekable = true;
 					break;
 
 				case doorCR:
-					zoneElements[i][j] = new Door({ tileScale*(j + 1),tileScale * (i + 1) }, circle, F_DARKRED, red);
+					zoneElements[i][j] = new Door({ tileScale*(j + 1),tileScale * (i + 1) }, circle, F_DARKRED);
 					zoneElements[i][j]->setForm(doorC);
-					zoneElements[i][j]->setColor(red);
-					zoneElements[i][j]->color = red;
+					zoneElements[i][j]->setColor(F_DARKRED);
 					zoneElements[i][j]->chekable = false;
 					break;
 
 				case doorCB:
-					zoneElements[i][j] = new Door({ tileScale*(j + 1),tileScale * (i + 1) }, circle, F_DARKBLUE, blue);
+					zoneElements[i][j] = new Door({ tileScale*(j + 1),tileScale * (i + 1) }, circle, F_DARKBLUE);
 					zoneElements[i][j]->setForm(doorC);
-					zoneElements[i][j]->setColor(blue);
-					zoneElements[i][j]->color = blue;
+					zoneElements[i][j]->setColor(F_DARKBLUE);
 					zoneElements[i][j]->chekable = false;
 					break;
 
 				case doorCG:
-					zoneElements[i][j] = new Door({ tileScale*(j + 1),tileScale * (i + 1) }, circle, F_DARKGREEN, green);
+					zoneElements[i][j] = new Door({ tileScale*(j + 1),tileScale * (i + 1) }, circle, F_DARKGREEN);
 					zoneElements[i][j]->setForm(doorC);
-					zoneElements[i][j]->setColor(green);
-					zoneElements[i][j]->color = green;
+					zoneElements[i][j]->setColor(F_DARKGREEN);
 					zoneElements[i][j]->chekable = false;
 					break;
 
 				case doorRR:
-					zoneElements[i][j] = new Door({ tileScale*(j + 1),tileScale * (i + 1) }, rectangle, F_DARKRED, red);
+					zoneElements[i][j] = new Door({ tileScale*(j + 1),tileScale * (i + 1) }, rectangle, F_DARKRED);
 					zoneElements[i][j]->setForm(doorR);
-					zoneElements[i][j]->setColor(red);
-					zoneElements[i][j]->color = red;
+					zoneElements[i][j]->setColor(F_DARKRED);
 					zoneElements[i][j]->chekable = false;
 					break;
 
 				case doorRB:
-					zoneElements[i][j] = new Door({ tileScale*(j + 1),tileScale * (i + 1) }, rectangle, F_DARKBLUE, blue);
+					zoneElements[i][j] = new Door({ tileScale*(j + 1),tileScale * (i + 1) }, rectangle, F_DARKBLUE);
 					zoneElements[i][j]->setForm(doorR);
-					zoneElements[i][j]->setColor(blue);
-					zoneElements[i][j]->color = blue;
+					zoneElements[i][j]->setColor(F_DARKBLUE);
 					zoneElements[i][j]->chekable = false;
 					break;
 
 				case doorRG:
-					zoneElements[i][j] = new Door({ tileScale*(j + 1),tileScale * (i + 1) }, rectangle, F_DARKGREEN, green);
+					zoneElements[i][j] = new Door({ tileScale*(j + 1),tileScale * (i + 1) }, rectangle, F_DARKGREEN);
 					zoneElements[i][j]->setForm(doorR);
-					zoneElements[i][j]->setColor(green);
-					zoneElements[i][j]->color = green;
+					zoneElements[i][j]->setColor(F_DARKGREEN);
 					zoneElements[i][j]->chekable = false;
 					break;
 
 				case doorTR:
-					zoneElements[i][j] = new Door({ tileScale*(j + 1),tileScale * (i + 1) }, triangle, F_DARKRED, red);
+					zoneElements[i][j] = new Door({ tileScale*(j + 1),tileScale * (i + 1) }, triangle, F_DARKRED);
 					zoneElements[i][j]->setForm(doorT);
-					zoneElements[i][j]->setColor(red);
-					zoneElements[i][j]->color = red;
+					zoneElements[i][j]->setColor(F_DARKRED);
 					zoneElements[i][j]->chekable = false;
 					break;
 
 				case doorTB:
-					zoneElements[i][j] = new Door({ tileScale*(j + 1),tileScale * (i + 1) }, triangle, F_DARKBLUE, blue);
+					zoneElements[i][j] = new Door({ tileScale*(j + 1),tileScale * (i + 1) }, triangle, F_DARKBLUE);
 					zoneElements[i][j]->setForm(doorT);
-					zoneElements[i][j]->setColor(blue);
-					zoneElements[i][j]->color = blue;
+					zoneElements[i][j]->setColor(F_DARKBLUE);
 					zoneElements[i][j]->chekable = false;
 					break;
 
 				case doorTG:
-					zoneElements[i][j] = new Door({ tileScale*(j + 1),tileScale * (i + 1) }, triangle, F_DARKGREEN, green);
+					zoneElements[i][j] = new Door({ tileScale*(j + 1),tileScale * (i + 1) }, triangle, F_DARKGREEN);
 					zoneElements[i][j]->setForm(doorT);
-					zoneElements[i][j]->setColor(green);
-					zoneElements[i][j]->color = green;
+					zoneElements[i][j]->setColor(F_DARKGREEN);
 					zoneElements[i][j]->chekable = false;
 					break;
 				default:
@@ -208,17 +191,22 @@ namespace FormersMJ
 	bool Zone::checkWin()
 	{
 		bool previousResult = true;
+		Zone_Structures* aux1;
+		Zone_Structures* aux2 = new Plates({ tileScale*-1,tileScale*-1 }, TileType::circle, F_DARKRED);
 		for (int i = 0;i< mapRow;i++)
 		{
-			for (int j = 0; j < mapColumn-1; j++)
+			for (int j = 0; j < mapColumn; j++)
 			{
 				if (zoneElements[i][j]->myType() == 'P') {
-					if (previousResult && zoneElements[i][j]->getForm() == zoneElements[i][j + 1]->getForm() &&
-						zoneElements[i][j]->color == zoneElements[i][j + 1]->color)
+					aux1 = aux2;
+					aux2 = zoneElements[i][j];
+					
+					if (aux1->getForm() == aux2->getForm() &&
+						Zone_Structures::compareColor(aux1->getColor(), aux2->getColor()))
 					{
 						previousResult = true;
 					}
-					else
+					else if(aux1->getPosition().x > 0 && aux1->getPosition().y > 0)
 					{
 						previousResult = false;
 					}
@@ -274,6 +262,7 @@ namespace FormersMJ
 				}
 			}
 		}
+
 	}
 	void Zone::Draw()
 	{

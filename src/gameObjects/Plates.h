@@ -12,7 +12,7 @@ namespace FormersMJ
 	public:
 		Plates();
 		~Plates();
-		Plates(Vector2 Pos, TileType form, Color myColor, Colors numColor);
+		Plates(Vector2 Pos, TileType form, Color myColor);
 		bool getAlredyChange();
 		void setAlredyChange(bool newRedyChange);
 		void checkCollision(Vector2 position, Vector2 lastPosition);

@@ -1,8 +1,8 @@
 #include "Door.h"
 namespace FormersMJ
 {
-	Door::Door(Vector2 Pos, TileType form, Color Color, Colors numColor): 
-		Zone_Structures(Pos,form,Color,numColor)
+	Door::Door(Vector2 Pos, TileType form, Color Color): 
+		Zone_Structures(Pos,form,Color)
 	{
 		type = 'D';
 		isOpen = false;

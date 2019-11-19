@@ -8,15 +8,12 @@ namespace FormersMJ
 		myPosition.y = 0;
 		myForm = circle;
 		myColor = F_DARKBLUE;
-		actualColor = blue;
-		color = blue;
 	}
-	Zone_Structures::Zone_Structures(Vector2 Pos, TileType form, Color myNewColor, Colors numColor)
+	Zone_Structures::Zone_Structures(Vector2 Pos, TileType form, Color myNewColor)
 	{
 		myPosition = Pos;
 		myForm = form;
 		myColor = myNewColor;
-		actualColor = numColor;
 	}
 	Zone_Structures::~Zone_Structures()
 	{
@@ -85,21 +82,29 @@ namespace FormersMJ
 		return myColor;
 	}
 
-
-	void Zone_Structures::setColor(Colors newColor)
+	void Zone_Structures::setColor(Color newColor)
 	{
-		actualColor = newColor;
-		if (actualColor == red)   myColor = F_DARKRED;
-		if (actualColor == blue)  myColor = F_DARKBLUE;
-		if (actualColor == green) myColor = F_DARKGREEN;
-		if (actualColor == gray)  myColor = GRAY;
-		if (actualColor == yellow)myColor = YELLOW;
-		if (actualColor == purple)myColor = PURPLE;
-
+		myColor = newColor;
 	}
+
+
 
 	char Zone_Structures::myType()
 	{
 		return type;
+	}
+	void Zone_Structures::setType(char newType)
+	{
+		type = newType;
+	}
+	bool Zone_Structures::compareColor(Color a, Color b)
+	{
+		if (a.b == b.b &&
+			a.g == b.g &&
+			a.r == b.r)
+		{
+			return true;
+		}
+		return false;
 	}
 }

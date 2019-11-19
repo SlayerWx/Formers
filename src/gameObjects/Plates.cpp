@@ -14,8 +14,8 @@ namespace FormersMJ
 	{
 	}
 
-	Plates::Plates(Vector2 Pos, TileType form, Color myNewColor, Colors numColor)
-		:Zone_Structures(Pos, form, myNewColor, numColor)
+	Plates::Plates(Vector2 Pos, TileType form, Color myNewColor)
+		:Zone_Structures(Pos, form, myNewColor)
 	{
 		alredyChange = false;
 		type = 'P';
@@ -70,35 +70,24 @@ namespace FormersMJ
 			}
 			else
 			{
-				switch (actualColor)
-				{
-				case red:
-					if (alredyChange == false)
+				
+					if(Zone_Structures::compareColor(myColor, F_DARKRED) && alredyChange == false)
 					{
-						setColor(blue);
+						setColor(F_DARKBLUE);
 						alredyChange = true;
 					}
-
-					break;
-				case blue:
-
-					if (alredyChange == false)
+					if (Zone_Structures::compareColor(myColor, F_DARKBLUE) && alredyChange == false)
 					{
-						setColor(green);
+						setColor(F_DARKGREEN);
 						alredyChange = true;
 					}
-					break;
-				case green:
-
-					if (alredyChange == false)
+					if (Zone_Structures::compareColor(myColor, F_DARKGREEN) && alredyChange == false)
 					{
-						setColor(red);
+						setColor(F_DARKRED);
 						alredyChange = true;
 					}
-					break;
-				default:
-					break;
-				}
+					
+				
 			}
 
 		}

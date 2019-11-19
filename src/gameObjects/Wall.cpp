@@ -9,7 +9,7 @@ namespace FormersMJ
 	Wall::~Wall()
 	{
 	}
-	Wall::Wall(Vector2 Pos, Color myNewColor, Colors numColor):Zone_Structures(Pos, rectangle, myNewColor, numColor)
+	Wall::Wall(Vector2 Pos, Color myNewColor):Zone_Structures(Pos, rectangle, myNewColor)
 	{
 		type = 'W';
 	}
