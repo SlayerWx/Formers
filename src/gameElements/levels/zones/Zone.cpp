@@ -2,6 +2,7 @@
 #include "gameObjects/Plates.h"
 #include <iostream>
 #include "gameObjects/Player.h"
+#include "gameObjects/Wall.h"
 namespace FormersMJ
 {
 	using namespace std;
@@ -23,12 +24,12 @@ namespace FormersMJ
 				switch (newMap[i][j])
 				{
 				case vacio:
-					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, vacio, BLUE, blue, newMap[i][j]);
+					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, vacio, BLUE, blue);
 					zoneElements[i][j]->chekable = false;
 
 					break;
 				case wall:
-					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, wall, GRAY, gray, newMap[i][j]);
+					zoneElements[i][j] = new Wall({ tileScale*(j + 1),tileScale * (i + 1) }, GRAY, gray);
 					zoneElements[i][j]->setForm(wall);
 					zoneElements[i][j]->setColor(gray);
 					zoneElements[i][j]->color = gray;
@@ -39,7 +40,7 @@ namespace FormersMJ
 					break;
 
 				case circleR:
-					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, circle, F_DARKRED, red, newMap[i][j]);
+					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, circle, F_DARKRED, red);
 					zoneElements[i][j]->setForm(circle);
 					zoneElements[i][j]->setColor(red);
 					zoneElements[i][j]->color = red;
@@ -47,7 +48,7 @@ namespace FormersMJ
 					break;
 
 				case circleB:
-					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, circle, F_DARKBLUE, blue, newMap[i][j]);
+					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, circle, F_DARKBLUE, blue);
 					zoneElements[i][j]->setForm(circle);
 					zoneElements[i][j]->setColor(blue);
 					zoneElements[i][j]->color = blue;
@@ -55,7 +56,7 @@ namespace FormersMJ
 					break;
 
 				case circleG:
-					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, circle, F_DARKGREEN, green, newMap[i][j]);
+					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, circle, F_DARKGREEN, green);
 					zoneElements[i][j]->setForm(circle);
 					zoneElements[i][j]->setColor(green);
 					zoneElements[i][j]->color = green;
@@ -63,7 +64,7 @@ namespace FormersMJ
 					break;
 
 				case rectangleR:
-					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, rectangle, F_DARKRED, red, newMap[i][j]);
+					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, rectangle, F_DARKRED, red);
 					zoneElements[i][j]->setForm(rectangle);
 					zoneElements[i][j]->setColor(red);
 					zoneElements[i][j]->color = red;
@@ -71,7 +72,7 @@ namespace FormersMJ
 					break;
 
 				case rectangleB:
-					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, rectangle, F_DARKBLUE, blue, newMap[i][j]);
+					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, rectangle, F_DARKBLUE, blue);
 					zoneElements[i][j]->setForm(rectangle);
 					zoneElements[i][j]->setColor(blue);
 					zoneElements[i][j]->color = blue;
@@ -79,7 +80,7 @@ namespace FormersMJ
 					break;
 
 				case rectangleG:
-					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, rectangle, F_DARKGREEN, green, newMap[i][j]);
+					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, rectangle, F_DARKGREEN, green);
 					zoneElements[i][j]->setForm(rectangle);
 					zoneElements[i][j]->setColor(green);
 					zoneElements[i][j]->color = green;
@@ -87,7 +88,7 @@ namespace FormersMJ
 					break;
 
 				case triangleR:
-					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, triangle, F_DARKRED, red, newMap[i][j]);
+					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, triangle, F_DARKRED, red);
 					zoneElements[i][j]->setForm(triangle);
 					zoneElements[i][j]->setColor(red);
 					zoneElements[i][j]->color = red;
@@ -95,7 +96,7 @@ namespace FormersMJ
 					break;
 
 				case triangleB:
-					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, triangle, F_DARKBLUE, blue, newMap[i][j]);
+					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, triangle, F_DARKBLUE, blue);
 					zoneElements[i][j]->setForm(triangle);
 					zoneElements[i][j]->setColor(blue);
 					zoneElements[i][j]->color = blue;
@@ -103,7 +104,7 @@ namespace FormersMJ
 					break;
 
 				case triangleG:
-					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, triangle, F_DARKGREEN, green, newMap[i][j]);
+					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, triangle, F_DARKGREEN, green);
 					zoneElements[i][j]->setForm(triangle);
 					zoneElements[i][j]->setColor(green);
 					zoneElements[i][j]->color = green;
@@ -112,7 +113,7 @@ namespace FormersMJ
 
 				case doorCR:
 					//zoneElements[i][j] = new Door({ tileScale*(j + 1),tileScale * (i + 1) }, circle, F_DARKRED, red);
-					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, circle, F_DARKRED, red, newMap[i][j]);
+					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, circle, F_DARKRED, red);
 					zoneElements[i][j]->setForm(doorC);
 					zoneElements[i][j]->setColor(red);
 					zoneElements[i][j]->color = red;
@@ -121,7 +122,7 @@ namespace FormersMJ
 
 				case doorCB:
 					//zoneElements[i][j] = new Door({ tileScale*(j + 1),tileScale * (i + 1) }, circle, F_DARKBLUE, blue);
-					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, circle, F_DARKBLUE, blue, newMap[i][j]);
+					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, circle, F_DARKBLUE, blue);
 					zoneElements[i][j]->setForm(doorC);
 					zoneElements[i][j]->setColor(blue);
 					zoneElements[i][j]->color = blue;
@@ -130,7 +131,7 @@ namespace FormersMJ
 
 				case doorCG:
 					//zoneElements[i][j] = new Door({ tileScale*(j + 1),tileScale * (i + 1) }, circle, F_DARKGREEN, green);
-					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, circle, F_DARKGREEN, green, newMap[i][j]);
+					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, circle, F_DARKGREEN, green);
 					zoneElements[i][j]->setForm(doorC);
 					zoneElements[i][j]->setColor(green);
 					zoneElements[i][j]->color = green;
@@ -139,7 +140,7 @@ namespace FormersMJ
 
 				case doorRR:
 					//zoneElements[i][j] = new Door({ tileScale*(j + 1),tileScale * (i + 1) }, rectangle, F_DARKRED, red);
-					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, rectangle, F_DARKRED, red, newMap[i][j]);
+					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, rectangle, F_DARKRED, red);
 					zoneElements[i][j]->setForm(doorR);
 					zoneElements[i][j]->setColor(red);
 					zoneElements[i][j]->color = red;
@@ -148,7 +149,7 @@ namespace FormersMJ
 
 				case doorRB:
 					//zoneElements[i][j] = new Door({ tileScale*(j + 1),tileScale * (i + 1) }, rectangle, F_DARKBLUE, blue);
-					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, rectangle, F_DARKBLUE, blue, newMap[i][j]);
+					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, rectangle, F_DARKBLUE, blue);
 					zoneElements[i][j]->setForm(doorR);
 					zoneElements[i][j]->setColor(blue);
 					zoneElements[i][j]->color = blue;
@@ -157,7 +158,7 @@ namespace FormersMJ
 
 				case doorRG:
 					//zoneElements[i][j] = new Door({ tileScale*(j + 1),tileScale * (i + 1) }, rectangle, F_DARKGREEN, green);
-					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, rectangle, F_DARKGREEN, green, newMap[i][j]);
+					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, rectangle, F_DARKGREEN, green);
 					zoneElements[i][j]->setForm(doorR);
 					zoneElements[i][j]->setColor(green);
 					zoneElements[i][j]->color = green;
@@ -166,7 +167,7 @@ namespace FormersMJ
 
 				case doorTR:
 					//zoneElements[i][j] = new Door({ tileScale*(j + 1),tileScale * (i + 1) }, triangle, F_DARKRED, red);
-					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, triangle, F_DARKRED, red, newMap[i][j]);
+					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, triangle, F_DARKRED, red);
 					zoneElements[i][j]->setForm(doorT);
 					zoneElements[i][j]->setColor(red);
 					zoneElements[i][j]->color = red;
@@ -175,7 +176,7 @@ namespace FormersMJ
 
 				case doorTB:
 					//zoneElements[i][j] = new Door({ tileScale*(j + 1),tileScale * (i + 1) }, triangle, F_DARKBLUE, blue);
-					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, triangle, F_DARKBLUE, blue, newMap[i][j]);
+					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, triangle, F_DARKBLUE, blue);
 					zoneElements[i][j]->setForm(doorT);
 					zoneElements[i][j]->setColor(blue);
 					zoneElements[i][j]->color = blue;
@@ -184,7 +185,7 @@ namespace FormersMJ
 
 				case doorTG:
 					//zoneElements[i][j] = new Door({ tileScale*(j + 1),tileScale * (i + 1) }, triangle, F_DARKGREEN, green);
-					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, triangle, F_DARKGREEN, green, newMap[i][j]);
+					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, triangle, F_DARKGREEN, green);
 					zoneElements[i][j]->setForm(doorT);
 					zoneElements[i][j]->setColor(green);
 					zoneElements[i][j]->color = green;

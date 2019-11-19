@@ -16,19 +16,17 @@ namespace FormersMJ
 	{
 	public:
 		Zone_Structures();
-		Zone_Structures(Vector2 Pos, TileType form, Color myNewColor, Colors numColor, int id);
+		Zone_Structures(Vector2 Pos, TileType form, Color myNewColor, Colors numColor);
 		virtual ~Zone_Structures();
 		void setColor(Colors myColor);
 		Color getColor();
-		int getID();
 		Vector2 getPosition();
 		void setPosition(Vector2 newPos);
 		TileType getForm();
 		void setForm(TileType myNewForm);
-		virtual void checkCollision(Vector2 playerPos, Vector2 lastPosition) = 0;
+		virtual void checkCollision(Vector2 playerPos, Vector2 lastPosition)= 0;
 		void drawMe();
 		bool chekable;
-		int id;
 		int color;
 		char myType();
 		char type;
