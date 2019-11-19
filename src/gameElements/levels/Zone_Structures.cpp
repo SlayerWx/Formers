@@ -98,6 +98,7 @@ namespace FormersMJ
 
 	}
 	
+		
 	char Zone_Structures::myType()
 	{
 		return type;

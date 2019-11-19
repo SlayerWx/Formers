@@ -1,5 +1,6 @@
 #include "Zone.h"
 #include "gameObjects/Plates.h"
+#include "gameObjects/Door.h"
 #include <iostream>
 #include "gameObjects/Player.h"
 #include "gameObjects/Wall.h"
@@ -13,6 +14,7 @@ namespace FormersMJ
 			for (int j = 0; j < mapColumn; j++)
 			{
 				zoneElements[i][j] = NULL;
+				
 				maxMoves = 60;
 			}
 
@@ -253,7 +255,7 @@ namespace FormersMJ
 			{
 				if (zoneElements[i][j]->getForm() != vacio)
 				{
-					if (zoneElements[i][j]->getForm() == wall || zoneElements[i][j]->getForm() == doorC || zoneElements[i][j]->getForm() == doorT || zoneElements[i][j]->getForm() == doorR)
+					if (zoneElements[i][j]->myType() == 'W')
 					{
 						if (zoneElements[i][j]->getPosition().x - tileScale == player->getNextPos().x &&
 							zoneElements[i][j]->getPosition().y - tileScale == player->getNextPos().y)
@@ -261,8 +263,20 @@ namespace FormersMJ
 							player->setStopAtion(true);
 							player->stopMyAction();
 						}
+
 					}
-					else
+					else if(zoneElements[i][j]->myType() == 'D')
+					{
+						static_cast<Door*>(zoneElements[i][j])->setOpen(true);
+						if (zoneElements[i][j]->getPosition().x - tileScale == player->getNextPos().x &&
+							zoneElements[i][j]->getPosition().y - tileScale == player->getNextPos().y &&
+							!static_cast<Door*>(zoneElements[i][j])->getIsOpen())
+						{
+							player->setStopAtion(true);
+							player->stopMyAction();
+						}
+					}
+					else if(zoneElements[i][j]->myType() == 'P')
 					{
 						zoneElements[i][j]->checkCollision(player->getPosition(), player->getLastPosition());
 					}
