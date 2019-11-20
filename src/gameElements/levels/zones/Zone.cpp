@@ -192,12 +192,17 @@ namespace FormersMJ
 	{
 		bool previousResult = true;
 		Zone_Structures* aux1 = NULL;
-		Zone_Structures* aux2 = NULL;// = new Plates({ tileScale*-1,tileScale*-1 }, TileType::circle, F_DARKRED);
+		Zone_Structures* aux2 = NULL;
+		Zone_Structures* door1 = NULL;
+		Zone_Structures* door2 = NULL;
+		Zone_Structures* door3 = NULL;
+		Zone_Structures* door4 = NULL;
 		for (int i = 0;i< mapRow;i++)
 		{
 			for (int j = 0; j < mapColumn; j++)
 			{
-				if (zoneElements[i][j]->myType() == 'P') {
+				if (zoneElements[i][j]->myType() == 'P') 
+				{
 					if (aux1 == NULL)
 					{
 						aux1 = zoneElements[i][j];
@@ -208,10 +213,42 @@ namespace FormersMJ
 					if (aux1->getForm() == aux2->getForm() &&
 						Zone_Structures::compareColor(aux1->getColor(), aux2->getColor()))
 					{
+						if (door1 != NULL)
+						{ 
+							
+						if (aux1->getForm() == door1->getForm() - 20 &&
+							Zone_Structures::compareColor(aux1->getColor(), door1->getColor()))
+						{
+						}
+						else
+						{
+							cout << door1->getForm() << endl;
+							previousResult = false;
+						}
+						}
 					}
 					else
 					{
 						previousResult = false;
+					}
+				}
+				if (zoneElements[i][j]->myType() == 'D')
+				{
+					if (door1 == NULL)
+					{
+						door1 = zoneElements[i][j];
+					}
+					else if (door2 == NULL)
+					{
+						door2 = zoneElements[i][j];
+					}
+					else if (door3 == NULL)
+					{
+						door3 = zoneElements[i][j];
+					}
+					else if (door4 == NULL)
+					{
+						door4 = zoneElements[i][j];
 					}
 				}
 			}
