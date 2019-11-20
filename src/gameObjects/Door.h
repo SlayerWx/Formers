@@ -9,6 +9,7 @@ namespace FormersMJ
 		void setOpen(bool isNewOpen);
 		void checkCollision(Vector2 playerPos, Vector2 lastPosition);
 		bool getIsOpen();
+		TileType getForm();
 	private:
 		bool isOpen;
 	};

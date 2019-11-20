@@ -193,7 +193,7 @@ namespace FormersMJ
 		bool previousResult = true;
 		Zone_Structures* aux1 = NULL;
 		Zone_Structures* aux2 = NULL;
-		Zone_Structures* doors[4] = { NULL,NULL,NULL,NULL };
+		Door* doors[4] = { NULL,NULL,NULL,NULL };
 
 		for (int i = 0;i< mapRow;i++)
 		{
@@ -214,7 +214,7 @@ namespace FormersMJ
 						if (doors[0] != NULL)
 						{ 
 							
-						if (aux1->getForm() == doors[0]->getForm() - 20 &&
+						if (aux1->getForm() == doors[0]->getForm() &&
 							Zone_Structures::compareColor(aux1->getColor(), doors[0]->getColor()))
 						{
 						}
@@ -234,19 +234,19 @@ namespace FormersMJ
 				{
 					if (doors[0] == NULL)
 					{
-						doors[0] = zoneElements[i][j];
+						doors[0] = static_cast <Door*>(zoneElements[i][j]);
 					}
 					else if (doors[1] == NULL)
 					{
-						doors[1] = zoneElements[i][j];
+						doors[1] = static_cast <Door*>(zoneElements[i][j]);
 					}
 					else if (doors[2] == NULL)
 					{
-						doors[2] = zoneElements[i][j];
+						doors[2] = static_cast <Door*>(zoneElements[i][j]);
 					}
 					else if (doors[3] == NULL)
 					{
-						doors[3] = zoneElements[i][j];
+						doors[3] = static_cast <Door*>(zoneElements[i][j]);
 					}
 				}
 			}

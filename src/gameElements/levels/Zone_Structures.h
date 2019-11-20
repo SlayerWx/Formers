@@ -19,7 +19,7 @@ namespace FormersMJ
 		void setColor(Color newColor);
 		Vector2 getPosition();
 		void setPosition(Vector2 newPos);
-		TileType getForm();
+		virtual TileType getForm();
 		void setForm(TileType myNewForm);
 		virtual void checkCollision(Vector2 playerPos, Vector2 lastPosition) = 0;
 		void drawMe();
