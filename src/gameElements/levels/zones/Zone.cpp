@@ -193,10 +193,8 @@ namespace FormersMJ
 		bool previousResult = true;
 		Zone_Structures* aux1 = NULL;
 		Zone_Structures* aux2 = NULL;
-		Zone_Structures* door1 = NULL;
-		Zone_Structures* door2 = NULL;
-		Zone_Structures* door3 = NULL;
-		Zone_Structures* door4 = NULL;
+		Zone_Structures* doors[4] = { NULL,NULL,NULL,NULL };
+
 		for (int i = 0;i< mapRow;i++)
 		{
 			for (int j = 0; j < mapColumn; j++)
@@ -213,16 +211,16 @@ namespace FormersMJ
 					if (aux1->getForm() == aux2->getForm() &&
 						Zone_Structures::compareColor(aux1->getColor(), aux2->getColor()))
 					{
-						if (door1 != NULL)
+						if (doors[0] != NULL)
 						{ 
 							
-						if (aux1->getForm() == door1->getForm() - 20 &&
-							Zone_Structures::compareColor(aux1->getColor(), door1->getColor()))
+						if (aux1->getForm() == doors[0]->getForm() - 20 &&
+							Zone_Structures::compareColor(aux1->getColor(), doors[0]->getColor()))
 						{
 						}
 						else
 						{
-							cout << door1->getForm() << endl;
+							cout << doors[0]->getForm() << endl;
 							previousResult = false;
 						}
 						}
@@ -234,21 +232,21 @@ namespace FormersMJ
 				}
 				if (zoneElements[i][j]->myType() == 'D')
 				{
-					if (door1 == NULL)
+					if (doors[0] == NULL)
 					{
-						door1 = zoneElements[i][j];
+						doors[0] = zoneElements[i][j];
 					}
-					else if (door2 == NULL)
+					else if (doors[1] == NULL)
 					{
-						door2 = zoneElements[i][j];
+						doors[1] = zoneElements[i][j];
 					}
-					else if (door3 == NULL)
+					else if (doors[2] == NULL)
 					{
-						door3 = zoneElements[i][j];
+						doors[2] = zoneElements[i][j];
 					}
-					else if (door4 == NULL)
+					else if (doors[3] == NULL)
 					{
-						door4 = zoneElements[i][j];
+						doors[3] = zoneElements[i][j];
 					}
 				}
 			}
