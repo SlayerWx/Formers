@@ -191,22 +191,25 @@ namespace FormersMJ
 	bool Zone::checkWin()
 	{
 		bool previousResult = true;
-		Zone_Structures* aux1;
-		Zone_Structures* aux2 = new Plates({ tileScale*-1,tileScale*-1 }, TileType::circle, F_DARKRED);
+		Zone_Structures* aux1 = NULL;
+		Zone_Structures* aux2 = NULL;// = new Plates({ tileScale*-1,tileScale*-1 }, TileType::circle, F_DARKRED);
 		for (int i = 0;i< mapRow;i++)
 		{
 			for (int j = 0; j < mapColumn; j++)
 			{
 				if (zoneElements[i][j]->myType() == 'P') {
-					aux1 = aux2;
+					if (aux1 == NULL)
+					{
+						aux1 = zoneElements[i][j];
+					}
 					aux2 = zoneElements[i][j];
+
 					
 					if (aux1->getForm() == aux2->getForm() &&
 						Zone_Structures::compareColor(aux1->getColor(), aux2->getColor()))
 					{
-						previousResult = true;
 					}
-					else if(aux1->getPosition().x > 0 && aux1->getPosition().y > 0)
+					else
 					{
 						previousResult = false;
 					}
