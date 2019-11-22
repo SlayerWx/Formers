@@ -14,6 +14,7 @@ namespace FormersMJ
 	public:
 		Level();
 		~Level();
+		void Zones();
 		void update(Player* player);
 		void draw();
 
