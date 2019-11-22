@@ -28,6 +28,10 @@ namespace FormersMJ
 	{
 		return { myBody.x, myBody.y };
 	}
+	void Player::setPosition(Vector2 newPos)
+	{
+		endPosition = newPos;
+	}
 	Vector2 Player::getLastPosition()
 	{
 		return { startPosition.x, startPosition.y };

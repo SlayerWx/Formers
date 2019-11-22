@@ -16,6 +16,7 @@ namespace FormersMJ
 		void updateMoves();
 		void resetMoves();
 		Vector2 getPosition();
+		void setPosition(Vector2 newPos);
 		Vector2 getLastPosition();
 		Vector2 getNextPos();
 		void stopMyAction();
