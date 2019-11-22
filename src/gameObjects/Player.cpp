@@ -31,6 +31,7 @@ namespace FormersMJ
 	void Player::setPosition(Vector2 newPos)
 	{
 		endPosition = newPos;
+		startPosition = newPos;
 	}
 	Vector2 Player::getLastPosition()
 	{
@@ -128,6 +129,11 @@ namespace FormersMJ
 	int Player::getMoves()
 	{
 		return moves;
+	}
+
+	void Player::initMoves()
+	{
+		moves = 0;
 	}
 
 	void Player::updateMoves()

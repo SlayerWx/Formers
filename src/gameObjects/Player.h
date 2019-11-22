@@ -13,6 +13,7 @@ namespace FormersMJ
 		void input();
 		void move();
 		int getMoves();
+		void initMoves();
 		void updateMoves();
 		void resetMoves();
 		Vector2 getPosition();

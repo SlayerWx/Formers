@@ -7,9 +7,10 @@ namespace FormersMJ
 	class Level
 	{
 	private:
-		Zone* map[9];
+		Zone* map[5][5];
 		bool alreadyChange;
-		int actualMap;
+		int actualMapX;
+		int actualMapY;
 	public:
 		Level();
 		~Level();

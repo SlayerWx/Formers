@@ -4,7 +4,8 @@ namespace FormersMJ
 {
 	Level::Level()
 	{
-		actualMap = 0;
+		actualMapX = 2;
+		actualMapY = 2;
 		alreadyChange = false;
 		int Final[mapRow][mapColumn]{
 			{  1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1},
@@ -23,7 +24,7 @@ namespace FormersMJ
 			{  1,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   1},
 			{  1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1},
 		};
-		map[0] = new Zone(Final);
+		map[2][2] = new Zone(Final);
 		int First[mapRow][mapColumn]{
 			{  1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1},
 			{  1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1},
@@ -41,7 +42,7 @@ namespace FormersMJ
 			{  1,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   1},
 			{  1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1},
 		};
-		map[1] = new Zone(First);
+		map[3][2] = new Zone(First);
 	}
 
 	Level::~Level()
@@ -49,16 +50,22 @@ namespace FormersMJ
 	}
 	void Level::update(Player* player)
 	{
-		map[actualMap]->Update(player);
-		if (player->getPosition().x > mapColumn * tileScale && alreadyChange == false)
+		map[actualMapX][actualMapY]->Update(player);
+		if (player->getPosition().x > (mapColumn-1) * tileScale)
 		{
-			actualMap++;
-			alreadyChange = true;
+			actualMapX++;
 			player->setPosition(leftDoor);
+			player->initMoves();
+		}
+		if (player->getPosition().x < 0 )
+		{
+			actualMapX--;
+			player->setPosition(rightDoor);
+			player->initMoves();
 		}
 	}
 	void Level::draw()
 	{
-		map[actualMap]->Draw();
+		map[actualMapX][actualMapY]->Draw();
 	}
 }
