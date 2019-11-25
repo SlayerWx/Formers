@@ -1,4 +1,5 @@
 #include "Door.h"
+#include "raylib.h"
 namespace FormersMJ
 {
 	Door::Door(Vector2 Pos, TileType form, Color Color): 

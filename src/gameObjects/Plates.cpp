@@ -1,6 +1,8 @@
 #include "Plates.h"
 #include <iostream>
+#include "gameElements/levels/Zone_Structures.h"
 #include "raylib.h"
+#include "gameElements/Global.h"
 namespace FormersMJ
 {
 	using namespace std;

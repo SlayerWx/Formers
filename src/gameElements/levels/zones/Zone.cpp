@@ -1,5 +1,7 @@
 #include <iostream>
+#include "raylib.h"
 #include "Zone.h"
+#include "gameElements/levels/Zone_Structures.h"
 #include "gameObjects/Plates.h"
 #include "gameObjects/Door.h"
 #include "gameObjects/Player.h"

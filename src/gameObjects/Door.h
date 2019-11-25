@@ -1,6 +1,7 @@
 #ifndef DOOR_H
 #define DOOR_H
 #include "gameElements/levels/Zone_Structures.h"
+#include "raylib.h"
 namespace FormersMJ
 {
 	class Door :public Zone_Structures

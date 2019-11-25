@@ -1,6 +1,5 @@
 #ifndef ZONE_H
 #define ZONE_H
-#include "gameObjects/Plates.h"
 #include "gameObjects/Player.h"
 #include "gameElements/levels/Zone_Structures.h"
 #include "gameObjects/Door.h"

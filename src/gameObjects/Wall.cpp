@@ -1,4 +1,6 @@
 #include "Wall.h"
+#include "raylib.h"
+#include "gameElements/levels/Zone_Structures.h"
 namespace FormersMJ
 {
 	Wall::Wall()

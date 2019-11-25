@@ -1,4 +1,5 @@
 #include "Player.h"
+#include "raylib.h"
 namespace FormersMJ 
 {
 	Player::Player()

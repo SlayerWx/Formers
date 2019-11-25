@@ -1,4 +1,5 @@
 #include "Zone_Structures.h"
+#include "raylib.h"
 #include "gameElements/Global.h"
 namespace FormersMJ
 {
