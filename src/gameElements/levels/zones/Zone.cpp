@@ -1,7 +1,7 @@
+#include <iostream>
 #include "Zone.h"
 #include "gameObjects/Plates.h"
 #include "gameObjects/Door.h"
-#include <iostream>
 #include "gameObjects/Player.h"
 #include "gameObjects/Wall.h"
 #include "gameElements/Global.h"
