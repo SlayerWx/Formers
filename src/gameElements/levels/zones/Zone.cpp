@@ -8,15 +8,20 @@
 namespace FormersMJ
 {
 	using namespace std;
-	Zone::Zone(int newMap[mapRow][mapColumn])
+	Zone::Zone(int newMap[mapRow][mapColumn], int maxMovments)
 	{
+		for (int i = 0; i < 4; i++)
+		{
+			doors[i] = { NULL };
+		}
+		
 		for (int i = 0; i < mapRow; i++)
 		{
 			for (int j = 0; j < mapColumn; j++)
 			{
 				zoneElements[i][j] = NULL;
 				
-				maxMoves = 60;
+				maxMoves = maxMovments;
 			}
 
 		}
@@ -30,6 +35,7 @@ namespace FormersMJ
 					zoneElements[i][j] = new Plates({ tileScale*(j + 1),tileScale * (i + 1) }, vacio, BLUE);
 					zoneElements[i][j]->chekable = false;
 					zoneElements[i][j]->setType('V');
+					zoneElements[i][j]->canPass = true;
 
 					break;
 				case wall:
@@ -37,9 +43,11 @@ namespace FormersMJ
 					zoneElements[i][j]->setForm(wall);
 					zoneElements[i][j]->setColor(GRAY);
 					zoneElements[i][j]->chekable = false;
+					zoneElements[i][j]->canPass = true;
 					break;
 				case door:
 					zoneElements[i][j]->chekable = false;
+					zoneElements[i][j]->canPass = false;
 					break;
 
 				case circleR:
@@ -47,6 +55,7 @@ namespace FormersMJ
 					zoneElements[i][j]->setForm(circle);
 					zoneElements[i][j]->setColor(F_DARKRED);
 					zoneElements[i][j]->chekable = true;
+					zoneElements[i][j]->canPass = true;
 					break;
 
 				case circleB:
@@ -54,6 +63,7 @@ namespace FormersMJ
 					zoneElements[i][j]->setForm(circle);
 					zoneElements[i][j]->setColor(F_DARKBLUE);
 					zoneElements[i][j]->chekable = true;
+					zoneElements[i][j]->canPass = true;
 					break;
 
 				case circleG:
@@ -61,6 +71,7 @@ namespace FormersMJ
 					zoneElements[i][j]->setForm(circle);
 					zoneElements[i][j]->setColor(F_DARKGREEN);
 					zoneElements[i][j]->chekable = true;
+					zoneElements[i][j]->canPass = true;
 					break;
 
 				case rectangleR:
@@ -68,6 +79,7 @@ namespace FormersMJ
 					zoneElements[i][j]->setForm(rectangle);
 					zoneElements[i][j]->setColor(F_DARKRED);
 					zoneElements[i][j]->chekable = true;
+					zoneElements[i][j]->canPass = true;
 					break;
 
 				case rectangleB:
@@ -75,6 +87,7 @@ namespace FormersMJ
 					zoneElements[i][j]->setForm(rectangle);
 					zoneElements[i][j]->setColor(F_DARKBLUE);
 					zoneElements[i][j]->chekable = true;
+					zoneElements[i][j]->canPass = true;
 					break;
 
 				case rectangleG:
@@ -82,6 +95,7 @@ namespace FormersMJ
 					zoneElements[i][j]->setForm(rectangle);
 					zoneElements[i][j]->setColor(F_DARKGREEN);
 					zoneElements[i][j]->chekable = true;
+					zoneElements[i][j]->canPass = true;
 					break;
 
 				case triangleR:
@@ -89,6 +103,7 @@ namespace FormersMJ
 					zoneElements[i][j]->setForm(triangle);
 					zoneElements[i][j]->setColor(F_DARKRED);
 					zoneElements[i][j]->chekable = true;
+					zoneElements[i][j]->canPass = true;
 					break;
 
 				case triangleB:
@@ -96,6 +111,7 @@ namespace FormersMJ
 					zoneElements[i][j]->setForm(triangle);
 					zoneElements[i][j]->setColor(F_DARKBLUE);
 					zoneElements[i][j]->chekable = true;
+					zoneElements[i][j]->canPass = true;
 					break;
 
 				case triangleG:
@@ -103,6 +119,7 @@ namespace FormersMJ
 					zoneElements[i][j]->setForm(triangle);
 					zoneElements[i][j]->setColor(F_DARKGREEN);
 					zoneElements[i][j]->chekable = true;
+					zoneElements[i][j]->canPass = true;
 					break;
 
 				case doorCR:
@@ -110,6 +127,7 @@ namespace FormersMJ
 					zoneElements[i][j]->setForm(doorC);
 					zoneElements[i][j]->setColor(F_DARKRED);
 					zoneElements[i][j]->chekable = false;
+					zoneElements[i][j]->canPass = false;
 					break;
 
 				case doorCB:
@@ -117,6 +135,7 @@ namespace FormersMJ
 					zoneElements[i][j]->setForm(doorC);
 					zoneElements[i][j]->setColor(F_DARKBLUE);
 					zoneElements[i][j]->chekable = false;
+					zoneElements[i][j]->canPass = false;
 					break;
 
 				case doorCG:
@@ -124,6 +143,7 @@ namespace FormersMJ
 					zoneElements[i][j]->setForm(doorC);
 					zoneElements[i][j]->setColor(F_DARKGREEN);
 					zoneElements[i][j]->chekable = false;
+					zoneElements[i][j]->canPass = false;
 					break;
 
 				case doorRR:
@@ -131,6 +151,7 @@ namespace FormersMJ
 					zoneElements[i][j]->setForm(doorR);
 					zoneElements[i][j]->setColor(F_DARKRED);
 					zoneElements[i][j]->chekable = false;
+					zoneElements[i][j]->canPass = false;
 					break;
 
 				case doorRB:
@@ -138,6 +159,7 @@ namespace FormersMJ
 					zoneElements[i][j]->setForm(doorR);
 					zoneElements[i][j]->setColor(F_DARKBLUE);
 					zoneElements[i][j]->chekable = false;
+					zoneElements[i][j]->canPass = false;
 					break;
 
 				case doorRG:
@@ -145,6 +167,7 @@ namespace FormersMJ
 					zoneElements[i][j]->setForm(doorR);
 					zoneElements[i][j]->setColor(F_DARKGREEN);
 					zoneElements[i][j]->chekable = false;
+					zoneElements[i][j]->canPass = false;
 					break;
 
 				case doorTR:
@@ -152,6 +175,7 @@ namespace FormersMJ
 					zoneElements[i][j]->setForm(doorT);
 					zoneElements[i][j]->setColor(F_DARKRED);
 					zoneElements[i][j]->chekable = false;
+					zoneElements[i][j]->canPass = false;
 					break;
 
 				case doorTB:
@@ -159,6 +183,7 @@ namespace FormersMJ
 					zoneElements[i][j]->setForm(doorT);
 					zoneElements[i][j]->setColor(F_DARKBLUE);
 					zoneElements[i][j]->chekable = false;
+					zoneElements[i][j]->canPass = false;
 					break;
 
 				case doorTG:
@@ -166,6 +191,7 @@ namespace FormersMJ
 					zoneElements[i][j]->setForm(doorT);
 					zoneElements[i][j]->setColor(F_DARKGREEN);
 					zoneElements[i][j]->chekable = false;
+					zoneElements[i][j]->canPass = false;
 					break;
 				default:
 					break;
@@ -193,13 +219,17 @@ namespace FormersMJ
 		bool previousResult = true;
 		Zone_Structures* aux1 = NULL;
 		Zone_Structures* aux2 = NULL;
-		Door* doors[4] = { NULL,NULL,NULL,NULL };
+		
+		
+			
+		
+		
 
-		for (int i = 0;i< mapRow;i++)
+		for (int i = 0; i < mapRow; i++)
 		{
 			for (int j = 0; j < mapColumn; j++)
 			{
-				if (zoneElements[i][j]->myType() == 'P') 
+				if (zoneElements[i][j]->myType() == 'P')
 				{
 					if (aux1 == NULL)
 					{
@@ -207,22 +237,27 @@ namespace FormersMJ
 					}
 					aux2 = zoneElements[i][j];
 
-					
+
 					if (aux1->getForm() == aux2->getForm() &&
 						Zone_Structures::compareColor(aux1->getColor(), aux2->getColor()))
 					{
-						if (doors[0] != NULL)
-						{ 
-							
-						if (aux1->getForm() == doors[0]->getForm() &&
-							Zone_Structures::compareColor(aux1->getColor(), doors[0]->getColor()))
+						for (int k = 0; k < 4; k++)
 						{
-						}
-						else
-						{
-							cout << doors[0]->getForm() << endl;
-							previousResult = false;
-						}
+							if (doors[k] != NULL)
+							{
+
+								if (aux1->getForm() == doors[k]->getForm() &&
+									Zone_Structures::compareColor(aux1->getColor(), doors[k]->getColor()))
+								{
+									doors[k]->canPass = true;
+								}
+								else
+								{
+									cout << doors[k]->getForm() << endl;
+									previousResult = false;
+									doors[k]->canPass = false;
+								}
+							}
 						}
 					}
 					else
@@ -291,7 +326,7 @@ namespace FormersMJ
 						static_cast<Door*>(zoneElements[i][j])->setOpen(true);
 						if (zoneElements[i][j]->getPosition().x - tileScale == player->getNextPos().x &&
 							zoneElements[i][j]->getPosition().y - tileScale == player->getNextPos().y &&
-							!static_cast<Door*>(zoneElements[i][j])->getIsOpen())
+							zoneElements[i][j]->canPass == false)
 						{
 							player->setStopAtion(true);
 							player->stopMyAction();
@@ -317,7 +352,7 @@ namespace FormersMJ
 		DrawText(FormatText("win: %i", checkWin()), tileScale * 5, tileScale / 2, tileScale / 2, WHITE);
 		system("cls");
 		cout << checkWin() << endl;
-		DrawText(FormatText("Moves has to be less than: %i", getMaxMoves()), tileScale * 10, tileScale / 2, tileScale / 2, WHITE);
+		DrawText(FormatText("Moves has to be less than: %i", getMaxMoves()), tileScale * 18, tileScale / 2, tileScale / 2, WHITE);
 	}
 
 }

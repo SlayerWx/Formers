@@ -2,6 +2,8 @@
 #define ZONE_H
 #include "gameObjects/Plates.h"
 #include "gameObjects/Player.h"
+#include "gameElements/levels/Zone_Structures.h"
+#include "gameObjects/Door.h"
 namespace FormersMJ
 {
 	class Zone
@@ -11,13 +13,13 @@ namespace FormersMJ
 		virtual void Init();
 		void Update(Player* player);
 		void Draw();
-		Zone(int newMap[mapRow][mapColumn]);
+		Zone(int newMap[mapRow][mapColumn], int maxMovments);
 		~Zone();
 		bool checkWin();
 		int getMaxMoves();
-
 	private:
 		int maxMoves;
+		Door* doors[4];
 	};
 }
 #endif

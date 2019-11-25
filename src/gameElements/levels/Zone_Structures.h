@@ -28,6 +28,7 @@ namespace FormersMJ
 		char type;
 		void setType(char newType);
 		static bool compareColor(Color a, Color b);
+		bool canPass;
 	protected:
 		Vector2 myPosition;
 		TileType myForm;

@@ -1,3 +1,5 @@
+#ifndef DOOR_H
+#define DOOR_H
 #include "gameElements/levels/Zone_Structures.h"
 namespace FormersMJ
 {
@@ -14,3 +16,4 @@ namespace FormersMJ
 		bool isOpen;
 	};
 }
+#endif
