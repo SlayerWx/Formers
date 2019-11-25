@@ -214,16 +214,11 @@ namespace FormersMJ
 		}
 	}
 
-	bool Zone::checkWin()
+	bool Zone::checkWin(Player* player)
 	{
 		bool previousResult = true;
 		Zone_Structures* aux1 = NULL;
 		Zone_Structures* aux2 = NULL;
-		
-		
-			
-		
-		
 
 		for (int i = 0; i < mapRow; i++)
 		{
@@ -301,6 +296,7 @@ namespace FormersMJ
 	}
 	void Zone::Update(Player* player)
 	{
+		checkWin(player);
 		for (int i = 0; i < mapRow; i++)
 		{
 			for (int j = 0; j < mapColumn; j++)
@@ -309,7 +305,10 @@ namespace FormersMJ
 				{
 					if (zoneElements[i][j]->myType() == 'P')
 					{
+						if(player->getMoves() <= maxMoves )
+						{
 						zoneElements[i][j]->checkCollision(player->getPosition(), player->getLastPosition());
+						}
 					}
 					else if (zoneElements[i][j]->myType() == 'W')
 					{
@@ -349,9 +348,6 @@ namespace FormersMJ
 				}
 			}
 		}
-		DrawText(FormatText("win: %i", checkWin()), tileScale * 5, tileScale / 2, tileScale / 2, WHITE);
-		system("cls");
-		cout << checkWin() << endl;
 		DrawText(FormatText("Moves has to be less than: %i", getMaxMoves()), tileScale * 18, tileScale / 2, tileScale / 2, WHITE);
 	}
 

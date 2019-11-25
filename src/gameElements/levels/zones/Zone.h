@@ -15,7 +15,7 @@ namespace FormersMJ
 		void Draw();
 		Zone(int newMap[mapRow][mapColumn], int maxMovments);
 		~Zone();
-		bool checkWin();
+		bool checkWin(Player* player);
 		int getMaxMoves();
 	private:
 		int maxMoves;
