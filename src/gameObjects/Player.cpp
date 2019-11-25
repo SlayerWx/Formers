@@ -18,6 +18,8 @@ namespace FormersMJ
 		right = false;
 		left = false;
 		moves = 0;
+		firstStartPosition.x = tileScale;
+		firstStartPosition.y = tileScale * 7;
 	}
 
 	Player::~Player()
@@ -165,5 +167,9 @@ namespace FormersMJ
 	{
 		stopAction = newStopAction;
 	}
-
+	void Player::restartPosition()
+	{
+		myBody.x = firstStartPosition.x;
+		myBody.y = firstStartPosition.y;
+	}
 }

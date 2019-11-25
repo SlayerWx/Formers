@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="..\src\gameElements\Credits.cpp" />
     <ClCompile Include="..\src\gameElements\Game.cpp" />
+    <ClCompile Include="..\src\gameElements\Global.cpp" />
     <ClCompile Include="..\src\gameElements\levels\Level.cpp" />
     <ClCompile Include="..\src\gameElements\levels\zones\Zone.cpp" />
     <ClCompile Include="..\src\gameElements\levels\Zone_Structures.cpp" />
@@ -31,7 +32,6 @@
     <ClCompile Include="..\src\gameObjects\Wall.cpp" />
     <ClCompile Include="..\src\game\Formers.cpp" />
     <ClCompile Include="..\src\main.cpp" />
-    <ClCompile Include="Global.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\gameElements\Credits.h" />

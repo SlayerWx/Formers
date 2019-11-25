@@ -28,7 +28,12 @@ namespace FormersMJ
 		//std::cout << player->getPosition().x << ";" << player->getPosition().y << std::endl;
 		//std::cout << player->getLastPosition().x << ";" << player->getLastPosition().y << std::endl;
 		player->move();
-
+		if (IsKeyReleased(KEY_R))
+		{
+			lvl = new Level();
+			player->restartPosition();
+			player->resetMoves();
+		}
 	}
 	void Game::Draw()
 	{

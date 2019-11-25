@@ -22,6 +22,7 @@ namespace FormersMJ
 		Vector2 getNextPos();
 		void stopMyAction();
 		void setStopAtion(bool newStopAction);
+		void restartPosition();
 	private:
 		Rectangle myBody;
 		Color myColor;
@@ -37,6 +38,7 @@ namespace FormersMJ
 		Vector2 startPosition;
 		Vector2 endPosition;
 		float lerp(float start, float end, float percent);
+		Vector2 firstStartPosition;
 	};
 }
 #endif
