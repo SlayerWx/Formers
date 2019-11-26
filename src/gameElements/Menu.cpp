@@ -5,10 +5,12 @@ namespace FormersMJ
 {
 	Menu::Menu()
 	{
+		menuSelectorSound = LoadSound("res/sound/menuSelector.wav");
 	}
 
 	Menu::~Menu()
 	{
+		UnloadSound(menuSelectorSound);
 	}
 
 	void Menu::Init()
@@ -21,6 +23,9 @@ namespace FormersMJ
 	{
 		if (IsKeyReleased(KEY_W))
 		{
+
+			PlaySound(menuSelectorSound);
+
 			if (actualOption == Play)
 			{
 				actualOption = Exit;
@@ -32,6 +37,9 @@ namespace FormersMJ
 		}
 		if (IsKeyReleased(KEY_S))
 		{
+
+			PlaySound(menuSelectorSound);
+
 			if (actualOption == Exit)
 			{
 				actualOption = Play;
@@ -49,7 +57,7 @@ namespace FormersMJ
 				{
 				case Play:
 					gamestatus = GAME;
-
+					StopSound(menuSelectorSound);
 				case Controls:
 					isControlMenu = true;
 					break;

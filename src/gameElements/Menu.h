@@ -1,5 +1,6 @@
 #ifndef MENU_H
 #define MENU_H
+#include "raylib.h"
 namespace FormersMJ
 {
 	class Menu
@@ -22,6 +23,7 @@ namespace FormersMJ
 		void changeIsControlMenu();
 	private:
 		bool isControlMenu;
+		Sound menuSelectorSound;
 	};
 }
 #endif

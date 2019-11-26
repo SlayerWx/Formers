@@ -1,6 +1,7 @@
 #include "Level.h"
 #include "gameElements/levels/zones/Zone.h"
 #include "gameObjects/Player.h"
+#include "gameObjects/Plates.h"
 namespace FormersMJ
 {
 	Level::Level()
@@ -9,11 +10,12 @@ namespace FormersMJ
 		actualMapY = 2;
 		alreadyChange = false;
 		Zones();
-		
+		Plates::setSoundChangeForm(LoadSound("sres/sound/changeForm.wav"));
 	}
 
 	Level::~Level()
 	{
+		UnloadSound(Plates::getSoundChangeForm());
 	}
 	
 	void Level::update(Player* player)

@@ -13,11 +13,16 @@ namespace FormersMJ
 		menu = new Menu();
 		credits = new Credits();
 		inGame = true;
+		InitAudioDevice();
 	}
 
 	Formers::~Formers()
 	{
 		if (game) delete game;
+		if (menu) delete menu;
+		if (credits) delete credits;
+		CloseAudioDevice();
+		CloseWindow();
 	}
 	void Formers::Play()
 	{

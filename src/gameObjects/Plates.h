@@ -9,6 +9,7 @@ namespace FormersMJ
 	{
 	private:
 		bool alredyChange;
+		static Sound soundPlatesForm;
 	public:
 		Plates();
 		~Plates();
@@ -16,6 +17,8 @@ namespace FormersMJ
 		bool getAlredyChange();
 		void setAlredyChange(bool newRedyChange);
 		void checkCollision(Vector2 position, Vector2 lastPosition);
+		static void setSoundChangeForm(Sound newSound) { soundPlatesForm = newSound; };
+		static Sound getSoundChangeForm() { return soundPlatesForm; };
 	};
 }
 #endif

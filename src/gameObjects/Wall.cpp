@@ -17,5 +17,7 @@ namespace FormersMJ
 	}
 	void Wall::checkCollision(Vector2 playerPos, Vector2 lastPosition)
 	{
+		playerPos = playerPos;
+		lastPosition = lastPosition;
 	}
 }

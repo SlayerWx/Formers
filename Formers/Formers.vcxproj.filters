@@ -64,7 +64,7 @@
       <Filter>src\gameElement\Levels</Filter>
     </ClCompile>
     <ClCompile Include="..\src\gameElements\Global.cpp">
-      <Filter>src\gameElement\Levels</Filter>
+      <Filter>src\gameElement</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -5,6 +5,7 @@
 #include "gameElements/Global.h"
 namespace FormersMJ
 {
+	Sound Plates::soundPlatesForm;
 	using namespace std;
 	Plates::Plates()
 	{
@@ -44,6 +45,7 @@ namespace FormersMJ
 				case circle:
 					if (alredyChange == false)
 					{
+						PlaySound(soundPlatesForm);
 						setForm(rectangle);
 						alredyChange = true;
 						playerPosition.x = tileScale;
@@ -53,6 +55,7 @@ namespace FormersMJ
 				case rectangle:
 					if (alredyChange == false)
 					{
+						PlaySound(soundPlatesForm);
 						setForm(triangle);
 						alredyChange = true;
 					}
@@ -61,6 +64,7 @@ namespace FormersMJ
 
 					if (alredyChange == false)
 					{
+						PlaySound(soundPlatesForm);
 						setForm(circle);
 						alredyChange = true;
 					}
