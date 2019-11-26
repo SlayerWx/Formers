@@ -6,13 +6,18 @@ namespace FormersMJ
 	Menu::Menu()
 	{
 		menuSelectorSound = LoadSound("res/sound/menuSelector.wav");
+		titleTexture = LoadTexture("res/img/Titulo para el menu.png");
+		titleTexture.height = titleTexture.height / 2;
+		titleTexture.width = titleTexture.width / 2;
 		controlsTexture = LoadTexture("res/img/Controls.png");
+		controlsTexture.width = GetScreenWidth();
+		controlsTexture.height = GetScreenHeight();
 	}
 
 	Menu::~Menu()
 	{
 		UnloadSound(menuSelectorSound);
-		UnloadTexture(controlsTexture);
+		UnloadTexture(titleTexture);
 	}
 
 	void Menu::Init()
@@ -75,9 +80,6 @@ namespace FormersMJ
 			}
 			else
 			{
-				BeginDrawing();
-				DrawTexture(controlsTexture, GetScreenHeight() / 2 - controlsTexture.width / 2, GetScreenWidth() / 2 - controlsTexture.height / 2, BLACK);
-				EndDrawing();
 				changeIsControlMenu();
 			}
 		}
@@ -91,12 +93,15 @@ namespace FormersMJ
 
 	void Menu::UpdateControlsMenu()
 	{
+		
 	}
 
 	void Menu::Draw()
 	{
 		if (isControlMenu == false)
 		{
+			DrawTexture(titleTexture, GetScreenWidth() / 2 - titleTexture.width / 2,
+				GetScreenHeight() / 5 - titleTexture.height / 2, WHITE);
 			switch (actualOption)
 			{
 			case Play:
@@ -132,12 +137,8 @@ namespace FormersMJ
 		}
 		else
 		{
-			DrawText("Controls", tileScale * 6, tileScale * 2, tileScale, WHITE);
+			DrawTexture(controlsTexture,0,0, WHITE);
 		}
-	}
-
-	void Menu::DrawControlsMenu()
-	{
 	}
 
 	bool Menu::getIsControlMenu()

@@ -17,13 +17,13 @@ namespace FormersMJ
 		void Update();
 		void UpdateControlsMenu();
 		void Draw();
-		void DrawControlsMenu();
 		int actualOption;
 		bool getIsControlMenu();
 		void changeIsControlMenu();
 	private:
 		bool isControlMenu;
 		Sound menuSelectorSound;
+		Texture2D titleTexture;
 		Texture2D controlsTexture;
 	};
 }
