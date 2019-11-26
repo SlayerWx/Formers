@@ -67,6 +67,9 @@ namespace FormersMJ
 		case CREDITS:
 			credits->Update();
 			break;
+		case EXIT:
+			inGame = false;
+			break;
 		}
 	}
 	void Formers::Draw()

@@ -17,7 +17,7 @@ namespace FormersMJ
 #define F_DARKBLUE  CLITERAL{ 24, 24, 182, 255 } 
 	enum GameStage
 	{
-		MENU, GAME, CREDITS
+		MENU, GAME, CREDITS, EXIT
 	};
 	extern GameStage gamestatus;
 }

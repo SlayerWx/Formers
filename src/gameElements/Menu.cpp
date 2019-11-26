@@ -51,7 +51,6 @@ namespace FormersMJ
 
 			if (actualOption == Exit)
 			{
-				CloseWindow();
 				actualOption = Play;
 			}
 			else
@@ -78,7 +77,7 @@ namespace FormersMJ
 					break;
 
 				case Exit:
-
+					gamestatus = EXIT;
 					break;
 				default:
 					break;
