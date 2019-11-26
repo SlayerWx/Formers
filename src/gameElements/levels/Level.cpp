@@ -12,7 +12,7 @@ namespace FormersMJ
 		actualMapY = 2;
 		alreadyChange = false;
 		Zones();
-		Plates::setSoundChangeForm(LoadSound("res/sound/changeForm.wav"));
+		Plates::setSoundChangeForm(LoadSound("assets/sound/changeForm.wav"));
 	//	Zone::mySoundDoor = LoadSound("res/sound/doorOpen.wav");
 	}
 

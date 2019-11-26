@@ -19,10 +19,13 @@
     <Filter Include="src\gameElement\Levels\zones">
       <UniqueIdentifier>{9239c3e7-b8f6-4686-879b-bb4993fb59f8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="sound">
+    <Filter Include="assets">
+      <UniqueIdentifier>{6b965d0a-6b85-4571-80c0-f6904d3fa444}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="assets\sound">
       <UniqueIdentifier>{866e7df5-2177-4ff1-82bb-76d7dfec0576}</UniqueIdentifier>
     </Filter>
-    <Filter Include="img">
+    <Filter Include="assets\img">
       <UniqueIdentifier>{6d8d289e-7444-4402-8891-9285bbfdff3b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -104,5 +107,24 @@
     <ClInclude Include="..\src\gameElements\levels\Level.h">
       <Filter>src\gameElement\Levels</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\res\assets\img\Controls.png">
+      <Filter>assets\img</Filter>
+    </Image>
+    <Image Include="..\res\assets\img\Creditos.png">
+      <Filter>assets\img</Filter>
+    </Image>
+    <Image Include="..\res\assets\img\Titulo para el menu.png">
+      <Filter>assets\img</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="..\res\assets\sound\changeForm.wav">
+      <Filter>assets\sound</Filter>
+    </Media>
+    <Media Include="..\res\assets\sound\menuSelector.wav">
+      <Filter>assets\sound</Filter>
+    </Media>
   </ItemGroup>
 </Project>
