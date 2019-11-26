@@ -37,6 +37,10 @@ namespace FormersMJ
 		if (playerPosition.x == myPosition.x - 30.0f &&
 			playerPosition.y == myPosition.y - 30.0f)
 		{
+			if (alredyChange == false)
+			{
+				PlaySound(soundPlatesForm);
+			}
 			if (playerPosition.x == lastPosition.x)
 			{
 				switch (getForm())
@@ -45,7 +49,6 @@ namespace FormersMJ
 				case circle:
 					if (alredyChange == false)
 					{
-						PlaySound(soundPlatesForm);
 						setForm(rectangle);
 						alredyChange = true;
 						playerPosition.x = tileScale;
@@ -55,7 +58,6 @@ namespace FormersMJ
 				case rectangle:
 					if (alredyChange == false)
 					{
-						PlaySound(soundPlatesForm);
 						setForm(triangle);
 						alredyChange = true;
 					}
@@ -64,7 +66,6 @@ namespace FormersMJ
 
 					if (alredyChange == false)
 					{
-						PlaySound(soundPlatesForm);
 						setForm(circle);
 						alredyChange = true;
 					}

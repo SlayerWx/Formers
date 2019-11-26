@@ -10,7 +10,7 @@ namespace FormersMJ
 		actualMapY = 2;
 		alreadyChange = false;
 		Zones();
-		Plates::setSoundChangeForm(LoadSound("sres/sound/changeForm.wav"));
+		Plates::setSoundChangeForm(LoadSound("res/sound/changeForm.wav"));
 	}
 
 	Level::~Level()
