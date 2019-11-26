@@ -1,5 +1,6 @@
 #ifndef GAME_H
 #define GAME_H
+#include "raylib.h"
 #include "gameObjects/Player.h"
 #include "gameElements/levels/Level.h"
 #include "gameElements/levels/zones/Zone.h"

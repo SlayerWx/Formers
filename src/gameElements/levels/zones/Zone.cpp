@@ -1,12 +1,17 @@
-#include <iostream>
-#include "raylib.h"
 #include "Zone.h"
+
+#include <iostream>
+
+#include "raylib.h"
+
 #include "gameElements/levels/Zone_Structures.h"
+#include "gameElements/Global.h"
+
 #include "gameObjects/Plates.h"
 #include "gameObjects/Door.h"
 #include "gameObjects/Player.h"
 #include "gameObjects/Wall.h"
-#include "gameElements/Global.h"
+
 namespace FormersMJ
 {
 	using namespace std;

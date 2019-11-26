@@ -1,9 +1,12 @@
 #include "Formers.h"
+
+#include "raylib.h"
+
 #include "gameElements/Game.h"
 #include "gameElements/Menu.h"
 #include "gameElements/Credits.h"
 #include "gameElements/Global.h"
-#include "raylib.h"
+
 namespace FormersMJ
 {
 	Formers::Formers()

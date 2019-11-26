@@ -42,10 +42,7 @@ namespace FormersMJ
 	}
 	void Player::drawMe()
 	{
-		//#if DEBUG
 		DrawRectangleRec(myBody, myColor);
-		//#endif
-
 		DrawText(FormatText("Moves: %i", getMoves()), tileScale, tileScale / 2, tileScale / 2, WHITE);
 
 	}
