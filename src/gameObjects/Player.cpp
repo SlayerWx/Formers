@@ -95,9 +95,9 @@ namespace FormersMJ
 	void Player::move()
 	{
 		stopMyAction();
-		if (executingMovement > 1.0f)
+		if (executingMovement > lerpTime)
 		{
-			executingMovement = 1.0f;
+			executingMovement = lerpTime;
 			stopAction = true;
 			updateMoves();
 		}

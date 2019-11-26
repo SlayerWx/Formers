@@ -39,6 +39,7 @@ namespace FormersMJ
 		Vector2 endPosition;
 		float lerp(float start, float end, float percent);
 		Vector2 firstStartPosition;
+		const int lerpTime = 1.0f;;
 	};
 }
 #endif

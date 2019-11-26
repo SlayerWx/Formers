@@ -3,6 +3,7 @@
 #include "gameElements/levels/zones/Zone.h"
 #include "gameObjects/Player.h"
 #include "gameObjects/Plates.h"
+#include "gameElements/Global.h"
 namespace FormersMJ
 {
 	Level::Level()
@@ -42,7 +43,7 @@ namespace FormersMJ
 			player->setPosition(bottomDoor);
 			player->initMoves();
 		}
-		if (player->getPosition().y > (mapRow - 1) * tileScale )
+		if (player->getPosition().y > (mapRow - SCALEDIF) * tileScale )
 		{
 			actualMapY++;
 			player->setPosition(topDoor);

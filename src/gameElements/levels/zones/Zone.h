@@ -6,6 +6,7 @@
 #include "gameObjects/Door.h"
 namespace FormersMJ
 {
+	static const int MAXDOORS = 4;
 	class Zone
 	{
 	public:
@@ -20,7 +21,7 @@ namespace FormersMJ
 		bool isFinish;
 	private:
 		int maxMoves;
-		Door* doors[4];
+		Door* doors[MAXDOORS];
 	};
 }
 #endif

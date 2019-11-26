@@ -37,8 +37,8 @@ namespace FormersMJ
 	}
 	void Plates::checkCollision(Vector2 playerPosition, Vector2 lastPosition)
 	{
-		if (playerPosition.x == myPosition.x - 30.0f &&
-			playerPosition.y == myPosition.y - 30.0f)
+		if (playerPosition.x == myPosition.x - tileScale &&
+			playerPosition.y == myPosition.y - tileScale)
 		{
 			if (alredyChange == false)
 			{
