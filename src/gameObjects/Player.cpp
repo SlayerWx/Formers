@@ -43,8 +43,8 @@ namespace FormersMJ
 	void Player::drawMe()
 	{
 		DrawRectangleRec(myBody, myColor);
-		DrawText(FormatText("Moves: %i", getMoves()), tileScale, tileScale / 2, tileScale / 2, WHITE);
-
+		DrawText(FormatText("Moves: %i", getMoves()), static_cast<int>(tileScale), static_cast<int>(tileScale / 2), static_cast<int>(tileScale / 2), WHITE);
+		
 	}
 	void Player::input()
 	{

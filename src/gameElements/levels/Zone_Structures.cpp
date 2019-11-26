@@ -37,40 +37,41 @@ namespace FormersMJ
 	}
 	void Zone_Structures::drawMe()
 	{
+		int tilescale = static_cast<int>(tileScale);
 		switch (getForm())
 		{
 		case circle:
-			DrawCircle(static_cast<int>(myPosition.x - tileScale / 2),
-				static_cast<int>(myPosition.y - tileScale / 2), tileScale / 2, myColor);
+			DrawCircle(static_cast<int>(myPosition.x - tilescale / 2),
+				static_cast<int>(myPosition.y - tilescale / 2), tileScale / 2, myColor);
 			break;
 		case rectangle:
-			DrawRectangle(static_cast<int>(myPosition.x - tileScale),
-				static_cast<int>(myPosition.y - tileScale), tileScale, tileScale, myColor);
+			DrawRectangle(static_cast<int>(myPosition.x - tilescale),
+				static_cast<int>(myPosition.y - tilescale), tilescale, tilescale, myColor);
 			break;
 		case triangle:
-			DrawTriangle({ myPosition.x - tileScale / 2,myPosition.y - tileScale / 2 - tileScale / 2 },
-				{ myPosition.x - tileScale / 2 - tileScale / 2,myPosition.y + tileScale / 2 - tileScale / 2 },
-				{ myPosition.x + tileScale / 2 - tileScale / 2,myPosition.y + tileScale / 2 - tileScale / 2 }, myColor);
+			DrawTriangle({ myPosition.x - static_cast<int>(tilescale / 2),myPosition.y - static_cast<int>(tilescale / 2) - tilescale / 2 },
+				{ myPosition.x - static_cast<int>(tilescale / 2) - static_cast<int>(tilescale / 2),myPosition.y + static_cast<int>(tilescale / 2) - static_cast<int>(tilescale / 2) },
+				{ myPosition.x + static_cast<int>(tilescale / 2) - static_cast<int>(tilescale / 2),myPosition.y + static_cast<int>(tilescale / 2) - static_cast<int>(tilescale / 2) }, myColor);
 			break;
 		case wall:
-			DrawRectangle(static_cast<int>(myPosition.x - tileScale),
-				static_cast<int>(myPosition.y - tileScale), tileScale, tileScale, myColor);
+			DrawRectangle(static_cast<int>(myPosition.x - tilescale),
+				static_cast<int>(myPosition.y - tilescale), tilescale, tilescale, myColor);
 			break;
 
 		case doorR:
-			DrawRectangle(static_cast<int>(myPosition.x - tileScale),
-				static_cast<int>(myPosition.y - tileScale), tileScale, tileScale, myColor);
+			DrawRectangle(static_cast<int>(myPosition.x - tilescale),
+				static_cast<int>(myPosition.y - tilescale), tilescale, tilescale, myColor);
 			break;
 
 		case doorT:
-			DrawTriangle({ myPosition.x - tileScale / 2,myPosition.y - tileScale / 2 - tileScale / 2 },
-				{ myPosition.x - tileScale / 2 - tileScale / 2,myPosition.y + tileScale / 2 - tileScale / 2 },
-				{ myPosition.x + tileScale / 2 - tileScale / 2,myPosition.y + tileScale / 2 - tileScale / 2 }, myColor);
+			DrawTriangle({ myPosition.x - static_cast<int>(tilescale / 2),myPosition.y - static_cast<int>(tilescale / 2) - static_cast<int>(tilescale / 2) },
+				{ myPosition.x - static_cast<int>(tilescale / 2) - static_cast<int>(tilescale / 2),myPosition.y + static_cast<int>(tilescale / 2) - static_cast<int>(tilescale / 2) },
+				{ myPosition.x + static_cast<int>(tilescale / 2) - static_cast<int>(tilescale / 2),myPosition.y + static_cast<int>(tilescale / 2) - static_cast<int>(tilescale / 2) }, myColor);
 			break;
 
 		case doorC:
-			DrawCircle(static_cast<int>(myPosition.x - tileScale / 2),
-				static_cast<int>(myPosition.y - tileScale / 2), tileScale / 2, myColor);
+			DrawCircle(static_cast<int>(static_cast<int>(myPosition.x - tilescale / 2)),
+				static_cast<int>(myPosition.y - tilescale / 2), tileScale / 2, myColor);
 			break;
 
 		

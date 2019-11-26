@@ -5,6 +5,7 @@
 namespace FormersMJ
 {
 	static float tileScale = 30.0f;
+	static Sound mySoundDoor;
 	const int mapColumn = 27;
 	const int mapRow = 15;
 	const static Vector2 rightDoor = { (mapColumn-1)*tileScale , tileScale*8 };

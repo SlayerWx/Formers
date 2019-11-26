@@ -13,13 +13,11 @@ namespace FormersMJ
 		alreadyChange = false;
 		Zones();
 		Plates::setSoundChangeForm(LoadSound("assets/sound/changeForm.wav"));
-	//	Zone::mySoundDoor = LoadSound("res/sound/doorOpen.wav");
 	}
 
 	Level::~Level()
 	{
 		UnloadSound(Plates::getSoundChangeForm());
-	//	UnloadSound(Zone::mySoundDoor);
 	}
 	
 	bool Level::update(Player* player)
@@ -30,24 +28,28 @@ namespace FormersMJ
 			actualMapX++;
 			player->setPosition(leftDoor);
 			player->initMoves();
+		//	PlaySound(mySoundDoor);
 		}
 		if (player->getPosition().x < 0 )
 		{
 			actualMapX--;
 			player->setPosition(rightDoor);
 			player->initMoves();
+		//	PlaySound(mySoundDoor);
 		}
 		if (player->getPosition().y < 0)
 		{
 			actualMapY--;
 			player->setPosition(bottomDoor);
 			player->initMoves();
+		//	PlaySound(mySoundDoor);
 		}
 		if (player->getPosition().y > (mapRow - SCALEDIF) * tileScale )
 		{
 			actualMapY++;
 			player->setPosition(topDoor);
 			player->initMoves();
+		//	PlaySound(mySoundDoor);
 		}
 		bool previusResult = true;
 		for (int i = 0; i < actualMapY && previusResult;i++)

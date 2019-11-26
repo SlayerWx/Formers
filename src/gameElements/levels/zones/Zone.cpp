@@ -222,7 +222,7 @@ namespace FormersMJ
 		}
 	}
 
-	bool Zone::checkWin(Player* player)
+	bool Zone::checkWin()
 	{
 		bool previousResult = true;
 		Zone_Structures* aux1 = NULL;
@@ -306,7 +306,7 @@ namespace FormersMJ
 	}
 	void Zone::Update(Player* player)
 	{
-		checkWin(player);
+		checkWin();
 		for (int i = 0; i < mapRow; i++)
 		{
 			for (int j = 0; j < mapColumn; j++)
@@ -358,7 +358,7 @@ namespace FormersMJ
 				}
 			}
 		}
-		DrawText(FormatText("Moves has to be less than: %i", getMaxMoves()), tileScale * 18, tileScale / 2, tileScale / 2, WHITE);
+		DrawText(FormatText("Moves has to be less than: %i", getMaxMoves()), static_cast<int>(tileScale * 18), static_cast<int>(tileScale / 2), static_cast<int>(tileScale / 2), WHITE);
 	}
 
 }

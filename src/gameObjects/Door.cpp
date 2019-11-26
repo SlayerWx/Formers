@@ -36,6 +36,7 @@ namespace FormersMJ
 		if (playerPos.x == myPosition.x - tileScale &&
 			playerPos.y == myPosition.y - tileScale)
 		{
+			lastPosition = lastPosition;
 		}
 	}
 }
