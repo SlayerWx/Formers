@@ -14,6 +14,7 @@ namespace FormersMJ
 		void Init();
 		void Update();
 		void Draw();
+		Music gameplayMusic;
 	private:
 		Player* player;
 	};
