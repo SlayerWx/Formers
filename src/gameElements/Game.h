@@ -18,6 +18,7 @@ namespace FormersMJ
 		Music gameplayMusic;
 	private:
 		Player* player;
+		Music gameMusic;
 	};
 }
 #endif

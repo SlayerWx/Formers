@@ -12,11 +12,11 @@ namespace FormersMJ
 	Formers::Formers()
 	{
 		InitWindow(screenWidth, screenHeight, "Formers v0.3");
+		InitAudioDevice();
 		game = new Game();
 		menu = new Menu();
 		credits = new Credits();
 		inGame = true;
-		InitAudioDevice();
 	}
 
 	Formers::~Formers()
@@ -55,7 +55,7 @@ namespace FormersMJ
 			if (!firstTime)
 			{
 				firstTime = true;
-				game = new Game();
+				game->Init();
 			}
 			if (game->Update())
 				{

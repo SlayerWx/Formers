@@ -1,8 +1,6 @@
 #include "Game.h"
-
 #include <iostream>
 #include "raylib.h"
-
 #include "gameElements/levels/zones/Zone.h"
 #include "gameElements/Global.h"
 #include "gameElements/levels/Level.h"
@@ -15,18 +13,23 @@ namespace FormersMJ
 	{
 		player = new Player();
 		lvl = new Level();
+		gameMusic = LoadMusicStream("assets/sound/gamePlayMusic.ogg");
 	}
 
 	Game::~Game()
 	{
+		UnloadMusicStream(gameMusic);
 		if (player) delete player;
 	}
 	void Game::Init()
 	{
+		player = new Player();
 		lvl = new Level();
+		PlayMusicStream(gameMusic);
 	}
 	bool Game::Update()
 	{
+		UpdateMusicStream(gameMusic);
 		player->input();
 		if (lvl->update(player))
 		{

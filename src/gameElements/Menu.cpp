@@ -6,25 +6,28 @@ namespace FormersMJ
 	Menu::Menu()
 	{
 		menuSelectorSound = LoadSound("assets/sound/menuSelector.wav");
+		menuMusic = LoadMusicStream("assets/sound/menuMusic.ogg");
 		titleTexture = LoadTexture("assets/img/Titulo para el menu.png");
 		titleTexture.height = titleTexture.height / 2;
 		titleTexture.width = titleTexture.width / 2;
 		controlsTexture = LoadTexture("assets/img/Controls.png");
 		controlsTexture.width = GetScreenWidth();
 		controlsTexture.height = GetScreenHeight();
-
+		
 	}
 
 	Menu::~Menu()
 	{
 		UnloadSound(menuSelectorSound);
 		UnloadTexture(titleTexture);
+		UnloadMusicStream(menuMusic);
 	}
 
 	void Menu::Init()
 	{
 		actualOption = Play;
 		isControlMenu = false;
+		PlayMusicStream(menuMusic);
 	}
 
 	void Menu::Input()
@@ -65,6 +68,7 @@ namespace FormersMJ
 				case Play:
 					gamestatus = GAME;
 					StopSound(menuSelectorSound);
+					StopMusicStream(menuMusic);
 				case Controls:
 					isControlMenu = true;
 					break;
@@ -89,6 +93,7 @@ namespace FormersMJ
 
 	void Menu::Update()
 	{
+		UpdateMusicStream(menuMusic);
 		Input();
 
 	}
