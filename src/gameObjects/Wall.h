@@ -1,7 +1,8 @@
 #ifndef WALL_H
 #define WALL_H
-#include "gameElements/levels/Zone_Structures.h"
+
 #include "raylib.h"
+#include "gameElements/levels/Zone_Structures.h"
 namespace FormersMJ
 {
 	class Wall :public Zone_Structures

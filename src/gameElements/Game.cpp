@@ -1,10 +1,14 @@
 #include "Game.h"
+
+#include <iostream>
+#include "raylib.h"
+
+#include "gameElements/levels/zones/Zone.h"
+#include "gameElements/Global.h"
 #include "gameElements/levels/Level.h"
 #include "gameObjects/Player.h"
 #include "gameObjects/Plates.h"
-#include "gameElements/levels/zones/Zone.h"
-#include "gameElements/Global.h"
-#include <iostream>
+
 namespace FormersMJ
 {
 	Game::Game()
@@ -28,8 +32,7 @@ namespace FormersMJ
 		{
 			return true;
 		}
-		//std::cout << player->getPosition().x << ";" << player->getPosition().y << std::endl;
-		//std::cout << player->getLastPosition().x << ";" << player->getLastPosition().y << std::endl;
+		
 		player->move();
 		if (IsKeyReleased(KEY_R))
 		{
@@ -43,6 +46,5 @@ namespace FormersMJ
 	{
 		lvl->draw();
 		player->drawMe();
-		//DrawCircle(testPlate->getPosition().x, testPlate->getPosition().y, WidthAndHeightWorld/2, testPlate->gerColor());
 	}
 }

@@ -1,5 +1,6 @@
 #include "Door.h"
 #include "raylib.h"
+#include "gameElements/levels/Zone_Structures.h"
 namespace FormersMJ
 {
 	Door::Door(Vector2 Pos, TileType form, Color Color): 
@@ -32,8 +33,8 @@ namespace FormersMJ
 	}
 	void Door::checkCollision(Vector2 playerPos, Vector2 lastPosition)
 	{
-		if (playerPos.x == myPosition.x - 30.0f &&
-			playerPos.y == myPosition.y - 30.0f)
+		if (playerPos.x == myPosition.x - tileScale &&
+			playerPos.y == myPosition.y - tileScale)
 		{
 		}
 	}
