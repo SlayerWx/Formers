@@ -24,6 +24,7 @@ namespace FormersMJ
 	private:
 		bool isControlMenu;
 		Sound menuSelectorSound;
+		Texture2D controlsTexture;
 	};
 }
 #endif

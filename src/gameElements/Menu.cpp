@@ -6,11 +6,13 @@ namespace FormersMJ
 	Menu::Menu()
 	{
 		menuSelectorSound = LoadSound("res/sound/menuSelector.wav");
+		controlsTexture = LoadTexture("res/img/Controls.png");
 	}
 
 	Menu::~Menu()
 	{
 		UnloadSound(menuSelectorSound);
+		UnloadTexture(controlsTexture);
 	}
 
 	void Menu::Init()
@@ -75,6 +77,9 @@ namespace FormersMJ
 			}
 			else
 			{
+				BeginDrawing();
+				DrawTexture(controlsTexture, GetScreenHeight() / 2 - controlsTexture.width / 2, GetScreenWidth() / 2 - controlsTexture.height / 2, BLACK);
+				EndDrawing();
 				changeIsControlMenu();
 			}
 		}
