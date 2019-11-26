@@ -47,6 +47,7 @@ namespace FormersMJ
 
 			if (actualOption == Exit)
 			{
+				CloseWindow();
 				actualOption = Play;
 			}
 			else
