@@ -1,5 +1,6 @@
 #ifndef CREDITS_H
 #define CREDITS_H
+#include "raylib.h"
 namespace FormersMJ
 {
 	class Credits
@@ -12,7 +13,7 @@ namespace FormersMJ
 		void Update();
 		void Draw();
 	private:
-
+		Texture2D creditsTexture;
 	};
 }
 #endif

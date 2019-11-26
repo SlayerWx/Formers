@@ -24,6 +24,7 @@ namespace FormersMJ
 		void Update();
 		void Draw();
 		bool inGame;
+		bool firstTime;
 	};
 }
 #endif

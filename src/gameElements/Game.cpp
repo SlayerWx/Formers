@@ -19,7 +19,7 @@ namespace FormersMJ
 	}
 	void Game::Init()
 	{
-		//testZone->Init();
+		lvl = new Level();
 	}
 	bool Game::Update()
 	{

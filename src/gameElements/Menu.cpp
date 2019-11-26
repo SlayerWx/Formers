@@ -5,13 +5,14 @@ namespace FormersMJ
 {
 	Menu::Menu()
 	{
-		menuSelectorSound = LoadSound("res/sound/menuSelector.wav");
-		titleTexture = LoadTexture("res/img/Titulo para el menu.png");
+		menuSelectorSound = LoadSound("assets/sound/menuSelector.wav");
+		titleTexture = LoadTexture("assets/img/Titulo para el menu.png");
 		titleTexture.height = titleTexture.height / 2;
 		titleTexture.width = titleTexture.width / 2;
-		controlsTexture = LoadTexture("res/img/Controls.png");
+		controlsTexture = LoadTexture("assets/img/Controls.png");
 		controlsTexture.width = GetScreenWidth();
 		controlsTexture.height = GetScreenHeight();
+
 	}
 
 	Menu::~Menu()

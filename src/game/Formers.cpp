@@ -49,10 +49,16 @@ namespace FormersMJ
 			menu->Update();
 			break;
 		case GAME:
+			if (!firstTime)
+			{
+				firstTime = true;
+				game = new Game();
+			}
 			if (game->Update())
 				{
 				gamestatus = CREDITS;
 				menu->changeIsControlMenu();
+				firstTime = false;
 				}
 			break;
 		case CREDITS:

@@ -5,6 +5,9 @@ namespace FormersMJ
 {
 	Credits::Credits()
 	{
+		creditsTexture = LoadTexture("assets/img/Creditos.png");
+		creditsTexture.width = GetScreenWidth();
+		creditsTexture.height = GetScreenHeight();
 	}
 
 	Credits::~Credits()
@@ -26,6 +29,6 @@ namespace FormersMJ
 	}
 	void Credits::Draw()
 	{
-		DrawText("Credits", tileScale * 2, tileScale * 10, tileScale, WHITE);
+		DrawTexture(creditsTexture, 0, 0, WHITE);
 	}
 }

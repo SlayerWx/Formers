@@ -24,6 +24,7 @@ namespace FormersMJ
 		Sound menuSelectorSound;
 		Texture2D titleTexture;
 		Texture2D controlsTexture;
+
 	};
 }
 #endif
