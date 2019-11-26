@@ -16,6 +16,7 @@ namespace FormersMJ
 		~Zone();
 		bool checkWin(Player* player);
 		int getMaxMoves();
+		bool isFinish;
 	private:
 		int maxMoves;
 		Door* doors[4];

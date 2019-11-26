@@ -21,10 +21,13 @@ namespace FormersMJ
 	{
 		//testZone->Init();
 	}
-	void Game::Update()
+	bool Game::Update()
 	{
 		player->input();
-		lvl->update(player);
+		if (lvl->update(player))
+		{
+			return true;
+		}
 		//std::cout << player->getPosition().x << ";" << player->getPosition().y << std::endl;
 		//std::cout << player->getLastPosition().x << ";" << player->getLastPosition().y << std::endl;
 		player->move();
@@ -34,6 +37,7 @@ namespace FormersMJ
 			player->restartPosition();
 			player->resetMoves();
 		}
+		return false;
 	}
 	void Game::Draw()
 	{

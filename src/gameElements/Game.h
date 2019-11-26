@@ -12,7 +12,7 @@ namespace FormersMJ
 		Game();
 		~Game();
 		void Init();
-		void Update();
+		bool Update();
 		void Draw();
 		Music gameplayMusic;
 	private:

@@ -91,11 +91,6 @@ namespace FormersMJ
 
 	}
 
-	void Menu::UpdateControlsMenu()
-	{
-		
-	}
-
 	void Menu::Draw()
 	{
 		if (isControlMenu == false)

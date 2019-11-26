@@ -15,7 +15,6 @@ namespace FormersMJ
 		void Init();
 		void Input();
 		void Update();
-		void UpdateControlsMenu();
 		void Draw();
 		int actualOption;
 		bool getIsControlMenu();

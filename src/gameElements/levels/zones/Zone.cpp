@@ -12,6 +12,7 @@ namespace FormersMJ
 	using namespace std;
 	Zone::Zone(int newMap[mapRow][mapColumn], int maxMovments)
 	{
+		isFinish = false;
 		for (int i = 0; i < 4; i++)
 		{
 			doors[i] = { NULL };
@@ -247,12 +248,14 @@ namespace FormersMJ
 									Zone_Structures::compareColor(aux1->getColor(), doors[k]->getColor()))
 								{
 									doors[k]->canPass = true;
+									isFinish = true;
 								}
 								else
 								{
 									cout << doors[k]->getForm() << endl;
 									previousResult = false;
 									doors[k]->canPass = false;
+									isFinish = false;
 								}
 							}
 						}

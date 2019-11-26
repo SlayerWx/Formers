@@ -8,7 +8,7 @@ namespace FormersMJ
 {
 	Formers::Formers()
 	{
-		InitWindow(screenWidth, screenHeight, "Formers v0.1");
+		InitWindow(screenWidth, screenHeight, "Formers v0.3");
 		game = new Game();
 		menu = new Menu();
 		credits = new Credits();
@@ -49,7 +49,11 @@ namespace FormersMJ
 			menu->Update();
 			break;
 		case GAME:
-			game->Update();
+			if (game->Update())
+				{
+				gamestatus = CREDITS;
+				menu->changeIsControlMenu();
+				}
 			break;
 		case CREDITS:
 			credits->Update();
