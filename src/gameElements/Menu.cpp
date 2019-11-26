@@ -23,7 +23,6 @@ namespace FormersMJ
 	{
 		if (IsKeyReleased(KEY_W))
 		{
-
 			PlaySound(menuSelectorSound);
 
 			if (actualOption == Play)
@@ -37,7 +36,6 @@ namespace FormersMJ
 		}
 		if (IsKeyReleased(KEY_S))
 		{
-
 			PlaySound(menuSelectorSound);
 
 			if (actualOption == Exit)
