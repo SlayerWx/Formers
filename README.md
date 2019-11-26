@@ -33,3 +33,4 @@ Julián Bega
 _Sergio Baretto_
 
 https://patrickdearteaga.com/es/musica-libre-derechos-gratis/childs-nightmare/
+https://patrickdearteaga.com/es/musica-libre-derechos-gratis/solve-the-puzzle/
