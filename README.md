@@ -21,6 +21,8 @@ Visual studio
 
 beepbox.com
 
+https://audiotrimmer.com/es/
+
 
 ## Creado por ✒️
 
@@ -34,3 +36,4 @@ _Sergio Baretto_
 
 https://patrickdearteaga.com/es/musica-libre-derechos-gratis/childs-nightmare/
 https://patrickdearteaga.com/es/musica-libre-derechos-gratis/solve-the-puzzle/
+https://www.freeaudiolibrary.com/es/efectos-gratuitos/?p=4
