@@ -17,7 +17,7 @@ namespace FormersMJ
 		menu = new Menu();
 		credits = new Credits();
 		inGame = true;
-		mySoundDoor = LoadSound("assets/sound/doorOpen.wav");
+		Global::mySoundDoor = LoadSound("assets/sound/doorOpen.wav");
 	}
 
 	Formers::~Formers()
@@ -25,7 +25,7 @@ namespace FormersMJ
 		if (game) delete game;
 		if (menu) delete menu;
 		if (credits) delete credits;
-		UnloadSound(mySoundDoor);
+		UnloadSound(Global::mySoundDoor);
 		CloseAudioDevice();
 		CloseWindow();
 	}

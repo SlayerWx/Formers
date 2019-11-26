@@ -13,6 +13,7 @@ namespace FormersMJ
 		controlsTexture = LoadTexture("assets/img/Controls.png");
 		controlsTexture.width = GetScreenWidth();
 		controlsTexture.height = GetScreenHeight();
+		SetMusicVolume(menuMusic, 0.25f);
 		
 	}
 

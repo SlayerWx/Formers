@@ -28,7 +28,7 @@ namespace FormersMJ
 			actualMapX++;
 			player->setPosition(leftDoor);
 			player->initMoves();
-		//	PlaySound(mySoundDoor);
+			PlaySound(Global::mySoundDoor);
 		}
 		if (player->getPosition().x < 0 )
 		{
