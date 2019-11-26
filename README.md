@@ -1,4 +1,4 @@
-# Formers
+﻿# Formers
 
 Formers es un juego de puzzles.
 
@@ -23,6 +23,10 @@ beepbox.com
 
 https://audiotrimmer.com/es/
 
+## Versiones
+https://github.com/SlayerWx/Formers/tree/v0.1
+
+https://github.com/SlayerWx/Formers/tree/v0.3
 
 ## Creado por ✒️
 
