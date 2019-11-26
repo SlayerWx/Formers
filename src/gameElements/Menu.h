@@ -3,6 +3,11 @@
 #include "raylib.h"
 namespace FormersMJ
 {
+	static const int TEXTDISTANCEINX = 2;
+	static const int PLAYTEXTDISTANCEINY = 6;
+	static const int CONTROLESTEXTDISTANCEINY = 8;
+	static const int CREDITSTEXTDISTANCEINY = 10;
+	static const int EXITTEXTDISTANCEINY = 12;
 	class Menu
 	{
 		enum MenuOptions

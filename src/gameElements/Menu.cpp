@@ -102,31 +102,31 @@ namespace FormersMJ
 			switch (actualOption)
 			{
 			case Play:
-				DrawText("Play", tileScale * 2, tileScale * 6, tileScale, YELLOW);
-				DrawText("Controls", tileScale * 2, tileScale * 8, tileScale, WHITE);
-				DrawText("Credits", tileScale * 2, tileScale * 10, tileScale, WHITE);
-				DrawText("Exit", tileScale * 2, tileScale * 12, tileScale, WHITE);
+				DrawText("Play", tileScale * TEXTDISTANCEINX, tileScale * PLAYTEXTDISTANCEINY, tileScale, YELLOW);
+				DrawText("Controls", tileScale * TEXTDISTANCEINX, tileScale * CONTROLESTEXTDISTANCEINY, tileScale, WHITE);
+				DrawText("Credits", tileScale * TEXTDISTANCEINX, tileScale * CREDITSTEXTDISTANCEINY, tileScale, WHITE);
+				DrawText("Exit", tileScale * TEXTDISTANCEINX, tileScale * EXITTEXTDISTANCEINY, tileScale, WHITE);
 				break;
 
 			case Controls:
-				DrawText("Play", tileScale * 2, tileScale * 6, tileScale, WHITE);
-				DrawText("Controls", tileScale * 2, tileScale * 8, tileScale, YELLOW);
-				DrawText("Credits", tileScale * 2, tileScale * 10, tileScale, WHITE);
-				DrawText("Exit", tileScale * 2, tileScale * 12, tileScale, WHITE);
+				DrawText("Play", tileScale * TEXTDISTANCEINX, tileScale * PLAYTEXTDISTANCEINY, tileScale, WHITE);
+				DrawText("Controls", tileScale * TEXTDISTANCEINX, tileScale * CONTROLESTEXTDISTANCEINY, tileScale, YELLOW);
+				DrawText("Credits", tileScale * TEXTDISTANCEINX, tileScale * CREDITSTEXTDISTANCEINY, tileScale, WHITE);
+				DrawText("Exit", tileScale * TEXTDISTANCEINX, tileScale * EXITTEXTDISTANCEINY, tileScale, WHITE);
 				break;
 
 			case Credits:
-				DrawText("Play", tileScale * 2, tileScale * 6, tileScale, WHITE);
-				DrawText("Controls", tileScale * 2, tileScale * 8, tileScale, WHITE);
-				DrawText("Credits", tileScale * 2, tileScale * 10, tileScale, YELLOW);
-				DrawText("Exit", tileScale * 2, tileScale * 12, tileScale, WHITE);
+				DrawText("Play", tileScale * TEXTDISTANCEINX, tileScale * PLAYTEXTDISTANCEINY, tileScale, WHITE);
+				DrawText("Controls", tileScale * TEXTDISTANCEINX, tileScale * CONTROLESTEXTDISTANCEINY, tileScale, WHITE);
+				DrawText("Credits", tileScale * TEXTDISTANCEINX, tileScale * CREDITSTEXTDISTANCEINY, tileScale, YELLOW);
+				DrawText("Exit", tileScale * TEXTDISTANCEINX, tileScale * EXITTEXTDISTANCEINY, tileScale, WHITE);
 				break;
 
 			case Exit:
-				DrawText("Play", tileScale * 2, tileScale * 6, tileScale, WHITE);
-				DrawText("Controls", tileScale * 2, tileScale * 8, tileScale, WHITE);
-				DrawText("Credits", tileScale * 2, tileScale * 10, tileScale, WHITE);
-				DrawText("Exit", tileScale * 2, tileScale * 12, tileScale, YELLOW);
+				DrawText("Play", tileScale * TEXTDISTANCEINX, tileScale * PLAYTEXTDISTANCEINY, tileScale, WHITE);
+				DrawText("Controls", tileScale * TEXTDISTANCEINX, tileScale * CONTROLESTEXTDISTANCEINY, tileScale, WHITE);
+				DrawText("Credits", tileScale * TEXTDISTANCEINX, tileScale * CREDITSTEXTDISTANCEINY, tileScale, WHITE);
+				DrawText("Exit", tileScale * TEXTDISTANCEINX, tileScale * EXITTEXTDISTANCEINY, tileScale, YELLOW);
 				break;
 			default:
 				break;
