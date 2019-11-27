@@ -48,10 +48,14 @@ namespace FormersMJ
 				{ myPosition.x + static_cast<int>(tilescale / 2) - static_cast<int>(tilescale / 2),myPosition.y + static_cast<int>(tilescale / 2) - static_cast<int>(tilescale / 2) }, myColor);
 			break;
 		case wall:
+#if DEBUG
 			DrawRectangle(static_cast<int>(myPosition.x - tilescale),
 				static_cast<int>(myPosition.y - tilescale), tilescale, tilescale, myColor);
+#endif
+#if RELEASE
+			DrawTexture(mySkin, static_cast<int>(myPosition.x - tilescale), static_cast<int>(myPosition.y - tilescale),WHITE);
+#endif
 			break;
-
 		case doorR:
 			DrawRectangle(static_cast<int>(myPosition.x - tilescale),
 				static_cast<int>(myPosition.y - tilescale), tilescale, tilescale, myColor);

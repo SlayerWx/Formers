@@ -17,6 +17,8 @@ namespace FormersMJ
 		inGame = true;
 		Global::mySoundDoor = LoadSound("assets/sound/doorOpen.wav");
 		Global::WallSkin = LoadTexture("assets/img/Wall.png");
+		Global::WallSkin.height = static_cast<int>(tileScale);
+		Global::WallSkin.width = static_cast<int>(tileScale);
 	}
 
 	Formers::~Formers()
