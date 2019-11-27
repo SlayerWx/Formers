@@ -58,14 +58,26 @@ namespace FormersMJ
 			break;
 
 		case doorT:
+#if DEBUG
 			DrawTriangle({ myPosition.x - static_cast<int>(tilescale / 2),myPosition.y - static_cast<int>(tilescale / 2) - static_cast<int>(tilescale / 2) },
 				{ myPosition.x - static_cast<int>(tilescale / 2) - static_cast<int>(tilescale / 2),myPosition.y + static_cast<int>(tilescale / 2) - static_cast<int>(tilescale / 2) },
 				{ myPosition.x + static_cast<int>(tilescale / 2) - static_cast<int>(tilescale / 2),myPosition.y + static_cast<int>(tilescale / 2) - static_cast<int>(tilescale / 2) }, myColor);
+#endif
+#if RELEASE
+			DrawRectangle(static_cast<int>(myPosition.x - tilescale),
+				static_cast<int>(myPosition.y - tilescale), tilescale, tilescale, myColor);
+#endif
 			break;
 
 		case doorC:
+#if DEBUG
 			DrawCircle(static_cast<int>(static_cast<int>(myPosition.x - tilescale / 2)),
 				static_cast<int>(myPosition.y - tilescale / 2), tileScale / 2, myColor);
+#endif
+#if RELEASE
+			DrawRectangle(static_cast<int>(myPosition.x - tilescale),
+				static_cast<int>(myPosition.y - tilescale), tilescale, tilescale, myColor);
+#endif
 			break;
 
 		
