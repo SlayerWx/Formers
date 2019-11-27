@@ -3,17 +3,15 @@
 #include "gameElements/levels/Zone_Structures.h"
 namespace FormersMJ
 {
-	Wall::Wall()
+
+	Wall::Wall(Vector2 Pos, Color myNewColor,Texture2D myNewSkin):
+		Zone_Structures(Pos, rectangle, myNewColor,myNewSkin)
 	{
 		type = 'W';
 	}
-
 	Wall::~Wall()
 	{
-	}
-	Wall::Wall(Vector2 Pos, Color myNewColor):Zone_Structures(Pos, rectangle, myNewColor)
-	{
-		type = 'W';
+
 	}
 	void Wall::checkCollision(Vector2 playerPos, Vector2 lastPosition)
 	{

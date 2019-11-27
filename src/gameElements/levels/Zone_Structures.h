@@ -12,8 +12,7 @@ namespace FormersMJ
 	class Zone_Structures
 	{
 	public:
-		Zone_Structures();
-		Zone_Structures(Vector2 Pos, TileType form, Color myNewColor);
+		Zone_Structures(Vector2 Pos, TileType form, Color myNewColor,Texture2D myNewSkin);
 		virtual ~Zone_Structures();
 		Color getColor();
 		void setColor(Color newColor);
@@ -33,6 +32,7 @@ namespace FormersMJ
 		Vector2 myPosition;
 		TileType myForm;
 		Color myColor;
+		Texture2D mySkin;
 
 	};
 }

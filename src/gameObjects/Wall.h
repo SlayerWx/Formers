@@ -8,10 +8,10 @@ namespace FormersMJ
 	class Wall :public Zone_Structures
 	{
 	public:
-		Wall();
+		Wall(Vector2 Pos, Color myNewColor, Texture2D myNewSkin);
 		~Wall();
-		Wall(Vector2 Pos, Color myColor);
 		void checkCollision(Vector2 playerPos, Vector2 lastPosition);
+		static Texture2D mySkin;
 	private:
 
 	};

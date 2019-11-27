@@ -9,7 +9,7 @@ namespace FormersMJ
 	class Door :public Zone_Structures
 	{
 	public:
-		Door(Vector2 Pos, TileType form, Color myColor);
+		Door(Vector2 Pos, TileType form, Color Color, Texture2D myNewSkin);
 		~Door();
 		void setOpen(bool isNewOpen);
 		void checkCollision(Vector2 playerPos, Vector2 lastPosition);

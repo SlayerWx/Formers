@@ -11,9 +11,8 @@ namespace FormersMJ
 		bool alredyChange;
 		static Sound soundPlatesForm;
 	public:
-		Plates();
+		Plates(Vector2 Pos, TileType form, Color myNewColor, Texture2D myNewSkin);
 		~Plates();
-		Plates(Vector2 Pos, TileType form, Color myColor);
 		bool getAlredyChange();
 		void setAlredyChange(bool newRedyChange);
 		void checkCollision(Vector2 position, Vector2 lastPosition);

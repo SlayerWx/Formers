@@ -10,21 +10,15 @@ namespace FormersMJ
 {
 	Sound Plates::soundPlatesForm;
 	using namespace std;
-	Plates::Plates()
+
+	Plates::Plates(Vector2 Pos, TileType form, Color myNewColor,Texture2D myNewSkin)
+		:Zone_Structures(Pos, form, myNewColor,myNewSkin)
 	{
 		alredyChange = false;
 		type = 'P';
 	}
-	
 	Plates::~Plates()
 	{
-	}
-
-	Plates::Plates(Vector2 Pos, TileType form, Color myNewColor)
-		:Zone_Structures(Pos, form, myNewColor)
-	{
-		alredyChange = false;
-		type = 'P';
 	}
 
 	void Plates::setAlredyChange(bool newRedyChange)

@@ -3,18 +3,12 @@
 #include "gameElements/Global.h"
 namespace FormersMJ
 {
-	Zone_Structures::Zone_Structures()
-	{
-		myPosition.x = 0;
-		myPosition.y = 0;
-		myForm = circle;
-		myColor = F_DARKBLUE;
-	}
-	Zone_Structures::Zone_Structures(Vector2 Pos, TileType form, Color myNewColor)
+	Zone_Structures::Zone_Structures(Vector2 Pos, TileType form, Color myNewColor,Texture2D myNewSkin)
 	{
 		myPosition = Pos;
 		myForm = form;
 		myColor = myNewColor;
+		mySkin = myNewSkin;
 	}
 	Zone_Structures::~Zone_Structures()
 	{

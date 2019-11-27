@@ -16,6 +16,7 @@ namespace FormersMJ
 		credits = new Credits();
 		inGame = true;
 		Global::mySoundDoor = LoadSound("assets/sound/doorOpen.wav");
+		Global::WallSkin = LoadTexture("assets/img/Wall.png");
 	}
 
 	Formers::~Formers()

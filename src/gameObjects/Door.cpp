@@ -3,8 +3,8 @@
 #include "gameElements/levels/Zone_Structures.h"
 namespace FormersMJ
 {
-	Door::Door(Vector2 Pos, TileType form, Color Color): 
-		Zone_Structures(Pos,form,Color)
+	Door::Door(Vector2 Pos, TileType form, Color Color,Texture2D myNewSkin): 
+		Zone_Structures(Pos,form,Color,myNewSkin)
 	{
 		type = 'D';
 		isOpen = false;
