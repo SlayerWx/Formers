@@ -7,6 +7,8 @@ namespace FormersMJ
 	static float tileScale = 30.0f;
 	const int mapColumn = 27;
 	const int mapRow = 15;
+	const int maxMapZoneRow = 5;
+	const int maxMapZoneColumn = 5;
 	const static Vector2 rightDoor = { (mapColumn-1)*tileScale , tileScale*8 };
 	const static Vector2 bottomDoor = { ((mapColumn+1)/2)*tileScale , (mapRow - 1)*tileScale };
 	const static Vector2 topDoor = { ((mapColumn + 1) / 2)*tileScale, 0 };

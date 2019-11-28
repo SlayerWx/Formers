@@ -2,12 +2,13 @@
 #define LEVEL_H
 #include "zones/Zone.h"
 #include "gameObjects/Player.h"
+#include "gameElements/Global.h"
 namespace FormersMJ
 {
 	class Level
 	{
 	private:
-		Zone* map[5][5];
+		Zone* map[maxMapZoneRow][maxMapZoneColumn];
 		bool alreadyChange;
 		int actualMapX;
 		int actualMapY;

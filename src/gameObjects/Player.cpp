@@ -128,7 +128,7 @@ namespace FormersMJ
 	}
 	int Player::getMoves()
 	{
-		return moves;
+		return 0;//moves;
 	}
 
 	void Player::initMoves()

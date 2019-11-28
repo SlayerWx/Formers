@@ -254,7 +254,6 @@ namespace FormersMJ
 								}
 								else
 								{
-									cout << doors[k]->getForm() << endl;
 									previousResult = false;
 									doors[k]->canPass = false;
 									isFinish = false;
@@ -288,6 +287,8 @@ namespace FormersMJ
 				}
 			}
 		}
+	//	system("cls");
+	//	cout << previousResult << endl;
 		return previousResult;
 	}
 
