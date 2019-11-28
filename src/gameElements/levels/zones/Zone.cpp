@@ -219,12 +219,11 @@ namespace FormersMJ
 		}
 	}
 
-	bool Zone::checkWin()
+	void Zone::checkWin()
 	{
-		bool previousResult = true;
 		Zone_Structures* aux1 = NULL;
 		Zone_Structures* aux2 = NULL;
-
+		isFinish = false;
 		for (int i = 0; i < mapRow; i++)
 		{
 			for (int j = 0; j < mapColumn; j++)
@@ -254,16 +253,10 @@ namespace FormersMJ
 								}
 								else
 								{
-									previousResult = false;
 									doors[k]->canPass = false;
-									isFinish = false;
 								}
 							}
 						}
-					}
-					else
-					{
-						previousResult = false;
 					}
 				}
 				if (zoneElements[i][j]->myType() == 'D')
@@ -287,9 +280,6 @@ namespace FormersMJ
 				}
 			}
 		}
-	//	system("cls");
-	//	cout << previousResult << endl;
-		return previousResult;
 	}
 
 	int Zone::getMaxMoves()

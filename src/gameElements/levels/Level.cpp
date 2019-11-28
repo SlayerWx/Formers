@@ -35,21 +35,21 @@ namespace FormersMJ
 			actualMapX--;
 			player->setPosition(rightDoor);
 			player->initMoves();
-		//	PlaySound(mySoundDoor);
+			PlaySound(Global::mySoundDoor);
 		}
 		if (player->getPosition().y < 0)
 		{
 				actualMapY--;
 			player->setPosition(bottomDoor);
 			player->initMoves();
-		//	PlaySound(mySoundDoor);
+			PlaySound(Global::mySoundDoor);
 		}
 		if (player->getPosition().y > (mapRow - SCALEDIF) * tileScale )
 		{
 			actualMapY++;
 			player->setPosition(topDoor);
 			player->initMoves();
-		//	PlaySound(mySoundDoor);
+			PlaySound(Global::mySoundDoor);
 		}
 		bool previusResult = true;
 		for (int i = 0; i < maxMapZoneRow && previusResult;i++)
@@ -62,6 +62,7 @@ namespace FormersMJ
 				}
 			}
 		}
+
 		return previusResult;
 	}
 	void Level::draw()

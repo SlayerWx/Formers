@@ -14,7 +14,7 @@ namespace FormersMJ
 		player = new Player();
 		lvl = new Level();
 		gameMusic = LoadMusicStream("assets/sound/gamePlayMusic.ogg");
-		SetMusicVolume(gameMusic, 0.15f);
+		SetMusicVolume(gameMusic, 0.25f);
 	}
 
 	Game::~Game()
