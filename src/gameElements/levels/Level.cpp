@@ -39,7 +39,7 @@ namespace FormersMJ
 		}
 		if (player->getPosition().y < 0)
 		{
-			actualMapY--;
+				actualMapY--;
 			player->setPosition(bottomDoor);
 			player->initMoves();
 		//	PlaySound(mySoundDoor);
@@ -52,9 +52,9 @@ namespace FormersMJ
 		//	PlaySound(mySoundDoor);
 		}
 		bool previusResult = true;
-		for (int i = 0; i < actualMapY && previusResult;i++)
+		for (int i = 0; i <= actualMapY && previusResult;i++)
 		{
-			for (int t = 0; t < actualMapX && previusResult; t++)
+			for (int t = 0; t <= actualMapX && previusResult; t++)
 			{
 				if (!map[i][t]->isFinish)
 				{
