@@ -14,7 +14,9 @@ namespace FormersMJ
 		player = new Player();
 		lvl = new Level();
 		gameMusic = LoadMusicStream("assets/sound/gamePlayMusic.ogg");
+		resetSong = LoadSound("assets/sound/resetSong.wav");
 		SetMusicVolume(gameMusic, 0.25f);
+		//SetSoundVolume();
 	}
 
 	Game::~Game()
@@ -43,6 +45,10 @@ namespace FormersMJ
 			lvl = new Level();
 			player->restartPosition();
 			player->resetMoves();
+			if (!IsSoundPlaying(resetSong)) 
+			{
+				PlaySound(resetSong);
+			}
 		}
 		return false;
 	}

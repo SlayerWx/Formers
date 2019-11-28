@@ -19,6 +19,7 @@ namespace FormersMJ
 	private:
 		Player* player;
 		Music gameMusic;
+		Sound resetSong;
 	};
 }
 #endif
