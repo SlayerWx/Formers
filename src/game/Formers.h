@@ -20,12 +20,12 @@ namespace FormersMJ
 		Game* game;
 		Menu* menu;
 		Credits* credits;
+		bool firstTime;
 	private:
 		void Init();
 		void Update();
 		void Draw();
 		bool inGame;
-		bool firstTime;
 		Sound winSong;
 	};
 }

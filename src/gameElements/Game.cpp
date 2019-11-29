@@ -50,6 +50,17 @@ namespace FormersMJ
 				PlaySound(resetSong);
 			}
 		}
+		else if (IsKeyDown(KEY_ESCAPE))
+		{
+			gamestatus = MENU;
+			lvl = new Level();
+			player->restartPosition();
+			player->resetMoves();
+			if (!IsSoundPlaying(resetSong))
+			{
+				PlaySound(resetSong);
+			}
+		}
 		return false;
 	}
 	void Game::Draw()

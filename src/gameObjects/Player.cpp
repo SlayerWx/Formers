@@ -1,5 +1,6 @@
 #include "Player.h"
 #include "raylib.h"
+#include "game/Formers.h"
 namespace FormersMJ 
 {
 	Player::Player()
@@ -83,6 +84,7 @@ namespace FormersMJ
 				endPosition.x = startPosition.x + distance;
 				endPosition.y = startPosition.y;
 			}
+			
 		}
 	}
 	Vector2 Player::getNextPos() {

@@ -22,14 +22,7 @@ namespace FormersMJ
 	}
 	TileType Door::getForm()
 	{
-		if (myForm == doorC || myForm == doorCB || myForm == doorCR || myForm == doorCG) { return circle; }else
-		if (myForm == doorR || myForm == doorRB || myForm == doorRR || myForm == doorRG) { return rectangle; }else
-		if (myForm == doorT || myForm == doorTB || myForm == doorTR || myForm == doorTG) { return triangle; }
-		else
-		{
 			return myForm;
-		}
-		
 	}
 	void Door::checkCollision(Vector2 playerPos, Vector2 lastPosition)
 	{

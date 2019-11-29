@@ -89,6 +89,12 @@ namespace FormersMJ
 				changeIsControlMenu();
 			}
 		}
+		if (IsKeyDown(KEY_ESCAPE) && isControlMenu == true)
+		{
+			isControlMenu = false;
+		}
+		
+		
 	}
 
 	void Menu::Update()

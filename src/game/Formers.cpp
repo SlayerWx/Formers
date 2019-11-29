@@ -34,7 +34,7 @@ namespace FormersMJ
 	void Formers::Play()
 	{
 		Init();
-		while (inGame && !WindowShouldClose())
+		while (inGame)
 		{
 
 			Update();

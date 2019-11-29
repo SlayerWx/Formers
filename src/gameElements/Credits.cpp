@@ -22,6 +22,10 @@ namespace FormersMJ
 		{
 			gamestatus = MENU;
 		}
+		if (IsKeyReleased(KEY_ESCAPE))
+		{
+			gamestatus = MENU;
+		}
 	}
 	void Credits::Update()
 	{

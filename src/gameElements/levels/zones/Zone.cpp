@@ -244,8 +244,13 @@ namespace FormersMJ
 						{
 							if (doors[k] != NULL)
 							{
+								TileType door = doors[k]->getForm();
+								if (door == doorC) door = circle;
+								if (door == doorR) door = rectangle;
+								if (door == doorT) door = triangle;
 
-								if (aux1->getForm() == doors[k]->getForm() &&
+
+								if (aux1->getForm() == door &&
 									Zone_Structures::compareColor(aux1->getColor(), doors[k]->getColor()))
 								{
 									doors[k]->canPass = true;
