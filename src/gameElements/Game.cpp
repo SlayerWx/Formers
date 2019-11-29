@@ -63,14 +63,14 @@ namespace FormersMJ
 				PlaySound(resetSong);
 			}
 		}
-		if (IsKeyReleased(KEY_H))
+		if (IsKeyReleased(KEY_F3))
 		{
 			if (volume <= 1.00f)
 			{
 				volume = volume + 0.1f;
 			}
 		}
-		if (IsKeyReleased(KEY_J))
+		if (IsKeyReleased(KEY_F2))
 		{
 			if (volume >= 0.00f)
 			{

@@ -94,14 +94,14 @@ namespace FormersMJ
 		{
 			isControlMenu = false;
 		}
-		if (IsKeyReleased(KEY_H))
+		if (IsKeyReleased(KEY_F3))
 		{
 			if (volume <= 1.00f)
 			{
 				volume = volume + 0.1f;
 			}
 		}
-		if (IsKeyReleased(KEY_J))
+		if (IsKeyReleased(KEY_F2))
 		{
 			if (volume >= 0.00f)
 			{
@@ -158,6 +158,8 @@ namespace FormersMJ
 			default:
 				break;
 			}
+			DrawText("F2 - volume", GetScreenWidth() -( tilescale * CONTROLESTEXTDISTANCEINY), tilescale * EXITTEXTDISTANCEINY, tilescale, WHITE);
+			DrawText("F3 + volume", GetScreenWidth() - (tilescale * CONTROLESTEXTDISTANCEINY), (tilescale * EXITTEXTDISTANCEINY) + tilescale, tilescale, WHITE);
 		}
 		else
 		{
