@@ -59,8 +59,11 @@ namespace FormersMJ
 		case doorR:
 			DrawRectangle(static_cast<int>(myPosition.x - tilescale),
 				static_cast<int>(myPosition.y - tilescale), tilescale, tilescale, myColor);
+#if RELEASE
+			DrawTexture(Global::doorRectangleTexture, static_cast<int>(myPosition.x - tilescale),
+				static_cast<int>(myPosition.y - tilescale), WHITE);
+#endif
 			break;
-
 		case doorT:
 #if DEBUG
 			DrawTriangle({ myPosition.x - static_cast<int>(tilescale / 2),myPosition.y - static_cast<int>(tilescale / 2) - static_cast<int>(tilescale / 2) },
@@ -70,6 +73,8 @@ namespace FormersMJ
 #if RELEASE
 			DrawRectangle(static_cast<int>(myPosition.x - tilescale),
 				static_cast<int>(myPosition.y - tilescale), tilescale, tilescale, myColor);
+			DrawTexture(Global::doorTriangleTexture, static_cast<int>(myPosition.x - tilescale),
+				static_cast<int>(myPosition.y - tilescale), WHITE);
 #endif
 			break;
 
@@ -81,6 +86,8 @@ namespace FormersMJ
 #if RELEASE
 			DrawRectangle(static_cast<int>(myPosition.x - tilescale),
 				static_cast<int>(myPosition.y - tilescale), tilescale, tilescale, myColor);
+			DrawTexture(Global::doorCircleTexture, static_cast<int>(myPosition.x - tilescale),
+				static_cast<int>(myPosition.y - tilescale), WHITE);
 #endif
 			break;
 

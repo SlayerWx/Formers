@@ -20,6 +20,9 @@ namespace FormersMJ
 		Global::WallSkin.height = static_cast<int>(tileScale);
 		Global::WallSkin.width = static_cast<int>(tileScale);
 		winSong = LoadSound("assets/sound/WinSong.wav");
+		Global::doorCircleTexture = LoadTexture("assets/img/Door-C.png");
+		Global::doorRectangleTexture = LoadTexture("assets/img/Door-R.png");
+		Global::doorTriangleTexture = LoadTexture("assets/img/Door-T.png");
 	}
 
 	Formers::~Formers()

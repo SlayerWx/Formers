@@ -29,6 +29,9 @@ namespace FormersMJ
 		~Global();
 		static Sound mySoundDoor;
 		static Texture2D WallSkin;
+		static Texture2D doorCircleTexture;
+		static Texture2D doorRectangleTexture;
+		static Texture2D doorTriangleTexture;
 	};
 
 }
