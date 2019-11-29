@@ -13,7 +13,8 @@ namespace FormersMJ
 		controlsTexture = LoadTexture("assets/img/Controls.png");
 		controlsTexture.width = GetScreenWidth();
 		controlsTexture.height = GetScreenHeight();
-		SetMusicVolume(menuMusic, 0.25f);
+		volume = 0.25f;
+		SetMusicVolume(menuMusic, volume);
 		
 	}
 
@@ -93,13 +94,27 @@ namespace FormersMJ
 		{
 			isControlMenu = false;
 		}
-		
+		if (IsKeyReleased(KEY_H))
+		{
+			if (volume <= 1.00f)
+			{
+				volume = volume + 0.1f;
+			}
+		}
+		if (IsKeyReleased(KEY_J))
+		{
+			if (volume >= 0.00f)
+			{
+				volume = volume - 0.1f;
+			}
+		}
 		
 	}
 
 	void Menu::Update()
 	{
 		UpdateMusicStream(menuMusic);
+		SetMusicVolume(menuMusic, volume);
 		Input();
 
 	}

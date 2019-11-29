@@ -16,6 +16,7 @@ namespace FormersMJ
 		bool Update();
 		void Draw();
 		Music gameplayMusic;
+		float volume;
 	private:
 		Player* player;
 		Music gameMusic;
