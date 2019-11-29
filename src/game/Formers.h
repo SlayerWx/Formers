@@ -26,6 +26,7 @@ namespace FormersMJ
 		void Draw();
 		bool inGame;
 		bool firstTime;
+		Sound winSong;
 	};
 }
 #endif

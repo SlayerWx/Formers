@@ -19,6 +19,7 @@ namespace FormersMJ
 		Global::WallSkin = LoadTexture("assets/img/Wall.png");
 		Global::WallSkin.height = static_cast<int>(tileScale);
 		Global::WallSkin.width = static_cast<int>(tileScale);
+		winSong = LoadSound("assets/sound/WinSong.wav");
 	}
 
 	Formers::~Formers()
@@ -65,6 +66,7 @@ namespace FormersMJ
 				gamestatus = CREDITS;
 				menu->changeIsControlMenu();
 				firstTime = false;
+				PlaySound(winSong);
 				}
 			break;
 		case CREDITS:

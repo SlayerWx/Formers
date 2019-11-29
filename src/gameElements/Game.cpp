@@ -18,10 +18,10 @@ namespace FormersMJ
 		SetMusicVolume(gameMusic, 0.25f);
 		//SetSoundVolume();
 	}
-
 	Game::~Game()
 	{
 		UnloadMusicStream(gameMusic);
+		UnloadSound(resetSong);
 		if (player) delete player;
 	}
 	void Game::Init()
