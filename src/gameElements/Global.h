@@ -32,6 +32,7 @@ namespace FormersMJ
 		static Texture2D doorCircleTexture;
 		static Texture2D doorRectangleTexture;
 		static Texture2D doorTriangleTexture;
+		static float volume;
 	};
 
 }

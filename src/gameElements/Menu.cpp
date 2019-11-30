@@ -1,6 +1,7 @@
 #include "Menu.h"
 #include "raylib.h"
 #include "Global.h"
+#include <iostream>
 namespace FormersMJ
 {
 	Menu::Menu()
@@ -13,8 +14,7 @@ namespace FormersMJ
 		controlsTexture = LoadTexture("assets/img/Controls.png");
 		controlsTexture.width = GetScreenWidth();
 		controlsTexture.height = GetScreenHeight();
-		volume = 0.25f;
-		SetMusicVolume(menuMusic, volume);
+		SetMusicVolume(menuMusic, Global::volume);
 		
 	}
 
@@ -94,18 +94,19 @@ namespace FormersMJ
 		{
 			isControlMenu = false;
 		}
-		if (IsKeyReleased(KEY_F3))
+		if (IsKeyReleased(KEY_F3) && Global::volume < 1.0f)
 		{
-			if (volume <= 1.00f)
-			{
-				volume = volume + 0.1f;
-			}
+			Global::volume = Global::volume + 0.1f;
+			SetMusicVolume(menuMusic, Global::volume);
 		}
-		if (IsKeyReleased(KEY_F2))
+		if (IsKeyReleased(KEY_F2) && Global::volume > 0.0f)
 		{
-			if (volume >= 0.00f)
+			Global::volume = Global::volume - 0.1f;
+			SetMusicVolume(menuMusic, Global::volume);
+			if (Global::volume < 0.0f)
 			{
-				volume = volume - 0.1f;
+				Global::volume = 0.0f;
+				SetMusicVolume(menuMusic, Global::volume);
 			}
 		}
 		
@@ -114,8 +115,9 @@ namespace FormersMJ
 	void Menu::Update()
 	{
 		UpdateMusicStream(menuMusic);
-		SetMusicVolume(menuMusic, volume);
 		Input();
+		system("cls");
+		std::cout << Global::volume << std::endl;
 
 	}
 

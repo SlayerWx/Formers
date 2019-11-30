@@ -15,9 +15,8 @@ namespace FormersMJ
 		lvl = new Level();
 		gameMusic = LoadMusicStream("assets/sound/gamePlayMusic.ogg");
 		resetSong = LoadSound("assets/sound/resetSong.wav");
-		volume = 0.25f;
-		SetMusicVolume(gameMusic, volume);
-		//SetSoundVolume();
+		SetMusicVolume(gameMusic, Global::volume);
+		SetSoundVolume(resetSong, Global::volume);
 	}
 	Game::~Game()
 	{
@@ -34,7 +33,6 @@ namespace FormersMJ
 	bool Game::Update()
 	{
 		UpdateMusicStream(gameMusic);
-		SetMusicVolume(gameMusic, volume);
 		player->input();
 		if (lvl->update(player))
 		{
@@ -63,18 +61,22 @@ namespace FormersMJ
 				PlaySound(resetSong);
 			}
 		}
-		if (IsKeyReleased(KEY_F3))
+		if (IsKeyReleased(KEY_F3) && Global::volume < 1.0f)
 		{
-			if (volume <= 1.00f)
-			{
-				volume = volume + 0.1f;
-			}
+			Global::volume = Global::volume + 0.1f;
+			SetMusicVolume(gameMusic, Global::volume);
+			SetSoundVolume(resetSong, Global::volume);
 		}
-		if (IsKeyReleased(KEY_F2))
+		if (IsKeyReleased(KEY_F2) && Global::volume > 0.0f)
 		{
-			if (volume >= 0.00f)
+			Global::volume = Global::volume - 0.1f;
+			SetMusicVolume(gameMusic, Global::volume);
+			SetSoundVolume(resetSong, Global::volume);
+			if (Global::volume < 0.0f)
 			{
-				volume = volume - 0.1f;
+				Global::volume = 0.0f;
+				SetMusicVolume(gameMusic, Global::volume);
+				SetSoundVolume(resetSong, Global::volume);
 			}
 		}
 

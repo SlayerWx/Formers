@@ -24,7 +24,6 @@ namespace FormersMJ
 		int actualOption;
 		bool getIsControlMenu();
 		void changeIsControlMenu();
-		float volume;
 	private:
 		bool isControlMenu;
 		Sound menuSelectorSound;

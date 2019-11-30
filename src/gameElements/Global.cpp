@@ -7,6 +7,7 @@ namespace FormersMJ
 	Texture2D Global::doorCircleTexture;
 	Texture2D Global::doorRectangleTexture;
 	Texture2D Global::doorTriangleTexture;
+	float Global::volume = 0.20f;
 
 	Global::Global()
 	{
