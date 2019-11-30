@@ -9,7 +9,7 @@ namespace FormersMJ
 {
 	Formers::Formers()
 	{
-		InitWindow(screenWidth, screenHeight, "Formers v0.3");
+		InitWindow(screenWidth, screenHeight, "Formers v0.4");
 		InitAudioDevice();
 		game = new Game();
 		menu = new Menu();

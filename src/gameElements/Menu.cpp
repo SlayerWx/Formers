@@ -1,7 +1,6 @@
 #include "Menu.h"
 #include "raylib.h"
 #include "Global.h"
-#include <iostream>
 namespace FormersMJ
 {
 	Menu::Menu()
@@ -116,8 +115,6 @@ namespace FormersMJ
 	{
 		UpdateMusicStream(menuMusic);
 		Input();
-		system("cls");
-		std::cout << Global::volume << std::endl;
 
 	}
 
